@@ -2,11 +2,13 @@
 
 A personal cloud portfolio website showcasing my transition from Service Desk Analyst to Cloud Engineering through hands-on AWS projects, cloud technologies, and continuous learning.
 
-## Live Website
+<h2>Live Website</h2>
 
-View my portfolio website:
-
-http://mandy-cloud-portfolio-site.s3-website-us-east-1.amazonaws.com
+<p>
+    🚀 <a href="http://mandy-cloud-portfolio-site.s3-website-us-east-1.amazonaws.com" target="_blank">
+        View My Cloud Engineer Portfolio
+    </a>
+</p>
 
 ## About This Project
 
