@@ -1,10 +1,14 @@
 # Cloud Engineer Portfolio
 
-A personal cloud portfolio website showcasing my transition from Service Desk Analyst to Cloud Engineering through hands-on AWS projects, cloud technologies, and continuous learning.
+A personal cloud portfolio website showcasing my transition from Service Desk Analyst to Cloud Engineering through hands-on AWS projects, cloud technologies, technical writing, and continuous learning.
 
 ## Live Website
 
 🚀 https://d165tmo5p8pk09.cloudfront.net
+
+## Technical Writing
+
+📖 https://medium.com/@mandymreed
 
 ## Architecture
 
@@ -22,9 +26,9 @@ HTTPS Portfolio Website
 
 ## About This Project
 
-This project serves as my personal cloud engineering portfolio and provides an overview of my professional background, technical skills, cloud projects, and ongoing learning journey.
+This project serves as my personal cloud engineering portfolio and provides an overview of my professional background, technical skills, cloud projects, technical writing, and ongoing learning journey.
 
-The website was built using HTML and CSS and deployed using Amazon S3 Static Website Hosting and Amazon CloudFront. The goal of this project is to demonstrate cloud fundamentals, website deployment, content delivery, and technical documentation skills while creating a professional online presence.
+The website was built using HTML and CSS and deployed using Amazon S3 Static Website Hosting and Amazon CloudFront. The goal of this project is to demonstrate cloud fundamentals, website deployment, content delivery, technical documentation, and professional branding while creating a central location for my cloud engineering work.
 
 ## Features
 
@@ -35,6 +39,7 @@ The website was built using HTML and CSS and deployed using Amazon S3 Static Web
 * Current learning and development roadmap
 * Portfolio architecture overview
 * Featured AWS project showcase
+* Technical writing showcase
 * Direct links to GitHub, LinkedIn, and Medium
 * Hosted on AWS with HTTPS support
 
@@ -115,6 +120,22 @@ Built and deployed a static website using Amazon S3, Amazon CloudFront, and AWS 
 
 Created a GitHub Actions workflow that validates required repository files and logs results to Amazon CloudWatch.
 
+## Technical Writing
+
+In addition to building cloud projects, I document lessons learned, troubleshooting experiences, and project walkthroughs through technical writing.
+
+### So I Decided I Needed a Portfolio Website... What Could Possibly Go Wrong?
+
+A behind-the-scenes look at building and deploying this portfolio using Amazon S3, CloudFront, GitHub, and HTTPS.
+
+### It Worked On My Machine... Until It Didn't
+
+A Docker-focused troubleshooting story exploring containers, consistency, and lessons learned.
+
+### Teaching the Cloud to Speak Every Language
+
+A walkthrough of a multilingual AWS pipeline using Amazon Transcribe, Translate, Polly, Lambda, S3, and CloudWatch.
+
 ## Current Focus Areas
 
 I am currently expanding my skills in:
@@ -139,22 +160,26 @@ I am currently transitioning into Cloud Engineering by building hands-on project
 * Custom domain integration
 * Automated deployments using GitHub Actions
 * Infrastructure as Code deployment using Terraform
+* Kubernetes-focused projects
 * Additional cloud projects and certifications
 * Enhanced portfolio architecture visualizations
 
 ## Connect With Me
 
-GitHub
+### GitHub
+
 https://github.com/mandyreed223
 
-LinkedIn
+### LinkedIn
+
 https://www.linkedin.com/in/mandymreed/
 
-Medium
+### Medium
+
 https://medium.com/@mandymreed
 
 ## Author
 
 Mandy Reed
 
-Service Desk Analyst transitioning into Cloud Engineering through hands-on AWS projects, continuous learning, and practical cloud solutions.
+Service Desk Analyst transitioning into Cloud Engineering through hands-on AWS projects, continuous learning, technical writing, and practical cloud solutions.
