@@ -151,7 +151,7 @@ As I complete projects in these areas, they will be added to this portfolio.
 
 ## Professional Background
 
-I have more than 20 years of experience supporting users in enterprise IT environments. My background includes troubleshooting, customer support, documentation, incident management, and technical problem solving.
+I have 18 years of experience supporting users in enterprise IT environments. My background includes troubleshooting, customer support, documentation, incident management, and technical problem solving.
 
 I am currently transitioning into Cloud Engineering by building hands-on projects that demonstrate cloud architecture, automation, serverless technologies, CI/CD pipelines, monitoring, and cloud operations.
 
