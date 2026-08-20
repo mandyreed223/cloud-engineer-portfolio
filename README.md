@@ -1,54 +1,62 @@
-# Cloud Engineer Portfolio
+# ☁️ Cloud Engineering Portfolio
 
-A personal cloud portfolio website showcasing my transition from Service Desk Analyst to Cloud Engineering through hands-on AWS projects, cloud technologies, technical writing, and continuous learning.
+A personal cloud engineering portfolio showcasing hands-on AWS projects, cloud technologies, troubleshooting, technical writing, and continuous learning.
 
-## Live Website
+This portfolio brings together my enterprise IT experience with the cloud engineering skills I am developing through practical projects and real-world troubleshooting.
 
-🚀 https://d165tmo5p8pk09.cloudfront.net
+## 🚀 Live Website
 
-## Technical Writing
+[View the Cloud Engineering Portfolio](https://d165tmo5p8pk09.cloudfront.net)
 
-📖 https://medium.com/@mandymreed
+> A custom domain is planned as a future enhancement.
 
-## Architecture
+## 🏗️ Portfolio Architecture
 
-This portfolio website is hosted on AWS using a serverless static website architecture.
+The portfolio is built with HTML and CSS, hosted on Amazon S3, and delivered securely through Amazon CloudFront using HTTPS.
 
 ```text
-GitHub
-   ↓
-Amazon S3
-   ↓
-Amazon CloudFront
-   ↓
-HTTPS Portfolio Website
+👤 Visitor
+    ↓
+☁️ Amazon CloudFront
+    ↓
+🪣 Amazon S3
+    ↓
+💻 Portfolio Website
 ```
 
-## About This Project
+Source code and version history are maintained in GitHub.
 
-This project serves as my personal cloud engineering portfolio and provides an overview of my professional background, technical skills, cloud projects, technical writing, and ongoing learning journey.
+## 👋 About This Project
 
-The website was built using HTML and CSS and deployed using Amazon S3 Static Website Hosting and Amazon CloudFront. The goal of this project is to demonstrate cloud fundamentals, website deployment, content delivery, technical documentation, and professional branding while creating a central location for my cloud engineering work.
+This project serves as the central hub for my cloud engineering work, technical writing, professional background, and continued technical development.
 
-## Features
+The website was built using HTML and CSS and deployed using Amazon S3 and Amazon CloudFront.
+
+Beyond simply deploying a website, this project has provided hands-on experience with cloud infrastructure, content delivery, HTTPS, caching, deployment troubleshooting, Git version control, and technical documentation.
+
+One of my goals with this portfolio is to demonstrate not only the technologies I have worked with, but also how I approach problems: understanding how services connect, troubleshooting failures, documenting what I learn, and improving the environments I build.
+
+## ✨ Features
 
 * Professional cloud engineering portfolio website
-* About Me section
-* Cloud skills and technologies section
-* Cloud roles and career goals section
+* About Me and professional background
+* Cloud skills and technologies
+* Cloud career focus areas
 * Current learning and development roadmap
-* Portfolio architecture overview
-* Featured AWS project showcase
+* AWS portfolio architecture
+* Featured cloud project showcase
 * Technical writing showcase
-* Direct links to GitHub, LinkedIn, and Medium
-* Hosted on AWS with HTTPS support
+* GitHub, LinkedIn, and Medium integration
+* Responsive design for desktop and mobile devices
+* Amazon CloudFront HTTPS delivery
 
-## Technologies Used
+## 🛠️ Technologies Used
 
 ### Frontend
 
 * HTML5
 * CSS3
+* Responsive web design
 
 ### AWS Services
 
@@ -61,24 +69,31 @@ The website was built using HTML and CSS and deployed using Amazon S3 Static Web
 * GitHub
 * Visual Studio Code
 
-## Skills Demonstrated
+## 🧠 Skills Demonstrated
 
-* Amazon S3 Static Website Hosting
-* Amazon CloudFront Content Delivery
-* HTTPS Website Delivery
-* Cloud Architecture Fundamentals
-* Website Deployment
-* Git Version Control
-* GitHub Repository Management
-* Technical Documentation
-* Front-End Web Development
+* Amazon S3 website hosting
+* Amazon CloudFront content delivery
+* HTTPS website delivery
+* CDN caching and cache invalidation
+* Cloud architecture fundamentals
+* Website deployment
+* Deployment troubleshooting
+* Git version control
+* GitHub repository management
+* Technical documentation
+* Front-end web development
+* Responsive web design
 
-## Cloud Skills Featured
+## ☁️ Cloud Skills Featured
+
+These technologies represent cloud and development tools I have practiced through hands-on projects:
 
 * AWS
+* Amazon EC2
 * Amazon S3
 * Amazon CloudFront
 * AWS Lambda
+* AWS IAM
 * Amazon DynamoDB
 * Amazon API Gateway
 * Amazon CloudWatch
@@ -92,94 +107,134 @@ The website was built using HTML and CSS and deployed using Amazon S3 Static Web
 * Git
 * GitHub
 * GitHub Actions
-* CI/CD Fundamentals
+* CI/CD
 
-## Featured Projects
+## 💻 Featured Projects
 
-### Prompt Deployment Pipeline
+### ☁️ AWS Cloud Engineering Portfolio
+
+Designed and deployed this cloud engineering portfolio using Amazon S3 and CloudFront, with source control in GitHub and hands-on troubleshooting of deployment, caching, HTTPS, and content delivery issues.
+
+[View Repository](https://github.com/mandyreed223/cloud-engineer-portfolio)
+
+### 🤖 Prompt Deployment Pipeline
 
 Built a CI/CD-style workflow using GitHub, Amazon S3, and Amazon Bedrock.
 
-### Multilingual Audio Pipeline
+[View Repository](https://github.com/mandyreed223/prompt-deployment-pipeline)
+
+### 🌎 Multilingual Audio Pipeline
 
 Created an AWS pipeline using Amazon Transcribe, Amazon Translate, Amazon Polly, AWS Lambda, and Amazon S3.
 
-### Rekognition Image Labeling Pipeline
+[View Repository](https://github.com/mandyreed223/multilingual-audio-pipeline)
+
+### 👁️ Rekognition Image Labeling Pipeline
 
 Built an image-processing workflow using Amazon Rekognition, Amazon DynamoDB, AWS Lambda, and Amazon S3.
 
-### Polly Text-to-Speech API Pipeline
+[View Repository](https://github.com/mandyreed223/rekognition-image-labeling-pipeline)
+
+### 🔊 Polly Text-to-Speech API Pipeline
 
 Created a serverless text-to-speech solution using Amazon Polly, AWS Lambda, Amazon API Gateway, and Amazon S3.
 
-### Static Website Pipeline
+[View Repository](https://github.com/mandyreed223/polly_text_to_speech_pipeline)
+
+### 🌐 Static Website Pipeline
 
 Built and deployed a static website using Amazon S3, Amazon CloudFront, and AWS CodePipeline.
 
-### Required Files Checker
+[View Repository](https://github.com/mandyreed223/static_website_pipeline_project)
+
+### ✅ Required Files Checker
 
 Created a GitHub Actions workflow that validates required repository files and logs results to Amazon CloudWatch.
 
-## Technical Writing
+[View Repository](https://github.com/mandyreed223/file_checker_project)
+
+## ✍️ Technical Writing
 
 In addition to building cloud projects, I document lessons learned, troubleshooting experiences, and project walkthroughs through technical writing.
 
-### So I Decided I Needed a Portfolio Website... What Could Possibly Go Wrong?
+### 🌐 So I Decided I Needed a Portfolio Website... What Could Possibly Go Wrong?
 
-A behind-the-scenes look at building and deploying this portfolio using Amazon S3, CloudFront, GitHub, and HTTPS.
+A behind-the-scenes look at building and deploying this cloud engineering portfolio with Amazon S3, CloudFront, and GitHub, including deployment and caching issues I troubleshot along the way.
 
-### It Worked On My Machine... Until It Didn't
+[Read on Medium](https://medium.com/@mandymreed/so-i-decided-i-needed-a-portfolio-website-what-could-possibly-go-wrong-5a726e889864)
 
-A Docker-focused troubleshooting story exploring containers, consistency, and lessons learned.
+### 🐳 It Worked On My Machine... Until It Didn't
 
-### Teaching the Cloud to Speak Every Language
+A Docker-focused troubleshooting story exploring containers, local environments, consistency, and lessons learned.
+
+[Read on Medium](https://medium.com/@mandymreed/it-worked-on-my-machine-until-it-didnt-3d2df233c995)
+
+### 🌍 Teaching the Cloud to Speak Every Language
 
 A walkthrough of a multilingual AWS pipeline using Amazon Transcribe, Translate, Polly, Lambda, S3, and CloudWatch.
 
-## Current Focus Areas
+[Read on Medium](https://medium.com/@mandymreed/teaching-the-cloud-to-speak-every-language-df07b5764134)
 
-I am currently expanding my skills in:
+## 🚀 Current Focus Areas
+
+I am continuing to expand my cloud engineering skills in:
 
 * Terraform
 * Infrastructure as Code (IaC)
-* Kubernetes Fundamentals
-* Cloud Security
-* Monitoring and Alerting
+* Kubernetes fundamentals
+* Cloud security
+* Monitoring and alerting
 * Site Reliability Engineering (SRE)
 
-As I complete projects in these areas, they will be added to this portfolio.
+As I complete hands-on projects in these areas, they will be added to the portfolio.
 
-## Professional Background
+## 💼 Professional Background
 
-I have 18 years of experience supporting users in enterprise IT environments. My background includes troubleshooting, customer support, documentation, incident management, and technical problem solving.
+I have 18 years of experience supporting users in enterprise IT environments and 21 years with Allstate.
 
-I am currently transitioning into Cloud Engineering by building hands-on projects that demonstrate cloud architecture, automation, serverless technologies, CI/CD pipelines, monitoring, and cloud operations.
+My background includes technical support, troubleshooting, customer service, documentation, incident management, problem-solving, and supporting business-critical technology.
 
-## Future Enhancements
+I am expanding that experience into cloud engineering through hands-on projects involving AWS, Linux, Docker, automation, monitoring, CI/CD, serverless technologies, and cloud operations.
 
-* Custom domain integration
-* Automated deployments using GitHub Actions
+## 🔧 Troubleshooting & Lessons Learned
+
+Building this portfolio has included troubleshooting real deployment and cloud infrastructure issues rather than simply following a successful deployment path.
+
+Examples include:
+
+* Diagnosing a Git push failure caused by a repository that had not yet been created
+* Identifying CloudFront caching when updated content existed in GitHub and S3 but the live website continued displaying the previous version
+* Using CloudFront cache invalidation to refresh deployed website content
+* Understanding the relationship between source control, object storage, content delivery, and the live website
+
+These experiences are an important part of the project because troubleshooting and understanding the complete path of a request are key areas I am continuing to develop as I move further into cloud engineering.
+
+## 🔮 Future Enhancements
+
+* Custom domain using Amazon Route 53
+* AWS Certificate Manager (ACM) integration for the custom domain
+* Automated portfolio deployments using GitHub Actions
 * Infrastructure as Code deployment using Terraform
 * Kubernetes-focused projects
 * Additional cloud projects and certifications
-* Enhanced portfolio architecture visualizations
+* Enhanced cloud architecture visualizations
 
-## Connect With Me
+## 🔗 Connect With Me
 
 ### GitHub
 
-https://github.com/mandyreed223
+[github.com/mandyreed223](https://github.com/mandyreed223)
 
 ### LinkedIn
 
-https://www.linkedin.com/in/mandymreed/
+[linkedin.com/in/mandymreed](https://www.linkedin.com/in/mandymreed/)
 
 ### Medium
 
-https://medium.com/@mandymreed
+[medium.com/@mandymreed](https://medium.com/@mandymreed)
 
-## Author
+## 👩‍💻 Author
 
-Mandy Reed
+**Mandy Reed**
 
-Service Desk Analyst transitioning into Cloud Engineering through hands-on AWS projects, continuous learning, technical writing, and practical cloud solutions.
+IT Support Professional building hands-on cloud engineering experience through AWS projects, troubleshooting, automation, technical writing, and continuous learning.
