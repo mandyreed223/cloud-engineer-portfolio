@@ -6,23 +6,29 @@ This portfolio brings together my enterprise IT experience with the cloud engine
 
 ## 🚀 Live Website
 
-[View the Cloud Engineering Portfolio](https://d165tmo5p8pk09.cloudfront.net)
+🌐 [mandyreed.com](https://mandyreed.com)
 
-> A custom domain is planned as a future enhancement.
+The portfolio is available through a custom domain configured with Amazon Route 53 and secured with an AWS Certificate Manager (ACM) TLS certificate.
 
 ## 🏗️ Portfolio Architecture
 
-The portfolio is built with HTML and CSS, hosted on Amazon S3, and delivered securely through Amazon CloudFront using HTTPS.
+The portfolio is built with HTML and CSS, maintained in GitHub, stored in Amazon S3, and delivered securely through Amazon CloudFront using a custom domain managed with Amazon Route 53.
 
 ```text
 👤 Visitor
     ↓
-☁️ Amazon CloudFront
+🌐 mandyreed.com
+    ↓
+🧭 Amazon Route 53
+    ↓
+🔒 Amazon CloudFront + HTTPS
     ↓
 🪣 Amazon S3
     ↓
 💻 Portfolio Website
 ```
+
+AWS Certificate Manager (ACM) provides the TLS certificate used by CloudFront to securely serve both `mandyreed.com` and `www.mandyreed.com` over HTTPS.
 
 Source code and version history are maintained in GitHub.
 
@@ -30,92 +36,109 @@ Source code and version history are maintained in GitHub.
 
 This project serves as the central hub for my cloud engineering work, technical writing, professional background, and continued technical development.
 
-The website was built using HTML and CSS and deployed using Amazon S3 and Amazon CloudFront.
+The website was built using HTML and CSS, stored in Amazon S3, delivered through Amazon CloudFront, and connected to a custom domain using Amazon Route 53 and AWS Certificate Manager.
 
-Beyond simply deploying a website, this project has provided hands-on experience with cloud infrastructure, content delivery, HTTPS, caching, deployment troubleshooting, Git version control, and technical documentation.
+Beyond simply deploying a website, this project has provided hands-on experience with cloud infrastructure, DNS, TLS certificates, content delivery, HTTPS, caching, deployment troubleshooting, Git version control, and technical documentation.
 
 One of my goals with this portfolio is to demonstrate not only the technologies I have worked with, but also how I approach problems: understanding how services connect, troubleshooting failures, documenting what I learn, and improving the environments I build.
 
 ## ✨ Features
 
-* Professional cloud engineering portfolio website
-* About Me and professional background
-* Cloud skills and technologies
-* Cloud career focus areas
-* Current learning and development roadmap
-* AWS portfolio architecture
-* Featured cloud project showcase
-* Technical writing showcase
-* GitHub, LinkedIn, and Medium integration
-* Responsive design for desktop and mobile devices
-* Amazon CloudFront HTTPS delivery
+- Professional cloud engineering portfolio website
+- Custom `mandyreed.com` domain
+- HTTPS/TLS secured website
+- Route 53 DNS routing
+- CloudFront content delivery
+- About Me and professional background
+- Cloud skills and technologies
+- Cloud career focus areas
+- Current learning and development roadmap
+- AWS portfolio architecture
+- Featured cloud project showcase
+- Technical writing showcase
+- GitHub, LinkedIn, and Medium integration
+- Responsive design for desktop and mobile devices
 
 ## 🛠️ Technologies Used
 
 ### Frontend
 
-* HTML5
-* CSS3
-* Responsive web design
+- HTML5
+- CSS3
+- Responsive web design
 
 ### AWS Services
 
-* Amazon S3
-* Amazon CloudFront
+- Amazon S3
+- Amazon CloudFront
+- Amazon Route 53
+- AWS Certificate Manager (ACM)
 
 ### Development Tools
 
-* Git
-* GitHub
-* Visual Studio Code
+- Git
+- GitHub
+- Visual Studio Code
 
 ## 🧠 Skills Demonstrated
 
-* Amazon S3 website hosting
-* Amazon CloudFront content delivery
-* HTTPS website delivery
-* CDN caching and cache invalidation
-* Cloud architecture fundamentals
-* Website deployment
-* Deployment troubleshooting
-* Git version control
-* GitHub repository management
-* Technical documentation
-* Front-end web development
-* Responsive web design
+- Amazon S3 website storage and hosting
+- Amazon CloudFront content delivery
+- Amazon Route 53 DNS configuration
+- Custom domain configuration
+- DNS record management
+- AWS Certificate Manager certificate provisioning
+- DNS certificate validation
+- HTTPS/TLS website delivery
+- CloudFront alternate domain configuration
+- CDN caching and cache invalidation
+- Cloud architecture fundamentals
+- Website deployment
+- Deployment troubleshooting
+- Git version control
+- GitHub repository management
+- Technical documentation
+- Front-end web development
+- Responsive web design
 
 ## ☁️ Cloud Skills Featured
 
 These technologies represent cloud and development tools I have practiced through hands-on projects:
 
-* AWS
-* Amazon EC2
-* Amazon S3
-* Amazon CloudFront
-* AWS Lambda
-* AWS IAM
-* Amazon DynamoDB
-* Amazon API Gateway
-* Amazon CloudWatch
-* Amazon Bedrock
-* Amazon Rekognition
-* Amazon Polly
-* Amazon Transcribe
-* Amazon Translate
-* Linux
-* Docker
-* Git
-* GitHub
-* GitHub Actions
-* CI/CD
+- AWS
+- Amazon EC2
+- Amazon S3
+- Amazon CloudFront
+- Amazon Route 53
+- AWS Certificate Manager
+- AWS Lambda
+- AWS IAM
+- Amazon DynamoDB
+- Amazon API Gateway
+- Amazon CloudWatch
+- Amazon Bedrock
+- Amazon Rekognition
+- Amazon Polly
+- Amazon Transcribe
+- Amazon Translate
+- Linux
+- Docker
+- Git
+- GitHub
+- GitHub Actions
+- CI/CD
 
 ## 💻 Featured Projects
 
 ### ☁️ AWS Cloud Engineering Portfolio
 
-Designed and deployed this cloud engineering portfolio using Amazon S3 and CloudFront, with source control in GitHub and hands-on troubleshooting of deployment, caching, HTTPS, and content delivery issues.
+Designed and deployed this cloud engineering portfolio using Amazon S3, CloudFront, Route 53, and AWS Certificate Manager.
 
-[View Repository](https://github.com/mandyreed223/cloud-engineer-portfolio)
+Configured a custom domain with DNS routing and HTTPS/TLS, maintained source control through GitHub, and performed hands-on troubleshooting involving deployment, caching, DNS, domain registration, HTTPS, and content delivery.
+
+🌐 [View Live Portfolio](https://mandyreed.com)
+
+💻 [View Repository](https://github.com/mandyreed223/cloud-engineer-portfolio)
 
 ### 🤖 Prompt Deployment Pipeline
 
@@ -179,12 +202,12 @@ A walkthrough of a multilingual AWS pipeline using Amazon Transcribe, Translate,
 
 I am continuing to expand my cloud engineering skills in:
 
-* Terraform
-* Infrastructure as Code (IaC)
-* Kubernetes fundamentals
-* Cloud security
-* Monitoring and alerting
-* Site Reliability Engineering (SRE)
+- Terraform
+- Infrastructure as Code (IaC)
+- Kubernetes fundamentals
+- Cloud security
+- Monitoring and alerting
+- Site Reliability Engineering (SRE)
 
 As I complete hands-on projects in these areas, they will be added to the portfolio.
 
@@ -198,28 +221,37 @@ I am expanding that experience into cloud engineering through hands-on projects 
 
 ## 🔧 Troubleshooting & Lessons Learned
 
-Building this portfolio has included troubleshooting real deployment and cloud infrastructure issues rather than simply following a successful deployment path.
+Building and expanding this portfolio has included troubleshooting real deployment and cloud infrastructure issues rather than simply following a successful deployment path.
 
 Examples include:
 
-* Diagnosing a Git push failure caused by a repository that had not yet been created
-* Identifying CloudFront caching when updated content existed in GitHub and S3 but the live website continued displaying the previous version
-* Using CloudFront cache invalidation to refresh deployed website content
-* Understanding the relationship between source control, object storage, content delivery, and the live website
+- Diagnosing a Git push failure caused by a repository that had not yet been created
+- Identifying CloudFront caching when updated content existed in GitHub and S3 but the live website continued displaying the previous version
+- Using CloudFront cache invalidation to refresh deployed website content
+- Troubleshooting an initial Route 53 domain registration failure
+- Completing domain registration and configuring the Route 53 hosted zone
+- Using DNS validation to validate an ACM TLS certificate
+- Configuring an ACM certificate for both the root domain and `www` subdomain
+- Adding custom alternate domain names to an existing CloudFront distribution
+- Creating Route 53 A and AAAA alias records to route the custom domain to CloudFront
+- Understanding the relationship between DNS, TLS certificates, content delivery, object storage, source control, and the live website
 
 These experiences are an important part of the project because troubleshooting and understanding the complete path of a request are key areas I am continuing to develop as I move further into cloud engineering.
 
 ## 🔮 Future Enhancements
 
-* Custom domain using Amazon Route 53
-* AWS Certificate Manager (ACM) integration for the custom domain
-* Automated portfolio deployments using GitHub Actions
-* Infrastructure as Code deployment using Terraform
-* Kubernetes-focused projects
-* Additional cloud projects and certifications
-* Enhanced cloud architecture visualizations
+- Automated portfolio deployments using GitHub Actions
+- Infrastructure as Code deployment using Terraform
+- Kubernetes-focused projects
+- Additional cloud projects and certifications
+- Enhanced cloud architecture visualizations
+- Continued improvements to monitoring and deployment automation
 
 ## 🔗 Connect With Me
+
+### 🌐 Portfolio
+
+[mandyreed.com](https://mandyreed.com)
 
 ### GitHub
 

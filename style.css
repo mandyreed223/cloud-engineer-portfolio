@@ -1,3 +1,4 @@
+```css
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -180,6 +181,10 @@ p {
         transform 0.2s ease;
 }
 
+.project-button + .project-button {
+    margin-left: 10px;
+}
+
 .project-button:hover {
     background-color: #ff9900;
     color: #232f3e;
@@ -285,4 +290,14 @@ footer a:hover {
     .article-card {
         padding: 16px;
     }
+
+    .project-button {
+        display: block;
+        width: fit-content;
+    }
+
+    .project-button + .project-button {
+        margin-left: 0;
+    }
 }
+```

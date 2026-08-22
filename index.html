@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Mandy Reed's cloud engineering portfolio featuring hands-on AWS, Linux, Docker, GitHub Actions, CI/CD, automation, and cloud troubleshooting projects.">
+          content="Mandy Reed's cloud engineering portfolio featuring hands-on AWS, Linux, Docker, GitHub Actions, CI/CD, automation, DNS, HTTPS, and cloud troubleshooting projects.">
 
     <title>Mandy Reed | Cloud Engineering Portfolio</title>
 
@@ -84,6 +84,10 @@
             <span>EC2</span>
             <span>S3</span>
             <span>CloudFront</span>
+            <span>Route 53</span>
+            <span>AWS Certificate Manager</span>
+            <span>DNS</span>
+            <span>HTTPS/TLS</span>
             <span>Lambda</span>
             <span>IAM</span>
             <span>CloudWatch</span>
@@ -130,8 +134,9 @@
 
         <p>
             This portfolio is built with HTML and CSS, maintained in GitHub,
-            stored in Amazon S3, and delivered securely through Amazon CloudFront
-            using HTTPS.
+            stored in Amazon S3, and delivered securely through Amazon CloudFront.
+            Amazon Route 53 provides DNS routing for the custom domain, while
+            AWS Certificate Manager provides the TLS certificate used for HTTPS.
         </p>
 
         <div class="architecture-diagram">
@@ -145,7 +150,23 @@
             </div>
 
             <div class="architecture-box">
-                ☁️ Amazon CloudFront
+                🌐 mandyreed.com
+            </div>
+
+            <div class="architecture-arrow">
+                ↓
+            </div>
+
+            <div class="architecture-box">
+                🧭 Amazon Route 53
+            </div>
+
+            <div class="architecture-arrow">
+                ↓
+            </div>
+
+            <div class="architecture-box">
+                🔒 Amazon CloudFront + HTTPS
             </div>
 
             <div class="architecture-arrow">
@@ -167,7 +188,9 @@
         </div>
 
         <p>
-            Source code and version history are maintained in GitHub.
+            AWS Certificate Manager secures both mandyreed.com and
+            www.mandyreed.com with HTTPS. Source code and version history
+            are maintained in GitHub.
         </p>
     </section>
 
@@ -183,10 +206,19 @@
 
             <p>
                 Designed and deployed this cloud engineering portfolio using
-                Amazon S3 and CloudFront, with source control in GitHub and
-                hands-on troubleshooting of deployment, caching, HTTPS,
-                and content delivery issues.
+                Amazon S3, CloudFront, Route 53, and AWS Certificate Manager.
+                Configured a custom domain with DNS routing and HTTPS/TLS,
+                maintained source control through GitHub, and troubleshot
+                deployment, caching, domain registration, DNS, and content
+                delivery issues.
             </p>
+
+            <a href="https://mandyreed.com"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="project-button">
+                View Live Portfolio
+            </a>
 
             <a href="https://github.com/mandyreed223/cloud-engineer-portfolio"
                target="_blank"
@@ -383,6 +415,15 @@
 
     <!-- FOOTER -->
     <footer>
+
+        <p>
+            🌐 Portfolio:
+            <a href="https://mandyreed.com"
+               target="_blank"
+               rel="noopener noreferrer">
+                mandyreed.com
+            </a>
+        </p>
 
         <p>
             💻 GitHub:
