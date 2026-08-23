@@ -1,8 +1,8 @@
 # ☁️ Cloud Engineering Portfolio
 
-A personal cloud engineering portfolio showcasing hands-on AWS projects, cloud technologies, troubleshooting, technical writing, and continuous learning.
+A personal cloud engineering portfolio showcasing hands-on AWS and DevOps projects, cloud technologies, containerization, troubleshooting, technical writing, and continuous learning.
 
-This portfolio brings together my enterprise IT experience with the cloud engineering skills I am developing through practical projects and real-world troubleshooting.
+This portfolio brings together my enterprise IT experience with the cloud and DevOps skills I am developing through practical projects and real-world troubleshooting.
 
 ## 🚀 Live Website
 
@@ -34,11 +34,13 @@ Source code and version history are maintained in GitHub.
 
 ## 👋 About This Project
 
-This project serves as the central hub for my cloud engineering work, technical writing, professional background, and continued technical development.
+This project serves as the central hub for my cloud and DevOps engineering work, technical writing, professional background, and continued technical development.
 
 The website was built using HTML and CSS, stored in Amazon S3, delivered through Amazon CloudFront, and connected to a custom domain using Amazon Route 53 and AWS Certificate Manager.
 
 Beyond simply deploying a website, this project has provided hands-on experience with cloud infrastructure, DNS, TLS certificates, content delivery, HTTPS, caching, deployment troubleshooting, Git version control, and technical documentation.
+
+As the portfolio has grown, it has also become a place to showcase hands-on work with containerization, Docker, Jenkins, CI/CD, automation, and other DevOps technologies.
 
 One of my goals with this portfolio is to demonstrate not only the technologies I have worked with, but also how I approach problems: understanding how services connect, troubleshooting failures, documenting what I learn, and improving the environments I build.
 
@@ -50,11 +52,11 @@ One of my goals with this portfolio is to demonstrate not only the technologies 
 - Route 53 DNS routing
 - CloudFront content delivery
 - About Me and professional background
-- Cloud skills and technologies
+- Cloud and DevOps skills and technologies
 - Cloud career focus areas
 - Current learning and development roadmap
 - AWS portfolio architecture
-- Featured cloud project showcase
+- Featured cloud and DevOps project showcase
 - Technical writing showcase
 - GitHub, LinkedIn, and Medium integration
 - Responsive design for desktop and mobile devices
@@ -101,7 +103,7 @@ One of my goals with this portfolio is to demonstrate not only the technologies 
 - Front-end web development
 - Responsive web design
 
-## ☁️ Cloud Skills Featured
+## ☁️ Cloud & DevOps Skills Featured
 
 These technologies represent cloud and development tools I have practiced through hands-on projects:
 
@@ -123,12 +125,26 @@ These technologies represent cloud and development tools I have practiced throug
 - Amazon Translate
 - Linux
 - Docker
+- Docker Compose
+- Jenkins
+- Dockerfiles
+- Persistent Volumes
 - Git
 - GitHub
 - GitHub Actions
 - CI/CD
 
 ## 💻 Featured Projects
+
+### 🐳 Docker + Jenkins Lab
+
+Built and managed Jenkins in Docker while exploring container lifecycle, persistent storage, Docker Compose, and custom image creation.
+
+Tested data persistence by intentionally removing and recreating Jenkins containers, then built a custom Jenkins image using a Dockerfile and verified the customization with `curl` inside the running container.
+
+💻 [View Repository](https://github.com/mandyreed223/docker-jenkins-lab)
+
+📖 [Read Project Story](https://medium.com/@mandymreed/i-put-jenkins-in-a-container-then-started-deleting-things-e947c8bca954)
 
 ### ☁️ AWS Cloud Engineering Portfolio
 
@@ -178,7 +194,13 @@ Created a GitHub Actions workflow that validates required repository files and l
 
 ## ✍️ Technical Writing
 
-In addition to building cloud projects, I document lessons learned, troubleshooting experiences, and project walkthroughs through technical writing.
+In addition to building cloud and DevOps projects, I document lessons learned, troubleshooting experiences, and project walkthroughs through technical writing.
+
+### 🐳 I Put Jenkins in a Container, Then Started Deleting Things
+
+A hands-on Docker and Jenkins story covering container lifecycle, persistent volumes, Docker Compose, custom Docker images, and the surprisingly useful lesson that deleting a container does not have to mean deleting your data.
+
+[Read on Medium](https://medium.com/@mandymreed/i-put-jenkins-in-a-container-then-started-deleting-things-e947c8bca954)
 
 ### 🌐 So I Decided I Needed a Portfolio Website... What Could Possibly Go Wrong?
 
@@ -217,7 +239,7 @@ I have 18 years of experience supporting users in enterprise IT environments and
 
 My background includes technical support, troubleshooting, customer service, documentation, incident management, problem-solving, and supporting business-critical technology.
 
-I am expanding that experience into cloud engineering through hands-on projects involving AWS, Linux, Docker, automation, monitoring, CI/CD, serverless technologies, and cloud operations.
+I am expanding that experience into cloud engineering through hands-on projects involving AWS, Linux, Docker, Docker Compose, Jenkins, automation, monitoring, CI/CD, serverless technologies, and cloud operations.
 
 ## 🔧 Troubleshooting & Lessons Learned
 
@@ -253,15 +275,15 @@ These experiences are an important part of the project because troubleshooting a
 
 [mandyreed.com](https://mandyreed.com)
 
-### GitHub
+### 💻 GitHub
 
 [github.com/mandyreed223](https://github.com/mandyreed223)
 
-### LinkedIn
+### 💼 LinkedIn
 
 [linkedin.com/in/mandymreed](https://www.linkedin.com/in/mandymreed/)
 
-### Medium
+### ✍️ Medium
 
 [medium.com/@mandymreed](https://medium.com/@mandymreed)
 
@@ -269,4 +291,4 @@ These experiences are an important part of the project because troubleshooting a
 
 **Mandy Reed**
 
-IT Support Professional building hands-on cloud engineering experience through AWS projects, troubleshooting, automation, technical writing, and continuous learning.
+IT Support Professional building hands-on cloud and DevOps engineering experience through AWS projects, containerization, troubleshooting, automation, technical writing, and continuous learning.
