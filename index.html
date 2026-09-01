@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Mandy Reed's cloud engineering portfolio featuring hands-on AWS, Linux, Docker, Jenkins, Docker Compose, GitHub Actions, CI/CD, automation, DNS, HTTPS, and cloud troubleshooting projects.">
+          content="Mandy Reed's cloud engineering portfolio featuring hands-on AWS, Terraform, Infrastructure as Code, Linux, Docker, Jenkins, GitHub Actions, CI/CD, automation, IAM, S3, DNS, HTTPS, and cloud troubleshooting projects.">
 
     <title>Mandy Reed | Cloud Engineering Portfolio</title>
 
@@ -18,6 +18,7 @@
 
     <!-- HERO -->
     <header class="hero">
+
         <img src="images/mandy-profile.png"
              alt="Mandy Reed"
              class="profile-photo">
@@ -25,21 +26,28 @@
         <h1>Mandy Reed</h1>
 
         <p class="hero-title">
-            ☁️ IT Support Professional | Cloud Engineering Portfolio
+            ☁️ Cloud Engineer | Enterprise IT Professional
+        </p>
+
+        <p class="hero-story">
+            Building cloud projects, breaking things responsibly,
+            and documenting what I learn along the way. ☁️🛠️
         </p>
 
         <p class="hero-subtitle">
-            AWS • Linux • Docker • Jenkins • Docker Compose • GitHub Actions • CI/CD • Cloud Troubleshooting
+            AWS • Terraform • Linux • Docker • Jenkins • GitHub Actions • CI/CD • Cloud Troubleshooting
         </p>
 
         <a href="#projects" class="button">
             🚀 Explore My Projects
         </a>
+
     </header>
 
 
     <!-- ABOUT -->
     <section class="about">
+
         <h2>👋 About Me</h2>
 
         <p>
@@ -52,35 +60,45 @@
 
         <p>
             I am expanding that experience into cloud engineering through hands-on
-            projects using AWS, Linux, Docker, Jenkins, Docker Compose, GitHub Actions,
-            automation, monitoring, and CI/CD. My projects focus not only on building
-            cloud solutions, but also on understanding how services connect,
-            troubleshooting failures, working with container lifecycle and persistent
-            storage, documenting lessons learned, and improving the reliability of the
-            environments I build.
+            projects using AWS, Terraform, Infrastructure as Code, Linux, Docker,
+            Jenkins, GitHub Actions, automation, monitoring, and CI/CD.
         </p>
+
+        <p>
+            My projects focus on more than simply getting something to deploy.
+            I want to understand how the pieces connect, what happens when something
+            breaks, how to validate that the environment actually works, and how
+            to make the next version more secure, repeatable, and reliable.
+        </p>
+
     </section>
 
 
     <!-- TARGET ROLES -->
     <section class="roles">
+
         <h2>🎯 Cloud Roles I Am Working Toward</h2>
 
         <div class="skill-list">
+
             <span>Cloud Support Engineer</span>
             <span>Junior Cloud Engineer</span>
             <span>Cloud Operations Engineer</span>
             <span>DevOps Support Engineer</span>
             <span>Site Reliability Engineering Associate</span>
+
         </div>
+
     </section>
 
 
     <!-- PRACTICED SKILLS -->
     <section class="skills">
+
         <h2>☁️ Cloud & DevOps Skills I Have Practiced</h2>
 
         <div class="skill-list">
+
             <span>AWS</span>
             <span>EC2</span>
             <span>S3</span>
@@ -99,6 +117,8 @@
             <span>Amazon Transcribe</span>
             <span>Amazon Translate</span>
             <span>Amazon Bedrock</span>
+            <span>Terraform</span>
+            <span>Infrastructure as Code</span>
             <span>Linux</span>
             <span>Docker</span>
             <span>Docker Compose</span>
@@ -109,32 +129,41 @@
             <span>GitHub</span>
             <span>GitHub Actions</span>
             <span>CI/CD</span>
+
         </div>
+
     </section>
 
 
     <!-- NEXT FOCUS -->
     <section class="next-focus">
+
         <h2>🚀 What I Am Focusing On Next</h2>
 
         <div class="skill-list">
-            <span>Terraform</span>
-            <span>Infrastructure as Code</span>
+
+            <span>Microsoft Azure</span>
             <span>Kubernetes Fundamentals</span>
             <span>Cloud Security</span>
             <span>Monitoring and Alerting</span>
             <span>Site Reliability Engineering</span>
+
         </div>
 
         <p>
-            These are the next areas I am studying and building toward. As I complete
-            hands-on projects in these areas, I plan to add them to my portfolio.
+            I am continuing to expand my cloud and DevOps skills through hands-on
+            projects, with upcoming focus areas including Microsoft Azure,
+            Kubernetes, cloud security, monitoring and alerting, and Site Reliability
+            Engineering. As I complete projects in these areas, I will continue
+            adding them to my portfolio.
         </p>
+
     </section>
 
 
     <!-- PORTFOLIO ARCHITECTURE -->
     <section class="architecture">
+
         <h2>🏗️ Portfolio Architecture</h2>
 
         <p>
@@ -197,17 +226,72 @@
             www.mandyreed.com with HTTPS. Source code and version history
             are maintained in GitHub.
         </p>
+
     </section>
 
 
     <!-- FEATURED PROJECTS -->
     <section id="projects" class="projects">
+
         <h2>💻 Featured Cloud & DevOps Projects</h2>
 
+        <p class="section-intro">
+            These are the projects where I get to build things, troubleshoot them,
+            figure out why they broke, and occasionally wonder why I thought
+            automating everything would be easier. 😅
+        </p>
 
-        <!-- DOCKER + JENKINS LAB -->
+
+        <!-- TERRAFORM + JENKINS -->
+        <div class="project-card featured-project">
+
+            <div class="project-badge">
+                ✨ Newest Project
+            </div>
+
+            <h3>🏗️ Jenkins on AWS with Terraform</h3>
+
+            <p class="story-hook">
+                It started with one manually deployed Jenkins server.
+                Then I decided Terraform should do the work. 😅
+            </p>
+
+            <p>
+                Deployed a Jenkins server on AWS using Terraform, progressing from
+                a manual proof of concept to reusable Infrastructure as Code.
+                Provisioned EC2, Security Groups, and private S3 artifact storage,
+                automated Jenkins installation with User Data, and implemented an
+                IAM Role and Instance Profile with least-privilege S3 permissions.
+                Validated temporary AWS credentials and tested artifact upload and
+                download before safely destroying the Terraform-managed infrastructure.
+            </p>
+
+            <a href="https://github.com/mandyreed223/terraform-jenkins-aws"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="project-button">
+                View Repository
+            </a>
+
+            <a href="https://medium.com/@mandymreed/i-put-jenkins-on-aws-with-terraform-because-apparently-clicking-buttons-was-too-easy-%EF%B8%8F-%EF%B8%8F-d6a39afaa125"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="project-button">
+                Read Project Story
+            </a>
+
+        </div>
+
+
+        <!-- DOCKER + JENKINS -->
         <div class="project-card">
+
             <h3>🐳 Docker + Jenkins Lab</h3>
+
+            <p class="story-hook">
+                What happens when you start deleting Jenkins containers on purpose?
+                Turns out, quite a lot. 🐳😂
+            </p>
 
             <p>
                 Built and managed Jenkins in Docker while exploring container
@@ -231,12 +315,19 @@
                class="project-button">
                 Read Project Story
             </a>
+
         </div>
 
 
-        <!-- AWS CLOUD ENGINEERING PORTFOLIO -->
+        <!-- AWS PORTFOLIO -->
         <div class="project-card">
+
             <h3>☁️ AWS Cloud Engineering Portfolio</h3>
+
+            <p class="story-hook">
+                Building a portfolio was easy. Getting DNS, HTTPS, caching,
+                and a custom domain to cooperate was the adventure. 🌐
+            </p>
 
             <p>
                 Designed and deployed this cloud engineering portfolio using
@@ -260,12 +351,19 @@
                class="project-button">
                 View Repository
             </a>
+
         </div>
 
 
         <!-- PROMPT DEPLOYMENT PIPELINE -->
         <div class="project-card">
+
             <h3>🤖 Prompt Deployment Pipeline</h3>
+
+            <p class="story-hook">
+                What if a GitHub push could hand work directly to generative AI?
+                Naturally, I had to find out. 🤖
+            </p>
 
             <p>
                 Built a CI/CD-style workflow using GitHub, Amazon S3,
@@ -278,12 +376,19 @@
                class="project-button">
                 View Repository
             </a>
+
         </div>
 
 
         <!-- MULTILINGUAL AUDIO PIPELINE -->
         <div class="project-card">
+
             <h3>🌎 Multilingual Audio Pipeline</h3>
+
+            <p class="story-hook">
+                One audio file went into AWS. Several services later,
+                the cloud was speaking another language. 🌍
+            </p>
 
             <p>
                 Created an AWS pipeline using Amazon Transcribe, Translate,
@@ -296,12 +401,19 @@
                class="project-button">
                 View Repository
             </a>
+
         </div>
 
 
-        <!-- REKOGNITION IMAGE LABELING PIPELINE -->
+        <!-- REKOGNITION PIPELINE -->
         <div class="project-card">
+
             <h3>👁️ Rekognition Image Labeling Pipeline</h3>
+
+            <p class="story-hook">
+                Upload an image and let AWS figure out what it is.
+                That sounded like a perfectly reasonable experiment. 👀
+            </p>
 
             <p>
                 Built an image-processing workflow using Amazon Rekognition,
@@ -314,12 +426,19 @@
                class="project-button">
                 View Repository
             </a>
+
         </div>
 
 
-        <!-- POLLY TEXT-TO-SPEECH -->
+        <!-- POLLY PIPELINE -->
         <div class="project-card">
+
             <h3>🔊 Polly Text-to-Speech API Pipeline</h3>
+
+            <p class="story-hook">
+                Because apparently reading text myself was too easy,
+                I taught AWS to say it out loud. 🔊
+            </p>
 
             <p>
                 Created a serverless text-to-speech solution using Amazon Polly,
@@ -332,12 +451,19 @@
                class="project-button">
                 View Repository
             </a>
+
         </div>
 
 
         <!-- STATIC WEBSITE PIPELINE -->
         <div class="project-card">
+
             <h3>🌐 Static Website Pipeline</h3>
+
+            <p class="story-hook">
+                The goal was simple: push code and let the pipeline handle
+                the deployment. Much nicer than clicking everything manually. 😎
+            </p>
 
             <p>
                 Built and deployed a static website using Amazon S3,
@@ -350,12 +476,18 @@
                class="project-button">
                 View Repository
             </a>
+
         </div>
 
 
         <!-- REQUIRED FILES CHECKER -->
         <div class="project-card">
+
             <h3>✅ Required Files Checker</h3>
+
+            <p class="story-hook">
+                No README? No entry. Sometimes automation needs boundaries. 😂
+            </p>
 
             <p>
                 Created a GitHub Actions workflow that validates required
@@ -368,6 +500,88 @@
                class="project-button">
                 View Repository
             </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- LESSONS -->
+    <section class="lessons">
+
+        <h2>🧠 Things My Projects Have Taught Me</h2>
+
+        <p class="section-intro">
+            The technical skills matter, but some of the best lessons happen
+            somewhere between “this should work” and “why is THAT happening?” 😅
+        </p>
+
+        <div class="lesson-grid">
+
+            <div class="lesson-card">
+
+                <div class="lesson-icon">
+                    ☁️
+                </div>
+
+                <h3>Deployment Is Only Step One</h3>
+
+                <p>
+                    A successful deployment does not automatically mean the
+                    application actually works. I validate the environment
+                    and prove the application works too.
+                </p>
+
+            </div>
+
+
+            <div class="lesson-card">
+
+                <div class="lesson-icon">
+                    🔎
+                </div>
+
+                <h3>Follow the Entire Path</h3>
+
+                <p>
+                    Troubleshooting gets easier when I understand how every
+                    service connects instead of looking at one component in isolation.
+                </p>
+
+            </div>
+
+
+            <div class="lesson-card">
+
+                <div class="lesson-icon">
+                    🔐
+                </div>
+
+                <h3>Secure It, Then Prove It</h3>
+
+                <p>
+                    Least privilege is more meaningful when I test the permissions
+                    and verify that the application can do exactly what it needs.
+                </p>
+
+            </div>
+
+
+            <div class="lesson-card">
+
+                <div class="lesson-icon">
+                    🧹
+                </div>
+
+                <h3>Clean Up Counts Too</h3>
+
+                <p>
+                    Building cloud resources is fun. Knowing how to safely tear
+                    them down is part of understanding the full lifecycle.
+                </p>
+
+            </div>
+
         </div>
 
     </section>
@@ -375,16 +589,43 @@
 
     <!-- TECHNICAL WRITING -->
     <section class="writing">
+
         <h2>✍️ Technical Writing</h2>
 
-        <p>
-            I document my cloud and DevOps projects, lessons learned, and
-            troubleshooting experiences through Medium articles.
+        <p class="writing-intro">
+            Cloud projects rarely go exactly according to plan.
+            I document the builds, the troubleshooting, the
+            “why is THAT happening?” moments, and what I learned from them on Medium. 😅
         </p>
+
+
+        <!-- TERRAFORM ARTICLE -->
+        <div class="article-card">
+
+            <h3>
+                🛠️ I Put Jenkins on AWS with Terraform… Because Apparently Clicking Buttons Was Too Easy
+            </h3>
+
+            <p>
+                A hands-on Terraform and AWS project that progressed from manually
+                deploying Jenkins to building reusable Infrastructure as Code,
+                implementing IAM role-based S3 access, validating the deployed
+                environment, and safely tearing everything down with Terraform.
+            </p>
+
+            <a href="https://medium.com/@mandymreed/i-put-jenkins-on-aws-with-terraform-because-apparently-clicking-buttons-was-too-easy-%EF%B8%8F-%EF%B8%8F-d6a39afaa125"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="project-button">
+                Read Article
+            </a>
+
+        </div>
 
 
         <!-- DOCKER + JENKINS ARTICLE -->
         <div class="article-card">
+
             <h3>
                 🐳 I Put Jenkins in a Container, Then Started Deleting Things
             </h3>
@@ -402,11 +643,13 @@
                class="project-button">
                 Read Article
             </a>
+
         </div>
 
 
         <!-- PORTFOLIO ARTICLE -->
         <div class="article-card">
+
             <h3>
                 🌐 So I Decided I Needed a Portfolio Website...
                 What Could Possibly Go Wrong?
@@ -424,11 +667,13 @@
                class="project-button">
                 Read Article
             </a>
+
         </div>
 
 
         <!-- DOCKER ARTICLE -->
         <div class="article-card">
+
             <h3>
                 🐳 It Worked On My Machine... Until It Didn't
             </h3>
@@ -444,11 +689,13 @@
                class="project-button">
                 Read Article
             </a>
+
         </div>
 
 
-        <!-- MULTILINGUAL PIPELINE ARTICLE -->
+        <!-- MULTILINGUAL ARTICLE -->
         <div class="article-card">
+
             <h3>
                 🌍 Teaching the Cloud to Speak Every Language
             </h3>
@@ -464,6 +711,7 @@
                class="project-button">
                 Read Article
             </a>
+
         </div>
 
     </section>
@@ -471,6 +719,11 @@
 
     <!-- FOOTER -->
     <footer>
+
+        <p class="footer-message">
+            ☁️ Thanks for stopping by. I'm probably building, troubleshooting,
+            or documenting something new right now. 🛠️
+        </p>
 
         <p>
             🌐 Portfolio:

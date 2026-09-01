@@ -1,18 +1,22 @@
 # ☁️ Cloud Engineering Portfolio
 
-A personal cloud engineering portfolio showcasing hands-on AWS and DevOps projects, cloud technologies, containerization, troubleshooting, technical writing, and continuous learning.
+> Building cloud projects, breaking things responsibly, and documenting what I learn along the way. ☁️🛠️
 
-This portfolio brings together my enterprise IT experience with the cloud and DevOps skills I am developing through practical projects and real-world troubleshooting.
+Welcome to my cloud engineering portfolio!
+
+This project brings together my enterprise IT background with the cloud and DevOps skills I am developing through hands-on projects, troubleshooting, automation, Infrastructure as Code, and technical writing.
 
 ## 🚀 Live Website
 
 🌐 [mandyreed.com](https://mandyreed.com)
 
-The portfolio is available through a custom domain configured with Amazon Route 53 and secured with an AWS Certificate Manager (ACM) TLS certificate.
+The portfolio is delivered through AWS using a custom domain, HTTPS, Amazon CloudFront, Amazon S3, Route 53, and AWS Certificate Manager.
+
+---
 
 ## 🏗️ Portfolio Architecture
 
-The portfolio is built with HTML and CSS, maintained in GitHub, stored in Amazon S3, and delivered securely through Amazon CloudFront using a custom domain managed with Amazon Route 53.
+The website is built with HTML and CSS, maintained in GitHub, stored in Amazon S3, and securely delivered through Amazon CloudFront.
 
 ```text
 👤 Visitor
@@ -28,40 +32,61 @@ The portfolio is built with HTML and CSS, maintained in GitHub, stored in Amazon
 💻 Portfolio Website
 ```
 
-AWS Certificate Manager (ACM) provides the TLS certificate used by CloudFront to securely serve both `mandyreed.com` and `www.mandyreed.com` over HTTPS.
+Amazon Route 53 provides DNS routing for the custom domain.
+
+AWS Certificate Manager provides the TLS certificate used by CloudFront to securely serve both `mandyreed.com` and `www.mandyreed.com` over HTTPS.
 
 Source code and version history are maintained in GitHub.
 
+---
+
 ## 👋 About This Project
 
-This project serves as the central hub for my cloud and DevOps engineering work, technical writing, professional background, and continued technical development.
+What started as a place to showcase cloud projects became a cloud project of its own. 😅
 
-The website was built using HTML and CSS, stored in Amazon S3, delivered through Amazon CloudFront, and connected to a custom domain using Amazon Route 53 and AWS Certificate Manager.
+Building this portfolio has given me hands-on experience with:
 
-Beyond simply deploying a website, this project has provided hands-on experience with cloud infrastructure, DNS, TLS certificates, content delivery, HTTPS, caching, deployment troubleshooting, Git version control, and technical documentation.
+- Amazon S3
+- Amazon CloudFront
+- Amazon Route 53
+- AWS Certificate Manager
+- DNS
+- HTTPS/TLS
+- CDN caching
+- Cache invalidation
+- Git and GitHub
+- HTML and CSS
+- Responsive web design
+- Deployment troubleshooting
+- Technical documentation
 
-As the portfolio has grown, it has also become a place to showcase hands-on work with containerization, Docker, Jenkins, CI/CD, automation, and other DevOps technologies.
+The portfolio has continued to grow alongside my technical skills and now showcases work involving AWS, Terraform, Infrastructure as Code, Linux, Docker, Jenkins, CI/CD, automation, IAM, serverless technologies, and cloud troubleshooting.
 
-One of my goals with this portfolio is to demonstrate not only the technologies I have worked with, but also how I approach problems: understanding how services connect, troubleshooting failures, documenting what I learn, and improving the environments I build.
+My goal is not simply to show which technologies I have used.
 
-## ✨ Features
+I want the projects to demonstrate how I approach technical problems: understanding how services connect, troubleshooting failures, validating that environments actually work, improving security and repeatability, and documenting what I learn along the way.
 
-- Professional cloud engineering portfolio website
+---
+
+## ✨ Portfolio Features
+
+- Professional cloud engineering portfolio
 - Custom `mandyreed.com` domain
-- HTTPS/TLS secured website
+- HTTPS/TLS-secured delivery
 - Route 53 DNS routing
 - CloudFront content delivery
-- About Me and professional background
-- Cloud and DevOps skills and technologies
-- Cloud career focus areas
-- Current learning and development roadmap
-- AWS portfolio architecture
-- Featured cloud and DevOps project showcase
-- Technical writing showcase
+- Responsive desktop and mobile design
+- Cloud and DevOps skills showcase
+- Featured project stories
+- Technical writing
+- AWS architecture documentation
+- Current learning roadmap
 - GitHub, LinkedIn, and Medium integration
-- Responsive design for desktop and mobile devices
+- Engineering lessons learned through hands-on projects
 
-## 🛠️ Technologies Used
+---
+
+## 🛠️ Technologies Used to Build the Portfolio
 
 ### Frontend
 
@@ -69,12 +94,12 @@ One of my goals with this portfolio is to demonstrate not only the technologies 
 - CSS3
 - Responsive web design
 
-### AWS Services
+### AWS
 
 - Amazon S3
 - Amazon CloudFront
 - Amazon Route 53
-- AWS Certificate Manager (ACM)
+- AWS Certificate Manager
 
 ### Development Tools
 
@@ -82,32 +107,14 @@ One of my goals with this portfolio is to demonstrate not only the technologies 
 - GitHub
 - Visual Studio Code
 
-## 🧠 Skills Demonstrated
-
-- Amazon S3 website storage and hosting
-- Amazon CloudFront content delivery
-- Amazon Route 53 DNS configuration
-- Custom domain configuration
-- DNS record management
-- AWS Certificate Manager certificate provisioning
-- DNS certificate validation
-- HTTPS/TLS website delivery
-- CloudFront alternate domain configuration
-- CDN caching and cache invalidation
-- Cloud architecture fundamentals
-- Website deployment
-- Deployment troubleshooting
-- Git version control
-- GitHub repository management
-- Technical documentation
-- Front-end web development
-- Responsive web design
+---
 
 ## ☁️ Cloud & DevOps Skills Featured
 
-These technologies represent cloud and development tools I have practiced through hands-on projects:
+These technologies represent tools and services I have practiced through hands-on projects:
 
-- AWS
+### AWS
+
 - Amazon EC2
 - Amazon S3
 - Amazon CloudFront
@@ -123,6 +130,11 @@ These technologies represent cloud and development tools I have practiced throug
 - Amazon Polly
 - Amazon Transcribe
 - Amazon Translate
+
+### Infrastructure & DevOps
+
+- Terraform
+- Infrastructure as Code
 - Linux
 - Docker
 - Docker Compose
@@ -134,161 +146,258 @@ These technologies represent cloud and development tools I have practiced throug
 - GitHub Actions
 - CI/CD
 
-## 💻 Featured Projects
+---
 
-### 🐳 Docker + Jenkins Lab
+# 💻 Featured Cloud & DevOps Projects
+
+These are the projects where I get to build things, troubleshoot them, figure out why they broke, and occasionally wonder why I thought automating everything would be easier. 😅
+
+## ✨ Jenkins on AWS with Terraform
+
+*It started with one manually deployed Jenkins server. Then I decided Terraform should do the work. 😅*
+
+Deployed Jenkins on AWS using Terraform, progressing from a manual proof of concept to reusable Infrastructure as Code.
+
+The project included:
+
+- Amazon EC2
+- Terraform
+- Security Groups
+- Automated Jenkins installation with User Data
+- Private Amazon S3 artifact storage
+- IAM Role and Instance Profile
+- Least-privilege S3 permissions
+- AWS temporary credential validation
+- S3 artifact upload and download testing
+- Terraform lifecycle management and cleanup
+
+Rather than stopping when `terraform apply` succeeded, I validated that EC2 assumed the correct IAM role and proved that the server could interact with S3 without storing AWS credentials on the instance.
+
+💻 [View Repository](https://github.com/mandyreed223/terraform-jenkins-aws)
+
+📖 [Read Project Story](https://medium.com/@mandymreed/i-put-jenkins-on-aws-with-terraform-because-apparently-clicking-buttons-was-too-easy-%EF%B8%8F-%EF%B8%8F-d6a39afaa125)
+
+---
+
+## 🐳 Docker + Jenkins Lab
+
+*What happens when you start deleting Jenkins containers on purpose? Turns out, quite a lot. 🐳😂*
 
 Built and managed Jenkins in Docker while exploring container lifecycle, persistent storage, Docker Compose, and custom image creation.
 
-Tested data persistence by intentionally removing and recreating Jenkins containers, then built a custom Jenkins image using a Dockerfile and verified the customization with `curl` inside the running container.
+Tested data persistence by intentionally removing and recreating Jenkins containers, then built a custom Jenkins image using a Dockerfile and verified the customization inside the running container.
 
 💻 [View Repository](https://github.com/mandyreed223/docker-jenkins-lab)
 
 📖 [Read Project Story](https://medium.com/@mandymreed/i-put-jenkins-in-a-container-then-started-deleting-things-e947c8bca954)
 
-### ☁️ AWS Cloud Engineering Portfolio
+---
 
-Designed and deployed this cloud engineering portfolio using Amazon S3, CloudFront, Route 53, and AWS Certificate Manager.
+## ☁️ AWS Cloud Engineering Portfolio
 
-Configured a custom domain with DNS routing and HTTPS/TLS, maintained source control through GitHub, and performed hands-on troubleshooting involving deployment, caching, DNS, domain registration, HTTPS, and content delivery.
+*Building a portfolio was easy. Getting DNS, HTTPS, caching, and a custom domain to cooperate was the adventure. 🌐*
+
+Designed and deployed this portfolio using Amazon S3, CloudFront, Route 53, and AWS Certificate Manager.
+
+Configured a custom domain with DNS routing and HTTPS/TLS, maintained source control through GitHub, and troubleshot deployment, caching, domain registration, DNS, and content delivery issues.
 
 🌐 [View Live Portfolio](https://mandyreed.com)
 
 💻 [View Repository](https://github.com/mandyreed223/cloud-engineer-portfolio)
 
-### 🤖 Prompt Deployment Pipeline
+📖 [Read Project Story](https://medium.com/@mandymreed/so-i-decided-i-needed-a-portfolio-website-what-could-possibly-go-wrong-5a726e889864)
+
+---
+
+## 🤖 Prompt Deployment Pipeline
 
 Built a CI/CD-style workflow using GitHub, Amazon S3, and Amazon Bedrock.
 
-[View Repository](https://github.com/mandyreed223/prompt-deployment-pipeline)
+💻 [View Repository](https://github.com/mandyreed223/prompt-deployment-pipeline)
 
-### 🌎 Multilingual Audio Pipeline
+---
+
+## 🌎 Multilingual Audio Pipeline
 
 Created an AWS pipeline using Amazon Transcribe, Amazon Translate, Amazon Polly, AWS Lambda, and Amazon S3.
 
-[View Repository](https://github.com/mandyreed223/multilingual-audio-pipeline)
+💻 [View Repository](https://github.com/mandyreed223/multilingual-audio-pipeline)
 
-### 👁️ Rekognition Image Labeling Pipeline
+---
+
+## 👁️ Rekognition Image Labeling Pipeline
 
 Built an image-processing workflow using Amazon Rekognition, Amazon DynamoDB, AWS Lambda, and Amazon S3.
 
-[View Repository](https://github.com/mandyreed223/rekognition-image-labeling-pipeline)
+💻 [View Repository](https://github.com/mandyreed223/rekognition-image-labeling-pipeline)
 
-### 🔊 Polly Text-to-Speech API Pipeline
+---
+
+## 🔊 Polly Text-to-Speech API Pipeline
 
 Created a serverless text-to-speech solution using Amazon Polly, AWS Lambda, Amazon API Gateway, and Amazon S3.
 
-[View Repository](https://github.com/mandyreed223/polly_text_to_speech_pipeline)
+💻 [View Repository](https://github.com/mandyreed223/polly_text_to_speech_pipeline)
 
-### 🌐 Static Website Pipeline
+---
+
+## 🌐 Static Website Pipeline
 
 Built and deployed a static website using Amazon S3, Amazon CloudFront, and AWS CodePipeline.
 
-[View Repository](https://github.com/mandyreed223/static_website_pipeline_project)
+💻 [View Repository](https://github.com/mandyreed223/static_website_pipeline_project)
 
-### ✅ Required Files Checker
+---
+
+## ✅ Required Files Checker
 
 Created a GitHub Actions workflow that validates required repository files and logs results to Amazon CloudWatch.
 
-[View Repository](https://github.com/mandyreed223/file_checker_project)
+💻 [View Repository](https://github.com/mandyreed223/file_checker_project)
 
-## ✍️ Technical Writing
+---
 
-In addition to building cloud and DevOps projects, I document lessons learned, troubleshooting experiences, and project walkthroughs through technical writing.
+# 🧠 Things My Projects Have Taught Me
+
+The technical skills matter, but some of the best lessons happen somewhere between **“this should work”** and **“why is THAT happening?”** 😅
+
+### ☁️ Deployment Is Only Step One
+
+A successful deployment does not automatically mean the application actually works. I validate the environment and prove the application works too.
+
+### 🔎 Follow the Entire Path
+
+Troubleshooting gets easier when I understand how every service connects instead of looking at one component in isolation.
+
+### 🔐 Secure It, Then Prove It
+
+Least privilege is more meaningful when I test the permissions and verify that the application can do exactly what it needs.
+
+### 🧹 Clean Up Counts Too
+
+Building cloud resources is fun. Knowing how to safely tear them down is part of understanding the full lifecycle.
+
+---
+
+# ✍️ Technical Writing
+
+Cloud projects rarely go exactly according to plan.
+
+I document the builds, the troubleshooting, the **“why is THAT happening?”** moments, and what I learned from them on Medium. 😅
+
+## 🛠️ I Put Jenkins on AWS with Terraform… Because Apparently Clicking Buttons Was Too Easy
+
+A hands-on AWS and Terraform story that progresses from manually deploying Jenkins to reusable Infrastructure as Code, IAM role-based S3 access, validation, and Terraform cleanup.
+
+📖 [Read on Medium](https://medium.com/@mandymreed/i-put-jenkins-on-aws-with-terraform-because-apparently-clicking-buttons-was-too-easy-%EF%B8%8F-%EF%B8%8F-d6a39afaa125)
 
 ### 🐳 I Put Jenkins in a Container, Then Started Deleting Things
 
-A hands-on Docker and Jenkins story covering container lifecycle, persistent volumes, Docker Compose, custom Docker images, and the surprisingly useful lesson that deleting a container does not have to mean deleting your data.
+A Docker and Jenkins story covering container lifecycle, persistent volumes, Docker Compose, and custom Docker images.
 
-[Read on Medium](https://medium.com/@mandymreed/i-put-jenkins-in-a-container-then-started-deleting-things-e947c8bca954)
+📖 [Read on Medium](https://medium.com/@mandymreed/i-put-jenkins-in-a-container-then-started-deleting-things-e947c8bca954)
 
 ### 🌐 So I Decided I Needed a Portfolio Website... What Could Possibly Go Wrong?
 
-A behind-the-scenes look at building and deploying this cloud engineering portfolio with Amazon S3, CloudFront, and GitHub, including deployment and caching issues I troubleshot along the way.
+A behind-the-scenes look at building and deploying this portfolio, including the deployment and caching issues I troubleshot along the way.
 
-[Read on Medium](https://medium.com/@mandymreed/so-i-decided-i-needed-a-portfolio-website-what-could-possibly-go-wrong-5a726e889864)
+📖 [Read on Medium](https://medium.com/@mandymreed/so-i-decided-i-needed-a-portfolio-website-what-could-possibly-go-wrong-5a726e889864)
 
 ### 🐳 It Worked On My Machine... Until It Didn't
 
-A Docker-focused troubleshooting story exploring containers, local environments, consistency, and lessons learned.
+A Docker troubleshooting story about containers, local environments, consistency, and learning why repeatable environments matter.
 
-[Read on Medium](https://medium.com/@mandymreed/it-worked-on-my-machine-until-it-didnt-3d2df233c995)
+📖 [Read on Medium](https://medium.com/@mandymreed/it-worked-on-my-machine-until-it-didnt-3d2df233c995)
 
 ### 🌍 Teaching the Cloud to Speak Every Language
 
-A walkthrough of a multilingual AWS pipeline using Amazon Transcribe, Translate, Polly, Lambda, S3, and CloudWatch.
+A walkthrough of a multilingual AWS pipeline using Transcribe, Translate, Polly, Lambda, S3, and CloudWatch.
 
-[Read on Medium](https://medium.com/@mandymreed/teaching-the-cloud-to-speak-every-language-df07b5764134)
+📖 [Read on Medium](https://medium.com/@mandymreed/teaching-the-cloud-to-speak-every-language-df07b5764134)
 
-## 🚀 Current Focus Areas
+---
 
-I am continuing to expand my cloud engineering skills in:
+# 🚀 What I'm Focusing On Next
 
-- Terraform
-- Infrastructure as Code (IaC)
+Terraform has officially graduated from **“something I need to learn”** to **“something I've built with.”** 🎓😅
+
+My next areas of focus include:
+
+- Microsoft Azure
 - Kubernetes fundamentals
 - Cloud security
 - Monitoring and alerting
-- Site Reliability Engineering (SRE)
+- Site Reliability Engineering
 
-As I complete hands-on projects in these areas, they will be added to the portfolio.
+As I complete hands-on projects in these areas, they will continue making their way into the portfolio.
 
-## 💼 Professional Background
+---
+
+# 💼 Professional Background
 
 I have 18 years of experience supporting users in enterprise IT environments and 21 years with Allstate.
 
 My background includes technical support, troubleshooting, customer service, documentation, incident management, problem-solving, and supporting business-critical technology.
 
-I am expanding that experience into cloud engineering through hands-on projects involving AWS, Linux, Docker, Docker Compose, Jenkins, automation, monitoring, CI/CD, serverless technologies, and cloud operations.
+I am expanding that experience into cloud engineering through hands-on projects involving AWS, Terraform, Infrastructure as Code, Linux, Docker, Jenkins, automation, monitoring, CI/CD, serverless technologies, and cloud operations.
 
-## 🔧 Troubleshooting & Lessons Learned
+The technologies are changing, but one part has stayed very familiar:
 
-Building and expanding this portfolio has included troubleshooting real deployment and cloud infrastructure issues rather than simply following a successful deployment path.
+**Something isn't working. Figure out why. 🔎**
 
-Examples include:
+---
 
-- Diagnosing a Git push failure caused by a repository that had not yet been created
-- Identifying CloudFront caching when updated content existed in GitHub and S3 but the live website continued displaying the previous version
-- Using CloudFront cache invalidation to refresh deployed website content
-- Troubleshooting an initial Route 53 domain registration failure
-- Completing domain registration and configuring the Route 53 hosted zone
-- Using DNS validation to validate an ACM TLS certificate
-- Configuring an ACM certificate for both the root domain and `www` subdomain
-- Adding custom alternate domain names to an existing CloudFront distribution
-- Creating Route 53 A and AAAA alias records to route the custom domain to CloudFront
-- Understanding the relationship between DNS, TLS certificates, content delivery, object storage, source control, and the live website
+# 🔧 Portfolio Troubleshooting & Lessons Learned
 
-These experiences are an important part of the project because troubleshooting and understanding the complete path of a request are key areas I am continuing to develop as I move further into cloud engineering.
+Building and maintaining this portfolio has involved real troubleshooting rather than following a perfectly successful deployment path.
 
-## 🔮 Future Enhancements
+A few examples:
 
-- Automated portfolio deployments using GitHub Actions
-- Infrastructure as Code deployment using Terraform
+- Diagnosed a Git push failure caused by a repository that had not yet been created
+- Identified CloudFront caching when GitHub and S3 contained updated content but the live website continued displaying the previous version
+- Used CloudFront cache invalidation to refresh deployed website content
+- Troubleshot an initial Route 53 domain registration failure
+- Configured the Route 53 hosted zone
+- Used DNS validation for an ACM TLS certificate
+- Configured HTTPS for both the root domain and `www` subdomain
+- Added alternate domain names to CloudFront
+- Created Route 53 A and AAAA alias records
+- Learned how DNS, TLS, CloudFront, S3, source control, and the live website fit together
+
+These experiences are an important part of the project because understanding the complete path makes troubleshooting much more effective.
+
+---
+
+# 🔮 What's Next for the Portfolio?
+
+The portfolio will continue evolving as my skills and projects grow.
+
+Future improvements may include:
+
+- Automated portfolio deployment with GitHub Actions
+- Terraform-managed portfolio infrastructure
+- Microsoft Azure projects
 - Kubernetes-focused projects
-- Additional cloud projects and certifications
-- Enhanced cloud architecture visualizations
-- Continued improvements to monitoring and deployment automation
+- Additional monitoring and deployment automation
+- New cloud architecture visualizations
+- More hands-on cloud and DevOps projects
 
-## 🔗 Connect With Me
+---
 
-### 🌐 Portfolio
+# 🔗 Connect With Me
 
-[mandyreed.com](https://mandyreed.com)
+🌐 **Portfolio:** [mandyreed.com](https://mandyreed.com)
 
-### 💻 GitHub
+💻 **GitHub:** [github.com/mandyreed223](https://github.com/mandyreed223)
 
-[github.com/mandyreed223](https://github.com/mandyreed223)
+💼 **LinkedIn:** [linkedin.com/in/mandymreed](https://www.linkedin.com/in/mandymreed/)
 
-### 💼 LinkedIn
+✍️ **Medium:** [medium.com/@mandymreed](https://medium.com/@mandymreed)
 
-[linkedin.com/in/mandymreed](https://www.linkedin.com/in/mandymreed/)
+---
 
-### ✍️ Medium
+## 👩‍💻 Mandy Reed
 
-[medium.com/@mandymreed](https://medium.com/@mandymreed)
+Enterprise IT professional building hands-on cloud and DevOps engineering experience through AWS, Terraform, Infrastructure as Code, containerization, automation, troubleshooting, and technical writing.
 
-## 👩‍💻 Author
-
-**Mandy Reed**
-
-IT Support Professional building hands-on cloud and DevOps engineering experience through AWS projects, containerization, troubleshooting, automation, technical writing, and continuous learning.
+☁️ **Build it. Troubleshoot it. Understand it. Then build something harder.** 🚀
