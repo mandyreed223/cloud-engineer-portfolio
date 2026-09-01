@@ -77,8 +77,8 @@ I want the projects to demonstrate how I approach technical problems: understand
 - CloudFront content delivery
 - Responsive desktop and mobile design
 - Cloud and DevOps skills showcase
-- Featured project stories
-- Technical writing
+- Featured project repositories
+- Project stories and technical writing
 - AWS architecture documentation
 - Current learning roadmap
 - GitHub, LinkedIn, and Medium integration
@@ -175,8 +175,6 @@ Rather than stopping when `terraform apply` succeeded, I validated that EC2 assu
 
 💻 [View Repository](https://github.com/mandyreed223/terraform-jenkins-aws)
 
-📖 [Read Project Story](https://medium.com/@mandymreed/i-put-jenkins-on-aws-with-terraform-because-apparently-clicking-buttons-was-too-easy-%EF%B8%8F-%EF%B8%8F-d6a39afaa125)
-
 ---
 
 ## 🐳 Docker + Jenkins Lab
@@ -188,8 +186,6 @@ Built and managed Jenkins in Docker while exploring container lifecycle, persist
 Tested data persistence by intentionally removing and recreating Jenkins containers, then built a custom Jenkins image using a Dockerfile and verified the customization inside the running container.
 
 💻 [View Repository](https://github.com/mandyreed223/docker-jenkins-lab)
-
-📖 [Read Project Story](https://medium.com/@mandymreed/i-put-jenkins-in-a-container-then-started-deleting-things-e947c8bca954)
 
 ---
 
@@ -204,8 +200,6 @@ Configured a custom domain with DNS routing and HTTPS/TLS, maintained source con
 🌐 [View Live Portfolio](https://mandyreed.com)
 
 💻 [View Repository](https://github.com/mandyreed223/cloud-engineer-portfolio)
-
-📖 [Read Project Story](https://medium.com/@mandymreed/so-i-decided-i-needed-a-portfolio-website-what-could-possibly-go-wrong-5a726e889864)
 
 ---
 
@@ -279,39 +273,41 @@ Building cloud resources is fun. Knowing how to safely tear them down is part of
 
 ---
 
-# ✍️ Technical Writing
+# ✍️ Project Stories & Technical Writing
 
-Cloud projects rarely go exactly according to plan.
+Building the project is only half the story.
 
-I document the builds, the troubleshooting, the **“why is THAT happening?”** moments, and what I learned from them on Medium. 😅
+I also document what happened along the way: the troubleshooting, mistakes, lessons learned, and occasional **“why is THAT happening?”** moments. 😅
 
-## 🛠️ I Put Jenkins on AWS with Terraform… Because Apparently Clicking Buttons Was Too Easy
+These articles focus less on simply listing technologies and more on explaining what I built, what went wrong, how I troubleshot it, and what I learned from the experience.
 
-A hands-on AWS and Terraform story that progresses from manually deploying Jenkins to reusable Infrastructure as Code, IAM role-based S3 access, validation, and Terraform cleanup.
+## 🛠️ Jenkins on AWS with Terraform
+
+From manually deploying Jenkins to reusable Infrastructure as Code, IAM role-based S3 access, environment validation, and safe Terraform cleanup.
 
 📖 [Read on Medium](https://medium.com/@mandymreed/i-put-jenkins-on-aws-with-terraform-because-apparently-clicking-buttons-was-too-easy-%EF%B8%8F-%EF%B8%8F-d6a39afaa125)
 
-### 🐳 I Put Jenkins in a Container, Then Started Deleting Things
+### 🐳 Docker + Jenkins Lab
 
-A Docker and Jenkins story covering container lifecycle, persistent volumes, Docker Compose, and custom Docker images.
+A hands-on Docker and Jenkins story covering container lifecycle, persistent volumes, Docker Compose, custom Docker images, and the surprisingly useful lesson that deleting a container does not have to mean deleting your data.
 
 📖 [Read on Medium](https://medium.com/@mandymreed/i-put-jenkins-in-a-container-then-started-deleting-things-e947c8bca954)
 
-### 🌐 So I Decided I Needed a Portfolio Website... What Could Possibly Go Wrong?
+### 🌐 AWS Cloud Engineering Portfolio
 
-A behind-the-scenes look at building and deploying this portfolio, including the deployment and caching issues I troubleshot along the way.
+A behind-the-scenes look at building and deploying this cloud engineering portfolio, including the deployment, caching, DNS, and custom domain issues I troubleshot along the way.
 
 📖 [Read on Medium](https://medium.com/@mandymreed/so-i-decided-i-needed-a-portfolio-website-what-could-possibly-go-wrong-5a726e889864)
 
-### 🐳 It Worked On My Machine... Until It Didn't
+### 🐳 Docker + Apache: It Worked On My Machine... Until It Didn't
 
 A Docker troubleshooting story about containers, local environments, consistency, and learning why repeatable environments matter.
 
 📖 [Read on Medium](https://medium.com/@mandymreed/it-worked-on-my-machine-until-it-didnt-3d2df233c995)
 
-### 🌍 Teaching the Cloud to Speak Every Language
+### 🌍 Multilingual Audio Pipeline
 
-A walkthrough of a multilingual AWS pipeline using Transcribe, Translate, Polly, Lambda, S3, and CloudWatch.
+A walkthrough of a multilingual AWS pipeline using Amazon Transcribe, Translate, Polly, Lambda, S3, and CloudWatch.
 
 📖 [Read on Medium](https://medium.com/@mandymreed/teaching-the-cloud-to-speak-every-language-df07b5764134)
 
