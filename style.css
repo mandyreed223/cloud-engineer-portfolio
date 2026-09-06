@@ -79,10 +79,12 @@ body {
 
 .hero-subtitle {
     font-size: 16px;
-    margin: 0 0 30px;
+    margin: 0 auto 30px;
     opacity: 0.92;
     position: relative;
     z-index: 1;
+    max-width: 850px;
+    line-height: 1.6;
 }
 
 .button {
@@ -259,6 +261,11 @@ p {
     border-bottom: 1px solid #d7dde4;
 }
 
+
+/* ==============================
+   FEATURED / NEWEST PROJECT
+   ============================== */
+
 .featured-project {
     border-left-width: 7px;
     background: linear-gradient(
@@ -279,6 +286,11 @@ p {
     font-weight: bold;
     margin-bottom: 12px;
 }
+
+
+/* ==============================
+   PROJECT BUTTONS
+   ============================== */
 
 .project-button {
     display: inline-block;
@@ -419,7 +431,8 @@ footer a:hover {
 
     .hero-subtitle {
         font-size: 15px;
-        line-height: 1.5;
+        line-height: 1.6;
+        max-width: 600px;
     }
 
     section {
@@ -447,6 +460,10 @@ footer a:hover {
 
 @media (max-width: 480px) {
 
+    .hero {
+        padding: 45px 16px;
+    }
+
     .hero h1 {
         font-size: 32px;
     }
@@ -457,6 +474,11 @@ footer a:hover {
 
     .hero-story {
         font-size: 15px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+        line-height: 1.7;
     }
 
     .profile-photo {

@@ -35,7 +35,7 @@
         </p>
 
         <p class="hero-subtitle">
-            AWS • Terraform • Linux • Docker • Jenkins • GitHub Actions • CI/CD • Cloud Troubleshooting
+            AWS • Terraform • Linux • Docker • Docker Swarm • Jenkins • GitHub Actions • CI/CD • Cloud Troubleshooting
         </p>
 
         <a href="#projects" class="button">
@@ -122,6 +122,9 @@
             <span>Linux</span>
             <span>Docker</span>
             <span>Docker Compose</span>
+            <span>Docker Swarm</span>
+            <span>Docker Stack</span>
+            <span>Container Orchestration</span>
             <span>Jenkins</span>
             <span>Dockerfile</span>
             <span>Persistent Volumes</span>
@@ -242,12 +245,39 @@
         </p>
 
 
-        <!-- TERRAFORM + JENKINS -->
+        <!-- DOCKER SWARM -->
         <div class="project-card featured-project">
 
             <div class="project-badge">
                 ✨ Newest Project
             </div>
+
+            <h3>🐳 Docker Swarm on AWS</h3>
+
+            <p class="story-hook">
+                I built a Docker Swarm. Then I started killing containers. 🐳💀
+            </p>
+
+            <p>
+                Built a three-node Docker Swarm across AWS EC2 instances to practice
+                multi-node container orchestration, service deployment, scaling,
+                self-healing, and Docker Stack. Tested resiliency by intentionally
+                removing containers and watching Swarm automatically restore the
+                desired state across the cluster.
+            </p>
+
+            <a href="https://github.com/mandyreed223/docker-swarm-aws-lab"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="project-button">
+                View Repository
+            </a>
+
+        </div>
+
+
+        <!-- TERRAFORM + JENKINS -->
+        <div class="project-card">
 
             <h3>🏗️ Jenkins on AWS with Terraform</h3>
 
@@ -323,13 +353,6 @@
                 deployment, caching, domain registration, DNS, and content
                 delivery issues.
             </p>
-
-            <a href="https://mandyreed.com"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                View Live Portfolio
-            </a>
 
             <a href="https://github.com/mandyreed223/cloud-engineer-portfolio"
                target="_blank"
@@ -583,6 +606,29 @@
             along the way: the troubleshooting, mistakes, lessons learned, and occasional
             “why is THAT happening?” moments. 😅
         </p>
+
+
+        <!-- DOCKER SWARM ARTICLE -->
+        <div class="article-card">
+
+            <h3>
+                🐳 Docker Swarm on AWS
+            </h3>
+
+            <p>
+                A three-node Docker Swarm adventure covering services, scaling,
+                Docker Stack, self-healing, and what happens when you deliberately
+                remove containers just to see whether the cluster brings them back.
+            </p>
+
+            <a href="https://medium.com/@mandymreed/i-built-a-docker-swarm-then-i-started-killing-containers-14bfd9fb54ae"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="project-button">
+                Read on Medium
+            </a>
+
+        </div>
 
 
         <!-- TERRAFORM ARTICLE -->

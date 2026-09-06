@@ -4,7 +4,7 @@
 
 Welcome to my cloud engineering portfolio!
 
-This project brings together my enterprise IT background with the cloud and DevOps skills I am developing through hands-on projects, troubleshooting, automation, Infrastructure as Code, and technical writing.
+This project brings together my enterprise IT background with the cloud and DevOps skills I am developing through hands-on projects, troubleshooting, automation, Infrastructure as Code, containerization, orchestration, and technical writing.
 
 ## 🚀 Live Website
 
@@ -46,21 +46,21 @@ What started as a place to showcase cloud projects became a cloud project of its
 
 Building this portfolio has given me hands-on experience with:
 
-- Amazon S3
-- Amazon CloudFront
-- Amazon Route 53
-- AWS Certificate Manager
-- DNS
-- HTTPS/TLS
-- CDN caching
-- Cache invalidation
-- Git and GitHub
-- HTML and CSS
-- Responsive web design
-- Deployment troubleshooting
-- Technical documentation
+* Amazon S3
+* Amazon CloudFront
+* Amazon Route 53
+* AWS Certificate Manager
+* DNS
+* HTTPS/TLS
+* CDN caching
+* Cache invalidation
+* Git and GitHub
+* HTML and CSS
+* Responsive web design
+* Deployment troubleshooting
+* Technical documentation
 
-The portfolio has continued to grow alongside my technical skills and now showcases work involving AWS, Terraform, Infrastructure as Code, Linux, Docker, Jenkins, CI/CD, automation, IAM, serverless technologies, and cloud troubleshooting.
+The portfolio has continued to grow alongside my technical skills and now showcases work involving AWS, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, Jenkins, CI/CD, automation, IAM, serverless technologies, and cloud troubleshooting.
 
 My goal is not simply to show which technologies I have used.
 
@@ -70,19 +70,19 @@ I want the projects to demonstrate how I approach technical problems: understand
 
 ## ✨ Portfolio Features
 
-- Professional cloud engineering portfolio
-- Custom `mandyreed.com` domain
-- HTTPS/TLS-secured delivery
-- Route 53 DNS routing
-- CloudFront content delivery
-- Responsive desktop and mobile design
-- Cloud and DevOps skills showcase
-- Featured project repositories
-- Project stories and technical writing
-- AWS architecture documentation
-- Current learning roadmap
-- GitHub, LinkedIn, and Medium integration
-- Engineering lessons learned through hands-on projects
+* Professional cloud engineering portfolio
+* Custom `mandyreed.com` domain
+* HTTPS/TLS-secured delivery
+* Route 53 DNS routing
+* CloudFront content delivery
+* Responsive desktop and mobile design
+* Cloud and DevOps skills showcase
+* Featured project repositories
+* Project stories and technical writing
+* AWS architecture documentation
+* Current learning roadmap
+* GitHub, LinkedIn, and Medium integration
+* Engineering lessons learned through hands-on projects
 
 ---
 
@@ -90,61 +90,64 @@ I want the projects to demonstrate how I approach technical problems: understand
 
 ### Frontend
 
-- HTML5
-- CSS3
-- Responsive web design
+* HTML5
+* CSS3
+* Responsive web design
 
 ### AWS
 
-- Amazon S3
-- Amazon CloudFront
-- Amazon Route 53
-- AWS Certificate Manager
+* Amazon S3
+* Amazon CloudFront
+* Amazon Route 53
+* AWS Certificate Manager
 
 ### Development Tools
 
-- Git
-- GitHub
-- Visual Studio Code
+* Git
+* GitHub
+* Visual Studio Code
 
 ---
 
-## ☁️ Cloud & DevOps Skills Featured
+# ☁️ Cloud & DevOps Skills Featured
 
 These technologies represent tools and services I have practiced through hands-on projects:
 
 ### AWS
 
-- Amazon EC2
-- Amazon S3
-- Amazon CloudFront
-- Amazon Route 53
-- AWS Certificate Manager
-- AWS Lambda
-- AWS IAM
-- Amazon DynamoDB
-- Amazon API Gateway
-- Amazon CloudWatch
-- Amazon Bedrock
-- Amazon Rekognition
-- Amazon Polly
-- Amazon Transcribe
-- Amazon Translate
+* Amazon EC2
+* Amazon S3
+* Amazon CloudFront
+* Amazon Route 53
+* AWS Certificate Manager
+* AWS Lambda
+* AWS IAM
+* Amazon DynamoDB
+* Amazon API Gateway
+* Amazon CloudWatch
+* Amazon Bedrock
+* Amazon Rekognition
+* Amazon Polly
+* Amazon Transcribe
+* Amazon Translate
 
 ### Infrastructure & DevOps
 
-- Terraform
-- Infrastructure as Code
-- Linux
-- Docker
-- Docker Compose
-- Jenkins
-- Dockerfiles
-- Persistent Volumes
-- Git
-- GitHub
-- GitHub Actions
-- CI/CD
+* Terraform
+* Infrastructure as Code
+* Linux
+* Docker
+* Docker Compose
+* Docker Swarm
+* Docker Stack
+* Container Orchestration
+* Jenkins
+* Dockerfiles
+* Persistent Volumes
+* Git
+* GitHub
+* GitHub Actions
+* CI/CD
 
 ---
 
@@ -152,34 +155,65 @@ These technologies represent tools and services I have practiced through hands-o
 
 These are the projects where I get to build things, troubleshoot them, figure out why they broke, and occasionally wonder why I thought automating everything would be easier. 😅
 
-## ✨ Jenkins on AWS with Terraform
+## ✨ 🐳 Docker Swarm on AWS
 
-*It started with one manually deployed Jenkins server. Then I decided Terraform should do the work. 😅*
+***I built a Docker Swarm. Then I started killing containers. 🐳💀***
+
+Built a three-node Docker Swarm across AWS EC2 instances to explore multi-node container orchestration, service deployment, scaling, self-healing, Docker Stack, and cluster resiliency.
+
+The project included:
+
+* Three AWS EC2 Linux nodes
+* Docker Swarm initialization
+* Manager and worker nodes
+* Replicated services
+* Global services
+* Service scaling
+* Docker Stack deployments
+* Overlay networking
+* Routing mesh testing
+* Node draining
+* Self-healing and desired-state reconciliation
+* Container failure testing
+
+Rather than stopping once the cluster was running, I intentionally removed containers and changed node availability to observe how Docker Swarm responded and restored the desired state.
+
+💻 [View Repository](https://github.com/mandyreed223/docker-swarm-aws-lab)
+
+📖 [Read on Medium](https://medium.com/@mandymreed/i-built-a-docker-swarm-then-i-started-killing-containers-14bfd9fb54ae)
+
+---
+
+## 🏗️ Jenkins on AWS with Terraform
+
+***It started with one manually deployed Jenkins server. Then I decided Terraform should do the work. 😅***
 
 Deployed Jenkins on AWS using Terraform, progressing from a manual proof of concept to reusable Infrastructure as Code.
 
 The project included:
 
-- Amazon EC2
-- Terraform
-- Security Groups
-- Automated Jenkins installation with User Data
-- Private Amazon S3 artifact storage
-- IAM Role and Instance Profile
-- Least-privilege S3 permissions
-- AWS temporary credential validation
-- S3 artifact upload and download testing
-- Terraform lifecycle management and cleanup
+* Amazon EC2
+* Terraform
+* Security Groups
+* Automated Jenkins installation with User Data
+* Private Amazon S3 artifact storage
+* IAM Role and Instance Profile
+* Least-privilege S3 permissions
+* AWS temporary credential validation
+* S3 artifact upload and download testing
+* Terraform lifecycle management and cleanup
 
 Rather than stopping when `terraform apply` succeeded, I validated that EC2 assumed the correct IAM role and proved that the server could interact with S3 without storing AWS credentials on the instance.
 
 💻 [View Repository](https://github.com/mandyreed223/terraform-jenkins-aws)
 
+📖 [Read on Medium](https://medium.com/@mandymreed/i-put-jenkins-on-aws-with-terraform-because-apparently-clicking-buttons-was-too-easy-%EF%B8%8F-%EF%B8%8F-d6a39afaa125)
+
 ---
 
 ## 🐳 Docker + Jenkins Lab
 
-*What happens when you start deleting Jenkins containers on purpose? Turns out, quite a lot. 🐳😂*
+***What happens when you start deleting Jenkins containers on purpose? Turns out, quite a lot. 🐳😂***
 
 Built and managed Jenkins in Docker while exploring container lifecycle, persistent storage, Docker Compose, and custom image creation.
 
@@ -187,11 +221,13 @@ Tested data persistence by intentionally removing and recreating Jenkins contain
 
 💻 [View Repository](https://github.com/mandyreed223/docker-jenkins-lab)
 
+📖 [Read on Medium](https://medium.com/@mandymreed/i-put-jenkins-in-a-container-then-started-deleting-things-e947c8bca954)
+
 ---
 
 ## ☁️ AWS Cloud Engineering Portfolio
 
-*Building a portfolio was easy. Getting DNS, HTTPS, caching, and a custom domain to cooperate was the adventure. 🌐*
+***Building a portfolio was easy. Getting DNS, HTTPS, caching, and a custom domain to cooperate was the adventure. 🌐***
 
 Designed and deployed this portfolio using Amazon S3, CloudFront, Route 53, and AWS Certificate Manager.
 
@@ -200,6 +236,8 @@ Configured a custom domain with DNS routing and HTTPS/TLS, maintained source con
 🌐 [View Live Portfolio](https://mandyreed.com)
 
 💻 [View Repository](https://github.com/mandyreed223/cloud-engineer-portfolio)
+
+📖 [Read on Medium](https://medium.com/@mandymreed/so-i-decided-i-needed-a-portfolio-website-what-could-possibly-go-wrong-5a726e889864)
 
 ---
 
@@ -216,6 +254,8 @@ Built a CI/CD-style workflow using GitHub, Amazon S3, and Amazon Bedrock.
 Created an AWS pipeline using Amazon Transcribe, Amazon Translate, Amazon Polly, AWS Lambda, and Amazon S3.
 
 💻 [View Repository](https://github.com/mandyreed223/multilingual-audio-pipeline)
+
+📖 [Read on Medium](https://medium.com/@mandymreed/teaching-the-cloud-to-speak-every-language-df07b5764134)
 
 ---
 
@@ -267,6 +307,10 @@ Troubleshooting gets easier when I understand how every service connects instead
 
 Least privilege is more meaningful when I test the permissions and verify that the application can do exactly what it needs.
 
+### ♻️ Desired State Is Powerful
+
+Container orchestration changed the way I think about application availability. With Docker Swarm, I could remove a running container and watch the cluster recognize that the actual state no longer matched the desired state and automatically create a replacement.
+
 ### 🧹 Clean Up Counts Too
 
 Building cloud resources is fun. Knowing how to safely tear them down is part of understanding the full lifecycle.
@@ -281,7 +325,15 @@ I also document what happened along the way: the troubleshooting, mistakes, less
 
 These articles focus less on simply listing technologies and more on explaining what I built, what went wrong, how I troubleshot it, and what I learned from the experience.
 
-## 🛠️ Jenkins on AWS with Terraform
+## 🐳 Docker Swarm on AWS
+
+***I Built a Docker Swarm. Then I Started Killing Containers. 🐳💀***
+
+Three EC2 servers, one Docker Swarm, and a crash course in scaling, self-healing, Docker Stack, and why containers apparently don't stay dead.
+
+📖 [Read on Medium](https://medium.com/@mandymreed/i-built-a-docker-swarm-then-i-started-killing-containers-14bfd9fb54ae)
+
+### 🛠️ Jenkins on AWS with Terraform
 
 From manually deploying Jenkins to reusable Infrastructure as Code, IAM role-based S3 access, environment validation, and safe Terraform cleanup.
 
@@ -315,15 +367,15 @@ A walkthrough of a multilingual AWS pipeline using Amazon Transcribe, Translate,
 
 # 🚀 What I'm Focusing On Next
 
-Terraform has officially graduated from **“something I need to learn”** to **“something I've built with.”** 🎓😅
+Terraform and Docker Swarm have officially graduated from **“things I need to learn”** to **“things I've built with.”** 🎓😅
 
 My next areas of focus include:
 
-- Microsoft Azure
-- Kubernetes fundamentals
-- Cloud security
-- Monitoring and alerting
-- Site Reliability Engineering
+* Microsoft Azure
+* Kubernetes fundamentals
+* Cloud security
+* Monitoring and alerting
+* Site Reliability Engineering
 
 As I complete hands-on projects in these areas, they will continue making their way into the portfolio.
 
@@ -335,7 +387,7 @@ I have 18 years of experience supporting users in enterprise IT environments and
 
 My background includes technical support, troubleshooting, customer service, documentation, incident management, problem-solving, and supporting business-critical technology.
 
-I am expanding that experience into cloud engineering through hands-on projects involving AWS, Terraform, Infrastructure as Code, Linux, Docker, Jenkins, automation, monitoring, CI/CD, serverless technologies, and cloud operations.
+I am expanding that experience into cloud engineering through hands-on projects involving AWS, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, Jenkins, automation, monitoring, CI/CD, serverless technologies, and cloud operations.
 
 The technologies are changing, but one part has stayed very familiar:
 
@@ -349,16 +401,16 @@ Building and maintaining this portfolio has involved real troubleshooting rather
 
 A few examples:
 
-- Diagnosed a Git push failure caused by a repository that had not yet been created
-- Identified CloudFront caching when GitHub and S3 contained updated content but the live website continued displaying the previous version
-- Used CloudFront cache invalidation to refresh deployed website content
-- Troubleshot an initial Route 53 domain registration failure
-- Configured the Route 53 hosted zone
-- Used DNS validation for an ACM TLS certificate
-- Configured HTTPS for both the root domain and `www` subdomain
-- Added alternate domain names to CloudFront
-- Created Route 53 A and AAAA alias records
-- Learned how DNS, TLS, CloudFront, S3, source control, and the live website fit together
+* Diagnosed a Git push failure caused by a repository that had not yet been created
+* Identified CloudFront caching when GitHub and S3 contained updated content but the live website continued displaying the previous version
+* Used CloudFront cache invalidation to refresh deployed website content
+* Troubleshot an initial Route 53 domain registration failure
+* Configured the Route 53 hosted zone
+* Used DNS validation for an ACM TLS certificate
+* Configured HTTPS for both the root domain and `www` subdomain
+* Added alternate domain names to CloudFront
+* Created Route 53 A and AAAA alias records
+* Learned how DNS, TLS, CloudFront, S3, source control, and the live website fit together
 
 These experiences are an important part of the project because understanding the complete path makes troubleshooting much more effective.
 
@@ -370,13 +422,13 @@ The portfolio will continue evolving as my skills and projects grow.
 
 Future improvements may include:
 
-- Automated portfolio deployment with GitHub Actions
-- Terraform-managed portfolio infrastructure
-- Microsoft Azure projects
-- Kubernetes-focused projects
-- Additional monitoring and deployment automation
-- New cloud architecture visualizations
-- More hands-on cloud and DevOps projects
+* Automated portfolio deployment with GitHub Actions
+* Terraform-managed portfolio infrastructure
+* Microsoft Azure projects
+* Kubernetes-focused projects
+* Additional monitoring and deployment automation
+* New cloud architecture visualizations
+* More hands-on cloud and DevOps projects
 
 ---
 
@@ -394,6 +446,6 @@ Future improvements may include:
 
 ## 👩‍💻 Mandy Reed
 
-Enterprise IT professional building hands-on cloud and DevOps engineering experience through AWS, Terraform, Infrastructure as Code, containerization, automation, troubleshooting, and technical writing.
+Enterprise IT professional building hands-on cloud and DevOps engineering experience through AWS, Terraform, Infrastructure as Code, containerization, orchestration, automation, troubleshooting, and technical writing.
 
 ☁️ **Build it. Troubleshoot it. Understand it. Then build something harder.** 🚀
