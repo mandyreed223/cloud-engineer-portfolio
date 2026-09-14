@@ -60,7 +60,7 @@ Building this portfolio has given me hands-on experience with:
 * Deployment troubleshooting
 * Technical documentation
 
-The portfolio has continued to grow alongside my technical skills and now showcases work involving AWS, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, Jenkins, CI/CD, automation, IAM, serverless technologies, and cloud troubleshooting.
+The portfolio has continued to grow alongside my technical skills and now showcases work involving AWS, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, container orchestration, Amazon EFS, Jenkins, CI/CD, automation, IAM, serverless technologies, persistent storage, and cloud troubleshooting.
 
 My goal is not simply to show which technologies I have used.
 
@@ -117,6 +117,7 @@ These technologies represent tools and services I have practiced through hands-o
 
 * Amazon EC2
 * Amazon S3
+* Amazon EFS
 * Amazon CloudFront
 * Amazon Route 53
 * AWS Certificate Manager
@@ -141,21 +142,75 @@ These technologies represent tools and services I have practiced through hands-o
 * Docker Swarm
 * Docker Stack
 * Container Orchestration
+* Docker Secrets
+* Overlay Networking
+* Persistent Volumes
 * Jenkins
 * Dockerfiles
-* Persistent Volumes
 * Git
 * GitHub
 * GitHub Actions
 * CI/CD
 
+### Applications & Data
+
+* WordPress
+* MySQL
+* Shared File Storage
+* NFS
+* Persistent Application Data
+
 ---
 
 # 💻 Featured Cloud & DevOps Projects
 
-These are the projects where I get to build things, troubleshoot them, figure out why they broke, and occasionally wonder why I thought automating everything would be easier. 😅
+These are the projects where I get to build things, troubleshoot them, figure out why they broke, and occasionally wonder why I thought making the architecture more complicated was a good idea. 😅
 
-## ✨ 🐳 Docker Swarm on AWS
+## ✨ 🐳 WordPress + MySQL Docker Swarm on AWS
+
+***I put WordPress on Docker Swarm. Then things got real. 🐳🔥***
+
+Built a multi-service WordPress and MySQL application across a three-node Docker Swarm running on AWS EC2.
+
+This project took the concepts from my original Docker Swarm lab and added something that changes the conversation quite a bit: **stateful application data**.
+
+The project included:
+
+* Three Ubuntu EC2 instances
+* One Docker Swarm manager and two workers
+* WordPress
+* MySQL
+* Docker Stack
+* Multi-service orchestration
+* Overlay networking
+* Docker Secrets
+* Amazon EFS shared storage
+* NFS
+* Persistent WordPress content
+* Docker service inspection and logging
+* Service scaling and rescheduling
+* Worker-node failure testing
+* Desired-state recovery
+* AWS Security Groups
+* Linux system troubleshooting
+
+I mounted Amazon EFS across the Swarm nodes so WordPress content could remain available regardless of which node ran the container and verified shared files across containers.
+
+I also deliberately removed a worker node to observe how Swarm rescheduled services and restored the desired state.
+
+Of course, the infrastructure did not make it easy. 😅
+
+One worker experienced intermittent SSH connectivity and memory pressure, which turned the project into a deeper troubleshooting exercise involving `top`, `free`, `df`, `journalctl`, `systemctl`, Docker events, listening ports, firewall checks, Security Groups, and eventually a reboot.
+
+The result was much more than a working WordPress site. It became an exercise in understanding how **orchestration, networking, storage, application state, Linux, and AWS infrastructure all interact**.
+
+💻 [View Repository](https://github.com/mandyreed223/wordpress-docker-swarm-aws)
+
+📖 [Read on Medium](https://medium.com/@mandymreed/i-put-wordpress-on-docker-swarm-then-things-got-real-438cbb166861)
+
+---
+
+## 🐳 Docker Swarm on AWS
 
 ***I built a Docker Swarm. Then I started killing containers. 🐳💀***
 
@@ -173,10 +228,13 @@ The project included:
 * Overlay networking
 * Routing mesh testing
 * Node draining
+* Task rescheduling
 * Self-healing and desired-state reconciliation
 * Container failure testing
 
 Rather than stopping once the cluster was running, I intentionally removed containers and changed node availability to observe how Docker Swarm responded and restored the desired state.
+
+I also drained a worker node and validated that the Swarm routing mesh could continue serving the published application through the node while tasks were running elsewhere in the cluster.
 
 💻 [View Repository](https://github.com/mandyreed223/docker-swarm-aws-lab)
 
@@ -307,9 +365,25 @@ Troubleshooting gets easier when I understand how every service connects instead
 
 Least privilege is more meaningful when I test the permissions and verify that the application can do exactly what it needs.
 
-### ♻️ Desired State Is Powerful
+### ♻️ Design for Failure
 
-Container orchestration changed the way I think about application availability. With Docker Swarm, I could remove a running container and watch the cluster recognize that the actual state no longer matched the desired state and automatically create a replacement.
+Container orchestration became much easier to understand when I deliberately started removing containers and workers.
+
+If the actual state no longer matches the desired state, the orchestrator should recognize it and respond. Watching that happen is a much better lesson than simply reading about self-healing.
+
+### 💾 Persistent Data Changes Everything
+
+Containers can disappear and be recreated. Application data cannot be treated the same way.
+
+Adding WordPress, MySQL, Docker Secrets, and Amazon EFS forced me to think beyond whether a container was running and start considering where data lives, which nodes can access it, what happens when workloads move, and how storage affects application recovery.
+
+### 🧩 The Problem May Be Somewhere Else
+
+A container problem is not always a Docker problem.
+
+During the WordPress Swarm project, troubleshooting crossed Docker, Linux, AWS Security Groups, networking, memory, storage, SSH, and the application itself.
+
+Understanding the entire path matters.
 
 ### 🧹 Clean Up Counts Too
 
@@ -325,7 +399,15 @@ I also document what happened along the way: the troubleshooting, mistakes, less
 
 These articles focus less on simply listing technologies and more on explaining what I built, what went wrong, how I troubleshot it, and what I learned from the experience.
 
-## 🐳 Docker Swarm on AWS
+## 🐳 WordPress + MySQL Docker Swarm
+
+***I Put WordPress on Docker Swarm. Then Things Got Real.***
+
+What started as a multi-container deployment became a hands-on lesson in Docker Swarm, WordPress, MySQL, Amazon EFS, Docker Secrets, persistent storage, service recovery, and whole-path troubleshooting.
+
+📖 [Read on Medium](https://medium.com/@mandymreed/i-put-wordpress-on-docker-swarm-then-things-got-real-438cbb166861)
+
+### 🐳 Docker Swarm on AWS
 
 ***I Built a Docker Swarm. Then I Started Killing Containers. 🐳💀***
 
@@ -387,7 +469,7 @@ I have 18 years of experience supporting users in enterprise IT environments and
 
 My background includes technical support, troubleshooting, customer service, documentation, incident management, problem-solving, and supporting business-critical technology.
 
-I am expanding that experience into cloud engineering through hands-on projects involving AWS, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, Jenkins, automation, monitoring, CI/CD, serverless technologies, and cloud operations.
+I am expanding that experience into cloud engineering through hands-on projects involving AWS, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, container orchestration, Amazon EFS, Jenkins, automation, monitoring, CI/CD, serverless technologies, and cloud operations.
 
 The technologies are changing, but one part has stayed very familiar:
 
@@ -446,6 +528,6 @@ Future improvements may include:
 
 ## 👩‍💻 Mandy Reed
 
-Enterprise IT professional building hands-on cloud and DevOps engineering experience through AWS, Terraform, Infrastructure as Code, containerization, orchestration, automation, troubleshooting, and technical writing.
+Enterprise IT professional building hands-on cloud and DevOps engineering experience through AWS, Terraform, Infrastructure as Code, containerization, orchestration, persistent storage, automation, troubleshooting, and technical writing.
 
 ☁️ **Build it. Troubleshoot it. Understand it. Then build something harder.** 🚀

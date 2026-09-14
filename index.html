@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Mandy Reed's cloud engineering portfolio featuring hands-on AWS, Terraform, Infrastructure as Code, Linux, Docker, Jenkins, GitHub Actions, CI/CD, automation, IAM, S3, DNS, HTTPS, and cloud troubleshooting projects.">
+          content="Mandy Reed's cloud engineering portfolio featuring hands-on AWS, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, container orchestration, Amazon EFS, Jenkins, GitHub Actions, CI/CD, automation, IAM, DNS, HTTPS, and cloud troubleshooting projects.">
 
     <title>Mandy Reed | Cloud Engineering Portfolio</title>
 
@@ -61,7 +61,7 @@
         <p>
             I am expanding that experience into cloud engineering through hands-on
             projects using AWS, Terraform, Infrastructure as Code, Linux, Docker,
-            Jenkins, GitHub Actions, automation, monitoring, and CI/CD.
+            Docker Swarm, Jenkins, GitHub Actions, automation, monitoring, and CI/CD.
         </p>
 
         <p>
@@ -102,6 +102,7 @@
             <span>AWS</span>
             <span>EC2</span>
             <span>S3</span>
+            <span>Amazon EFS</span>
             <span>CloudFront</span>
             <span>Route 53</span>
             <span>AWS Certificate Manager</span>
@@ -125,9 +126,12 @@
             <span>Docker Swarm</span>
             <span>Docker Stack</span>
             <span>Container Orchestration</span>
+            <span>Docker Secrets</span>
+            <span>Overlay Networking</span>
+            <span>Persistent Volumes</span>
+            <span>MySQL</span>
             <span>Jenkins</span>
             <span>Dockerfile</span>
-            <span>Persistent Volumes</span>
             <span>Git</span>
             <span>GitHub</span>
             <span>GitHub Actions</span>
@@ -245,12 +249,41 @@
         </p>
 
 
-        <!-- DOCKER SWARM -->
+        <!-- WORDPRESS + MYSQL DOCKER SWARM -->
         <div class="project-card featured-project">
 
             <div class="project-badge">
                 ✨ Newest Project
             </div>
+
+            <h3>🐳 WordPress + MySQL Docker Swarm on AWS</h3>
+
+            <p class="story-hook">
+                WordPress, MySQL, Docker Swarm, EFS... what could possibly go wrong? 😅
+            </p>
+
+            <p>
+                Built a multi-service WordPress and MySQL application on a
+                three-node Docker Swarm running across AWS EC2. Used Docker Stack,
+                overlay networking, Docker Secrets, and Amazon EFS shared storage
+                to explore container orchestration, persistent data, service
+                communication, and resiliency. Troubleshot networking, SSH,
+                Docker service health, memory pressure, and storage issues while
+                testing service recovery and worker-node rescheduling.
+            </p>
+
+            <a href="https://github.com/mandyreed223/wordpress-docker-swarm-aws"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="project-button">
+                View Repository
+            </a>
+
+        </div>
+
+
+        <!-- DOCKER SWARM -->
+        <div class="project-card">
 
             <h3>🐳 Docker Swarm on AWS</h3>
 
@@ -260,10 +293,11 @@
 
             <p>
                 Built a three-node Docker Swarm across AWS EC2 instances to practice
-                multi-node container orchestration, service deployment, scaling,
-                self-healing, and Docker Stack. Tested resiliency by intentionally
-                removing containers and watching Swarm automatically restore the
-                desired state across the cluster.
+                multi-node container orchestration, replicated and global services,
+                scaling, self-healing, Docker Stack, overlay networking, and routing
+                mesh. Tested resiliency by intentionally removing containers and
+                draining a worker node to validate desired-state recovery, task
+                rescheduling, and traffic routing across the cluster.
             </p>
 
             <a href="https://github.com/mandyreed223/docker-swarm-aws-lab"
@@ -579,6 +613,40 @@
             <div class="lesson-card">
 
                 <div class="lesson-icon">
+                    ♻️
+                </div>
+
+                <h3>Design for Failure</h3>
+
+                <p>
+                    Orchestration becomes much easier to understand when I deliberately
+                    remove a container or worker and watch how the platform restores
+                    the desired state.
+                </p>
+
+            </div>
+
+
+            <div class="lesson-card">
+
+                <div class="lesson-icon">
+                    💾
+                </div>
+
+                <h3>Persistent Data Changes Everything</h3>
+
+                <p>
+                    Containers may be disposable, but application data is not.
+                    Shared storage, database placement, and recovery behavior need
+                    to be considered as part of the architecture.
+                </p>
+
+            </div>
+
+
+            <div class="lesson-card">
+
+                <div class="lesson-icon">
                     🧹
                 </div>
 
@@ -606,6 +674,29 @@
             along the way: the troubleshooting, mistakes, lessons learned, and occasional
             “why is THAT happening?” moments. 😅
         </p>
+
+
+        <!-- WORDPRESS DOCKER SWARM ARTICLE -->
+        <div class="article-card">
+
+            <h3>
+                🐳 WordPress + MySQL Docker Swarm
+            </h3>
+
+            <p>
+                A multi-service Docker Swarm adventure involving WordPress, MySQL,
+                Amazon EFS, Docker Secrets, persistent storage, worker-node recovery,
+                and enough troubleshooting to make things interesting. 😅
+            </p>
+
+            <a href="https://medium.com/@mandymreed/i-put-wordpress-on-docker-swarm-then-things-got-real-438cbb166861"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="project-button">
+                Read on Medium
+            </a>
+
+        </div>
 
 
         <!-- DOCKER SWARM ARTICLE -->
