@@ -60,7 +60,7 @@ Building this portfolio has given me hands-on experience with:
 * Deployment troubleshooting
 * Technical documentation
 
-The portfolio has continued to grow alongside my technical skills and now showcases work involving AWS, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, container orchestration, Amazon EFS, Jenkins, CI/CD, automation, IAM, serverless technologies, persistent storage, and cloud troubleshooting.
+The portfolio has continued to grow alongside my technical skills and now showcases work involving AWS, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, container orchestration, Amazon EFS, Jenkins, CI/CD, automation, IAM, serverless technologies, persistent storage, container networking, image versioning, and cloud troubleshooting.
 
 My goal is not simply to show which technologies I have used.
 
@@ -143,6 +143,9 @@ These technologies represent tools and services I have practiced through hands-o
 * Docker Stack
 * Container Orchestration
 * Docker Secrets
+* Docker Networking
+* Docker Image Versioning
+* Container Troubleshooting
 * Overlay Networking
 * Persistent Volumes
 * Jenkins
@@ -154,6 +157,7 @@ These technologies represent tools and services I have practiced through hands-o
 
 ### Applications & Data
 
+* Apache HTTP Server
 * WordPress
 * MySQL
 * Shared File Storage
@@ -283,6 +287,52 @@ Tested data persistence by intentionally removing and recreating Jenkins contain
 
 ---
 
+## 🐳 Docker + Apache Web App Rebuild
+
+***Same project. Different engineer. 🐳***
+
+Revisited and rebuilt one of my earliest Docker projects after gaining more hands-on experience with containers, networking, troubleshooting, and repeatable deployments.
+
+The original project helped me understand the basic idea of putting an application inside a container. The rebuild focused much more on understanding **how and why the pieces work together**.
+
+The rebuild included:
+
+* Dockerfiles
+* Docker image builds
+* Image tagging and versioning
+* Docker layer caching
+* Apache HTTP Server
+* Multiple running containers
+* Host-to-container port mapping
+* Docker networking
+* Container inspection
+* Container logs
+* Container lifecycle management
+* Application validation
+* Docker cleanup
+* Troubleshooting port conflicts
+* Troubleshooting container-name conflicts
+* Troubleshooting Docker Engine availability
+* Comparing container build approaches
+
+Rather than manually configuring a running container and treating the finished container as the product, I used a Dockerfile to define a repeatable build process and create reusable images.
+
+I also ran multiple containers from the application images using different host ports, inspected their configuration and networking, and practiced separating the concepts of **Dockerfile → image → container**.
+
+The biggest difference from the first version was not the application itself.
+
+It was how I approached it.
+
+The first time, I was learning how to make Docker work.
+
+This time, I wanted to understand what Docker was actually doing.
+
+💻 [View Repository](https://github.com/mandyreed223/docker-apache-webapp)
+
+📖 [Read the Updated Project Story on Medium](https://medium.com/@mandymreed/it-worked-on-my-machine-until-it-didnt-3d2df233c995)
+
+---
+
 ## ☁️ AWS Cloud Engineering Portfolio
 
 ***Building a portfolio was easy. Getting DNS, HTTPS, caching, and a custom domain to cooperate was the adventure. 🌐***
@@ -385,6 +435,14 @@ During the WordPress Swarm project, troubleshooting crossed Docker, Linux, AWS S
 
 Understanding the entire path matters.
 
+### 🔄 Rebuilding Old Work Shows Progress
+
+One of the most useful ways to see how much I have learned is to revisit something I built earlier.
+
+Rebuilding my Docker + Apache project changed the questions I was asking. Instead of simply asking whether I could get a container running, I was thinking about image construction, layers, versioning, networking, port mappings, repeatability, inspection, troubleshooting, and lifecycle management.
+
+**Same project. Different engineer.**
+
 ### 🧹 Clean Up Counts Too
 
 Building cloud resources is fun. Knowing how to safely tear them down is part of understanding the full lifecycle.
@@ -427,17 +485,21 @@ A hands-on Docker and Jenkins story covering container lifecycle, persistent vol
 
 📖 [Read on Medium](https://medium.com/@mandymreed/i-put-jenkins-in-a-container-then-started-deleting-things-e947c8bca954)
 
+### 🐳 Docker + Apache: It Worked On My Machine... Until It Didn't
+
+One of my earliest Docker stories, now revisited with a second chapter.
+
+The updated article follows the original container experiment into a more intentional rebuild using Dockerfiles, reusable images, image versioning, layer caching, multiple containers, port mapping, networking, inspection, troubleshooting, and lifecycle management.
+
+The application may look familiar. The way I approached it definitely does not. 🐳
+
+📖 [Read the Updated Story on Medium](https://medium.com/@mandymreed/it-worked-on-my-machine-until-it-didnt-3d2df233c995)
+
 ### 🌐 AWS Cloud Engineering Portfolio
 
 A behind-the-scenes look at building and deploying this cloud engineering portfolio, including the deployment, caching, DNS, and custom domain issues I troubleshot along the way.
 
 📖 [Read on Medium](https://medium.com/@mandymreed/so-i-decided-i-needed-a-portfolio-website-what-could-possibly-go-wrong-5a726e889864)
-
-### 🐳 Docker + Apache: It Worked On My Machine... Until It Didn't
-
-A Docker troubleshooting story about containers, local environments, consistency, and learning why repeatable environments matter.
-
-📖 [Read on Medium](https://medium.com/@mandymreed/it-worked-on-my-machine-until-it-didnt-3d2df233c995)
 
 ### 🌍 Multilingual Audio Pipeline
 
