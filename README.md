@@ -60,7 +60,7 @@ Building this portfolio has given me hands-on experience with:
 * Deployment troubleshooting
 * Technical documentation
 
-The portfolio has continued to grow alongside my technical skills and now showcases work involving AWS, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, container orchestration, Amazon EFS, Jenkins, CI/CD, automation, IAM, serverless technologies, persistent storage, container networking, image versioning, and cloud troubleshooting.
+The portfolio has continued to grow alongside my technical skills and now showcases work involving AWS, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, Kubernetes, container orchestration, Amazon EFS, Jenkins, CI/CD, automation, IAM, serverless technologies, persistent storage, container networking, image versioning, desired-state reconciliation, and cloud troubleshooting.
 
 My goal is not simply to show which technologies I have used.
 
@@ -148,6 +148,22 @@ These technologies represent tools and services I have practiced through hands-o
 * Container Troubleshooting
 * Overlay Networking
 * Persistent Volumes
+* Kubernetes
+* MicroK8s
+* kubectl
+* Kubernetes Pods
+* Kubernetes Deployments
+* ReplicaSets
+* Kubernetes Services
+* ClusterIP Services
+* Labels and Selectors
+* EndpointSlices
+* Kubernetes YAML
+* Declarative Configuration
+* Desired-State Reconciliation
+* Self-Healing Workloads
+* Kubernetes Scaling
+* Rolling Updates
 * Jenkins
 * Dockerfiles
 * Git
@@ -158,6 +174,7 @@ These technologies represent tools and services I have practiced through hands-o
 ### Applications & Data
 
 * Apache HTTP Server
+* nginx
 * WordPress
 * MySQL
 * Shared File Storage
@@ -170,7 +187,64 @@ These technologies represent tools and services I have practiced through hands-o
 
 These are the projects where I get to build things, troubleshoot them, figure out why they broke, and occasionally wonder why I thought making the architecture more complicated was a good idea. 😅
 
-## ✨ 🐳 WordPress + MySQL Docker Swarm on AWS
+## ✨ ☸️ Kubernetes Fundamentals
+
+***Kubernetes said desired state. I said prove it. ☸️***
+
+Built my first hands-on Kubernetes application using MicroK8s on Ubuntu in WSL2.
+
+The project started with a single nginx Pod and gradually moved through the Kubernetes controller and networking layers until the application was managed declaratively using Deployments, ReplicaSets, Services, and YAML.
+
+The project included:
+
+* MicroK8s
+* Ubuntu on WSL2
+* kubectl
+* nginx
+* Kubernetes Pods
+* Deployments
+* ReplicaSets
+* ClusterIP Services
+* Labels and selectors
+* EndpointSlices
+* Declarative YAML
+* Server-side dry runs
+* Scaling
+* Desired-state reconciliation
+* Pod self-healing
+* Rolling updates
+* Resource inspection
+* Kubernetes troubleshooting
+
+Rather than stopping when the application was running, I deliberately tested the behavior Kubernetes is designed to provide.
+
+I scaled the Deployment to multiple replicas and inspected how the Deployment, ReplicaSet, and Pods related to one another.
+
+Then I deleted a Pod on purpose.
+
+Kubernetes immediately created a replacement because the actual state no longer matched the desired state defined by the Deployment.
+
+That was the moment desired-state reconciliation stopped being an abstract Kubernetes concept and became something I could actually observe.
+
+I also created a ClusterIP Service and explored how labels and selectors connect the Service to the correct Pods while EndpointSlices track the available application endpoints.
+
+The project included a rolling nginx image update so I could watch Kubernetes replace Pods while maintaining the Deployment's desired state.
+
+Finally, I moved the application into reusable YAML and rebuilt it declaratively.
+
+That step also created one of the most useful troubleshooting lessons in the project: a Deployment selector is immutable after creation. Instead of simply working around the error, I traced the relationship between the Deployment selector, Pod template labels, and Service selector, corrected the manifests, recreated the resources, and validated the complete application path again.
+
+The result was not just my first Kubernetes deployment.
+
+It was my first hands-on look at how Kubernetes uses **controllers, desired state, labels, selectors, Services, and declarative configuration to manage an application as a system**.
+
+💻 [View Repository](https://github.com/mandyreed223/kubernetes-fundamentals)
+
+📖 [Read on Medium](https://medium.com/@mandymreed/kubernetes-said-desired-state-i-said-prove-it-%EF%B8%8F-e8fbe1469ec3)
+
+---
+
+## 🐳 WordPress + MySQL Docker Swarm on AWS
 
 ***I put WordPress on Docker Swarm. Then things got real. 🐳🔥***
 
@@ -415,11 +489,27 @@ Troubleshooting gets easier when I understand how every service connects instead
 
 Least privilege is more meaningful when I test the permissions and verify that the application can do exactly what it needs.
 
-### ♻️ Design for Failure
+### ♻️ Desired State Is Something You Can Test
 
-Container orchestration became much easier to understand when I deliberately started removing containers and workers.
+Container orchestration became much easier to understand when I deliberately started removing workloads instead of simply reading about self-healing.
 
-If the actual state no longer matches the desired state, the orchestrator should recognize it and respond. Watching that happen is a much better lesson than simply reading about self-healing.
+Docker Swarm introduced me to desired-state recovery by replacing containers and rescheduling tasks.
+
+Kubernetes took that concept further by letting me watch a Deployment, ReplicaSet, and Pods work together to maintain the number and configuration of workloads I declared.
+
+If the actual state no longer matches the desired state, the orchestrator should recognize it and respond.
+
+Watching that happen is a much better lesson than simply reading about it.
+
+### 🧩 Labels Create Relationships
+
+My Kubernetes project reinforced that having healthy individual resources does not automatically mean the application path is correct.
+
+Deployment selectors, Pod labels, and Service selectors create relationships between Kubernetes resources.
+
+A Pod can be running and a Service can exist, but if their labels and selectors do not line up, the Service will not route traffic to the intended workload.
+
+Understanding those relationships made Kubernetes networking much easier to reason about and troubleshoot.
 
 ### 💾 Persistent Data Changes Everything
 
@@ -457,7 +547,15 @@ I also document what happened along the way: the troubleshooting, mistakes, less
 
 These articles focus less on simply listing technologies and more on explaining what I built, what went wrong, how I troubleshot it, and what I learned from the experience.
 
-## 🐳 WordPress + MySQL Docker Swarm
+## ☸️ Kubernetes Fundamentals
+
+***Kubernetes Said Desired State. I Said Prove It. ☸️***
+
+My first hands-on Kubernetes project started with a single nginx Pod and grew into Deployments, ReplicaSets, Services, scaling, self-healing, rolling updates, labels and selectors, EndpointSlices, declarative YAML, and an unexpectedly useful troubleshooting lesson involving an immutable Deployment selector.
+
+📖 [Read on Medium](https://medium.com/@mandymreed/kubernetes-said-desired-state-i-said-prove-it-%EF%B8%8F-e8fbe1469ec3)
+
+### 🐳 WordPress + MySQL Docker Swarm
 
 ***I Put WordPress on Docker Swarm. Then Things Got Real.***
 
@@ -511,15 +609,16 @@ A walkthrough of a multilingual AWS pipeline using Amazon Transcribe, Translate,
 
 # 🚀 What I'm Focusing On Next
 
-Terraform and Docker Swarm have officially graduated from **“things I need to learn”** to **“things I've built with.”** 🎓😅
+Terraform, Docker Swarm, and now Kubernetes fundamentals have officially graduated from **“things I need to learn”** to **“things I've built with.”** 🎓😅
 
 My next areas of focus include:
 
 * Microsoft Azure
-* Kubernetes fundamentals
 * Cloud security
 * Monitoring and alerting
 * Site Reliability Engineering
+
+Kubernetes is not disappearing from the roadmap. The fundamentals project established the foundation, and future projects can build on it with more advanced orchestration, cloud-hosted Kubernetes, configuration management, observability, and deployment workflows.
 
 As I complete hands-on projects in these areas, they will continue making their way into the portfolio.
 
@@ -531,7 +630,7 @@ I have 18 years of experience supporting users in enterprise IT environments and
 
 My background includes technical support, troubleshooting, customer service, documentation, incident management, problem-solving, and supporting business-critical technology.
 
-I am expanding that experience into cloud engineering through hands-on projects involving AWS, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, container orchestration, Amazon EFS, Jenkins, automation, monitoring, CI/CD, serverless technologies, and cloud operations.
+I am expanding that experience into cloud engineering through hands-on projects involving AWS, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, Kubernetes, container orchestration, Amazon EFS, Jenkins, automation, monitoring, CI/CD, serverless technologies, and cloud operations.
 
 The technologies are changing, but one part has stayed very familiar:
 
@@ -569,7 +668,8 @@ Future improvements may include:
 * Automated portfolio deployment with GitHub Actions
 * Terraform-managed portfolio infrastructure
 * Microsoft Azure projects
-* Kubernetes-focused projects
+* More advanced Kubernetes projects
+* Cloud-hosted Kubernetes
 * Additional monitoring and deployment automation
 * New cloud architecture visualizations
 * More hands-on cloud and DevOps projects
@@ -590,6 +690,6 @@ Future improvements may include:
 
 ## 👩‍💻 Mandy Reed
 
-Enterprise IT professional building hands-on cloud and DevOps engineering experience through AWS, Terraform, Infrastructure as Code, containerization, orchestration, persistent storage, automation, troubleshooting, and technical writing.
+Enterprise IT professional building hands-on cloud and DevOps engineering experience through AWS, Terraform, Infrastructure as Code, Linux, Docker, Kubernetes, container orchestration, persistent storage, automation, troubleshooting, and technical writing.
 
 ☁️ **Build it. Troubleshoot it. Understand it. Then build something harder.** 🚀

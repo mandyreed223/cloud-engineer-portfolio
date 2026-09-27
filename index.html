@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Mandy Reed's cloud engineering portfolio featuring hands-on AWS, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, container orchestration, Amazon EFS, Jenkins, GitHub Actions, CI/CD, automation, IAM, DNS, HTTPS, and cloud troubleshooting projects.">
+          content="Mandy Reed's cloud engineering portfolio featuring hands-on AWS, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, Kubernetes, container orchestration, Amazon EFS, Jenkins, GitHub Actions, CI/CD, automation, IAM, DNS, HTTPS, and cloud troubleshooting projects.">
 
     <title>Mandy Reed | Cloud Engineering Portfolio</title>
 
@@ -35,7 +35,7 @@
         </p>
 
         <p class="hero-subtitle">
-            AWS • Terraform • Linux • Docker • Docker Swarm • Jenkins • GitHub Actions • CI/CD • Cloud Troubleshooting
+            AWS • Terraform • Linux • Docker • Kubernetes • Container Orchestration • Jenkins • GitHub Actions • CI/CD • Cloud Troubleshooting
         </p>
 
         <a href="#projects" class="button">
@@ -61,7 +61,8 @@
         <p>
             I am expanding that experience into cloud engineering through hands-on
             projects using AWS, Terraform, Infrastructure as Code, Linux, Docker,
-            Docker Swarm, Jenkins, GitHub Actions, automation, monitoring, and CI/CD.
+            Docker Swarm, Kubernetes, Jenkins, GitHub Actions, automation,
+            monitoring, and CI/CD.
         </p>
 
         <p>
@@ -132,6 +133,18 @@
             <span>Container Troubleshooting</span>
             <span>Overlay Networking</span>
             <span>Persistent Volumes</span>
+            <span>Kubernetes</span>
+            <span>MicroK8s</span>
+            <span>kubectl</span>
+            <span>Kubernetes Pods</span>
+            <span>Kubernetes Deployments</span>
+            <span>ReplicaSets</span>
+            <span>Kubernetes Services</span>
+            <span>Labels & Selectors</span>
+            <span>EndpointSlices</span>
+            <span>Kubernetes YAML</span>
+            <span>Desired-State Reconciliation</span>
+            <span>Rolling Updates</span>
             <span>MySQL</span>
             <span>Jenkins</span>
             <span>Dockerfile</span>
@@ -153,7 +166,6 @@
         <div class="skill-list">
 
             <span>Microsoft Azure</span>
-            <span>Kubernetes Fundamentals</span>
             <span>Cloud Security</span>
             <span>Monitoring and Alerting</span>
             <span>Site Reliability Engineering</span>
@@ -161,11 +173,11 @@
         </div>
 
         <p>
-            I am continuing to expand my cloud and DevOps skills through hands-on
-            projects, with upcoming focus areas including Microsoft Azure,
-            Kubernetes, cloud security, monitoring and alerting, and Site Reliability
-            Engineering. As I complete projects in these areas, I will continue
-            adding them to my portfolio.
+            Kubernetes fundamentals have officially moved from something I was
+            preparing to learn to something I have now built and tested hands-on. ☸️
+            I am continuing to expand my cloud and DevOps skills through projects,
+            with upcoming focus areas including Microsoft Azure, cloud security,
+            monitoring and alerting, and Site Reliability Engineering.
         </p>
 
     </section>
@@ -252,12 +264,43 @@
         </p>
 
 
-        <!-- WORDPRESS + MYSQL DOCKER SWARM -->
+        <!-- KUBERNETES FUNDAMENTALS -->
         <div class="project-card featured-project">
 
             <div class="project-badge">
                 ✨ Newest Project
             </div>
+
+            <h3>☸️ Kubernetes Fundamentals</h3>
+
+            <p class="story-hook">
+                Kubernetes said desired state. I said prove it. ☸️
+            </p>
+
+            <p>
+                Built my first hands-on Kubernetes application using MicroK8s on
+                Ubuntu in WSL2, progressing from a standalone nginx Pod to a
+                declaratively managed application with Deployments, ReplicaSets,
+                multiple Pods, and a stable ClusterIP Service. Practiced scaling,
+                labels and selectors, EndpointSlices, rolling updates, and
+                desired-state reconciliation while intentionally deleting Pods
+                to observe Kubernetes self-healing. Finished by moving the
+                application into reusable YAML and troubleshooting an immutable
+                Deployment selector while rebuilding the environment declaratively.
+            </p>
+
+            <a href="https://github.com/mandyreed223/kubernetes-fundamentals"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="project-button">
+                View Repository
+            </a>
+
+        </div>
+
+
+        <!-- WORDPRESS + MYSQL DOCKER SWARM -->
+        <div class="project-card">
 
             <h3>🐳 WordPress + MySQL Docker Swarm on AWS</h3>
 
@@ -649,12 +692,14 @@
                     ♻️
                 </div>
 
-                <h3>Design for Failure</h3>
+                <h3>Desired State Is Something You Can Test</h3>
 
                 <p>
-                    Orchestration becomes much easier to understand when I deliberately
-                    remove a container or worker and watch how the platform restores
-                    the desired state.
+                    Orchestration became much easier to understand when I deliberately
+                    removed workloads and watched the platform reconcile actual state
+                    back to desired state. Docker Swarm introduced the idea, and
+                    Kubernetes let me explore it through Deployments, ReplicaSets,
+                    Pods, scaling, and declarative configuration.
                 </p>
 
             </div>
@@ -672,6 +717,24 @@
                     Containers may be disposable, but application data is not.
                     Shared storage, database placement, and recovery behavior need
                     to be considered as part of the architecture.
+                </p>
+
+            </div>
+
+
+            <div class="lesson-card">
+
+                <div class="lesson-icon">
+                    🧩
+                </div>
+
+                <h3>Labels Create Relationships</h3>
+
+                <p>
+                    Kubernetes reinforced that healthy resources are not enough if
+                    the relationships between them are wrong. Deployment selectors,
+                    Pod labels, and Service selectors need to match for the application
+                    path to work correctly.
                 </p>
 
             </div>
@@ -707,6 +770,30 @@
             along the way: the troubleshooting, mistakes, lessons learned, and occasional
             “why is THAT happening?” moments. 😅
         </p>
+
+
+        <!-- KUBERNETES ARTICLE -->
+        <div class="article-card">
+
+            <h3>
+                ☸️ Kubernetes Said Desired State. I Said Prove It. ☸️
+            </h3>
+
+            <p>
+                My first hands-on Kubernetes project started with a single nginx Pod
+                and grew into Deployments, ReplicaSets, Services, scaling, self-healing,
+                rolling updates, labels and selectors, EndpointSlices, declarative YAML,
+                and a troubleshooting lesson involving an immutable selector.
+            </p>
+
+            <a href="https://medium.com/@mandymreed/kubernetes-said-desired-state-i-said-prove-it-%EF%B8%8F-e8fbe1469ec3"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="project-button">
+                Read on Medium
+            </a>
+
+        </div>
 
 
         <!-- WORDPRESS DOCKER SWARM ARTICLE -->
