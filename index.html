@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Mandy Reed's cloud engineering portfolio featuring hands-on AWS, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, Kubernetes, container orchestration, Amazon EFS, Jenkins, GitHub Actions, CI/CD, automation, IAM, DNS, HTTPS, and cloud troubleshooting projects.">
+          content="Mandy Reed's cloud engineering portfolio featuring hands-on AWS, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, Kubernetes, multi-tier applications, container orchestration, Amazon EFS, Jenkins, GitHub Actions, CI/CD, automation, IAM, DNS, HTTPS, and cloud troubleshooting projects.">
 
     <title>Mandy Reed | Cloud Engineering Portfolio</title>
 
@@ -61,8 +61,8 @@
         <p>
             I am expanding that experience into cloud engineering through hands-on
             projects using AWS, Terraform, Infrastructure as Code, Linux, Docker,
-            Docker Swarm, Kubernetes, Jenkins, GitHub Actions, automation,
-            monitoring, and CI/CD.
+            Docker Swarm, Kubernetes, multi-tier applications, Jenkins, GitHub Actions,
+            automation, monitoring, and CI/CD.
         </p>
 
         <p>
@@ -133,18 +133,24 @@
             <span>Container Troubleshooting</span>
             <span>Overlay Networking</span>
             <span>Persistent Volumes</span>
-            <span>Kubernetes</span>
-            <span>MicroK8s</span>
-            <span>kubectl</span>
-            <span>Kubernetes Pods</span>
-            <span>Kubernetes Deployments</span>
-            <span>ReplicaSets</span>
-            <span>Kubernetes Services</span>
-            <span>Labels & Selectors</span>
-            <span>EndpointSlices</span>
-            <span>Kubernetes YAML</span>
-            <span>Desired-State Reconciliation</span>
-            <span>Rolling Updates</span>
+
+            <span class="k8s-skill">Kubernetes</span>
+            <span class="k8s-skill">MicroK8s</span>
+            <span class="k8s-skill">kubectl</span>
+            <span class="k8s-skill">Kubernetes Pods</span>
+            <span class="k8s-skill">Kubernetes Deployments</span>
+            <span class="k8s-skill">ReplicaSets</span>
+            <span class="k8s-skill">Kubernetes Services</span>
+            <span class="k8s-skill">ClusterIP Services</span>
+            <span class="k8s-skill">Labels & Selectors</span>
+            <span class="k8s-skill">EndpointSlices</span>
+            <span class="k8s-skill">Kubernetes YAML</span>
+            <span class="k8s-skill">Desired-State Reconciliation</span>
+            <span class="k8s-skill">Rolling Updates</span>
+            <span class="k8s-skill">Multi-Tier Applications</span>
+            <span class="k8s-skill">Application-to-Database Communication</span>
+            <span class="k8s-skill">Kubernetes Troubleshooting</span>
+
             <span>MySQL</span>
             <span>Jenkins</span>
             <span>Dockerfile</span>
@@ -173,11 +179,14 @@
         </div>
 
         <p>
-            Kubernetes fundamentals have officially moved from something I was
-            preparing to learn to something I have now built and tested hands-on. ☸️
-            I am continuing to expand my cloud and DevOps skills through projects,
-            with upcoming focus areas including Microsoft Azure, cloud security,
-            monitoring and alerting, and Site Reliability Engineering.
+            Kubernetes has officially moved from something I was preparing to learn
+            to something I am actively building with. ☸️ After starting with the
+            fundamentals, I expanded into a multi-tier WordPress and MySQL application
+            to practice workload communication, Services, persistent data, and
+            whole-path troubleshooting. I am continuing to expand my cloud and DevOps
+            skills through projects, with upcoming focus areas including Microsoft
+            Azure, cloud security, monitoring and alerting, and Site Reliability
+            Engineering.
         </p>
 
     </section>
@@ -264,12 +273,44 @@
         </p>
 
 
-        <!-- KUBERNETES FUNDAMENTALS -->
+        <!-- KUBERNETES MULTI-TIER APPLICATION -->
         <div class="project-card featured-project">
 
             <div class="project-badge">
                 ✨ Newest Project
             </div>
+
+            <h3>☸️ WordPress + MySQL Multi-Tier Application on Kubernetes</h3>
+
+            <p class="story-hook">
+                I put WordPress and MySQL on Kubernetes. Then MySQL fought back. ⚔️
+            </p>
+
+            <p>
+                Built a multi-tier WordPress and MySQL application on Kubernetes,
+                moving beyond individual Kubernetes resources to explore how
+                application and database workloads communicate as part of a larger
+                system. Worked with Deployments, Services, labels and selectors,
+                persistent application data, and Kubernetes networking while
+                troubleshooting communication between WordPress and MySQL.
+                The project reinforced that a healthy Pod does not automatically
+                mean a healthy application, and that troubleshooting Kubernetes
+                means following the complete path between workloads, Services,
+                configuration, storage, and the application itself.
+            </p>
+
+            <a href="https://github.com/mandyreed223/kubernetes-multitier-application"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="project-button">
+                View Repository
+            </a>
+
+        </div>
+
+
+        <!-- KUBERNETES FUNDAMENTALS -->
+        <div class="project-card">
 
             <h3>☸️ Kubernetes Fundamentals</h3>
 
@@ -743,6 +784,24 @@
             <div class="lesson-card">
 
                 <div class="lesson-icon">
+                    🔗
+                </div>
+
+                <h3>A Healthy Pod Does Not Mean a Healthy Application</h3>
+
+                <p>
+                    Multi-tier applications reinforced that troubleshooting cannot
+                    stop when individual Pods show Running. The application path may
+                    still cross Services, selectors, configuration, storage, networking,
+                    and database connectivity before the application actually works.
+                </p>
+
+            </div>
+
+
+            <div class="lesson-card">
+
+                <div class="lesson-icon">
                     🧹
                 </div>
 
@@ -772,7 +831,32 @@
         </p>
 
 
-        <!-- KUBERNETES ARTICLE -->
+        <!-- KUBERNETES MULTI-TIER ARTICLE -->
+        <div class="article-card">
+
+            <h3>
+                ☸️ I Put WordPress and MySQL on Kubernetes. Then MySQL Fought Back. ⚔️
+            </h3>
+
+            <p>
+                A multi-tier Kubernetes project that moved beyond individual Pods
+                and Deployments into application-to-database communication,
+                Services, labels and selectors, persistent data, networking,
+                and whole-path troubleshooting when WordPress and MySQL did not
+                cooperate quite as planned. 😅
+            </p>
+
+            <a href="https://medium.com/@mandymreed/i-put-wordpress-and-mysql-on-kubernetes-then-mysql-fought-back-%EF%B8%8F-05a6370e0926"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="project-button">
+                Read on Medium
+            </a>
+
+        </div>
+
+
+        <!-- KUBERNETES FUNDAMENTALS ARTICLE -->
         <div class="article-card">
 
             <h3>

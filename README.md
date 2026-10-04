@@ -60,7 +60,7 @@ Building this portfolio has given me hands-on experience with:
 * Deployment troubleshooting
 * Technical documentation
 
-The portfolio has continued to grow alongside my technical skills and now showcases work involving AWS, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, Kubernetes, container orchestration, Amazon EFS, Jenkins, CI/CD, automation, IAM, serverless technologies, persistent storage, container networking, image versioning, desired-state reconciliation, and cloud troubleshooting.
+The portfolio has continued to grow alongside my technical skills and now showcases work involving AWS, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, Kubernetes, multi-tier applications, container orchestration, Amazon EFS, Jenkins, CI/CD, automation, IAM, serverless technologies, persistent storage, container networking, image versioning, desired-state reconciliation, and cloud troubleshooting.
 
 My goal is not simply to show which technologies I have used.
 
@@ -164,6 +164,9 @@ These technologies represent tools and services I have practiced through hands-o
 * Self-Healing Workloads
 * Kubernetes Scaling
 * Rolling Updates
+* Multi-Tier Applications
+* Application-to-Database Communication
+* Kubernetes Troubleshooting
 * Jenkins
 * Dockerfiles
 * Git
@@ -187,7 +190,60 @@ These technologies represent tools and services I have practiced through hands-o
 
 These are the projects where I get to build things, troubleshoot them, figure out why they broke, and occasionally wonder why I thought making the architecture more complicated was a good idea. 😅
 
-## ✨ ☸️ Kubernetes Fundamentals
+## ✨ ☸️ WordPress + MySQL Multi-Tier Application on Kubernetes
+
+***I put WordPress and MySQL on Kubernetes. Then MySQL fought back. ⚔️***
+
+Built a multi-tier WordPress and MySQL application on Kubernetes, taking the concepts from my Kubernetes Fundamentals project and using them together as part of a larger application architecture.
+
+Instead of working with a single nginx workload, this project introduced application-to-database communication and reinforced how Kubernetes resources depend on one another for the complete application path to work.
+
+The project included:
+
+* Kubernetes
+* MicroK8s
+* Ubuntu on WSL2
+* kubectl
+* WordPress
+* MySQL
+* Multi-tier application architecture
+* Kubernetes Deployments
+* Kubernetes Services
+* ClusterIP networking
+* Labels and selectors
+* Application-to-database communication
+* Persistent application data
+* Declarative YAML
+* Resource inspection
+* Kubernetes networking
+* Kubernetes troubleshooting
+* Whole-path application validation
+
+This project built directly on the fundamentals I had already practiced with Pods, Deployments, Services, labels, selectors, and declarative configuration.
+
+The difference was that those resources were no longer being explored individually.
+
+They had to work together.
+
+WordPress needed to communicate with MySQL through Kubernetes, which meant the application path depended on more than whether individual Pods appeared healthy.
+
+That became especially clear when MySQL decided not to cooperate. 😅
+
+Troubleshooting the application reinforced an important lesson: a Pod showing `Running` does not automatically mean the application is healthy.
+
+The complete path can involve workloads, Services, labels, selectors, configuration, storage, networking, database connectivity, and the application itself.
+
+Instead of treating each Kubernetes resource as an isolated component, I worked through the relationships between them and followed the application path to understand where communication was failing.
+
+The result was an important progression from learning Kubernetes resources individually to using those resources together as part of a multi-tier application.
+
+💻 [View Repository](https://github.com/mandyreed223/kubernetes-multitier-application)
+
+📖 [Read on Medium](https://medium.com/@mandymreed/i-put-wordpress-and-mysql-on-kubernetes-then-mysql-fought-back-%EF%B8%8F-05a6370e0926)
+
+---
+
+## ☸️ Kubernetes Fundamentals
 
 ***Kubernetes said desired state. I said prove it. ☸️***
 
@@ -503,7 +559,7 @@ Watching that happen is a much better lesson than simply reading about it.
 
 ### 🧩 Labels Create Relationships
 
-My Kubernetes project reinforced that having healthy individual resources does not automatically mean the application path is correct.
+My Kubernetes projects reinforced that having healthy individual resources does not automatically mean the application path is correct.
 
 Deployment selectors, Pod labels, and Service selectors create relationships between Kubernetes resources.
 
@@ -511,17 +567,27 @@ A Pod can be running and a Service can exist, but if their labels and selectors 
 
 Understanding those relationships made Kubernetes networking much easier to reason about and troubleshoot.
 
+### 🔗 A Healthy Pod Does Not Mean a Healthy Application
+
+The multi-tier Kubernetes project reinforced that troubleshooting cannot stop when individual Pods show `Running`.
+
+WordPress and MySQL may each have workloads in Kubernetes, but the complete application still depends on the relationships between workloads, Services, selectors, configuration, networking, storage, and database connectivity.
+
+A healthy resource is only one part of a healthy application.
+
+That lesson pushed my troubleshooting from checking individual Kubernetes objects toward following the complete application path.
+
 ### 💾 Persistent Data Changes Everything
 
 Containers can disappear and be recreated. Application data cannot be treated the same way.
 
-Adding WordPress, MySQL, Docker Secrets, and Amazon EFS forced me to think beyond whether a container was running and start considering where data lives, which nodes can access it, what happens when workloads move, and how storage affects application recovery.
+Adding stateful applications such as WordPress and MySQL forced me to think beyond whether a container or Pod was running and start considering where data lives, how workloads access it, what happens when workloads move or restart, and how storage affects application recovery.
 
 ### 🧩 The Problem May Be Somewhere Else
 
-A container problem is not always a Docker problem.
+A container problem is not always a Docker problem, and a Kubernetes problem is not always a Pod problem.
 
-During the WordPress Swarm project, troubleshooting crossed Docker, Linux, AWS Security Groups, networking, memory, storage, SSH, and the application itself.
+Troubleshooting these projects has crossed containers, orchestration, Linux, AWS Security Groups, networking, memory, storage, SSH, Services, application configuration, databases, and the applications themselves.
 
 Understanding the entire path matters.
 
@@ -546,6 +612,16 @@ Building the project is only half the story.
 I also document what happened along the way: the troubleshooting, mistakes, lessons learned, and occasional **“why is THAT happening?”** moments. 😅
 
 These articles focus less on simply listing technologies and more on explaining what I built, what went wrong, how I troubleshot it, and what I learned from the experience.
+
+## ☸️ WordPress + MySQL on Kubernetes
+
+***I Put WordPress and MySQL on Kubernetes. Then MySQL Fought Back. ⚔️***
+
+My second hands-on Kubernetes project moved beyond exploring individual Kubernetes resources and into a multi-tier application where WordPress and MySQL had to communicate through Kubernetes.
+
+The project became a practical lesson in Services, selectors, application-to-database communication, persistent data, networking, and why a Pod showing `Running` does not automatically mean the application works.
+
+📖 [Read on Medium](https://medium.com/@mandymreed/i-put-wordpress-and-mysql-on-kubernetes-then-mysql-fought-back-%EF%B8%8F-05a6370e0926)
 
 ## ☸️ Kubernetes Fundamentals
 
@@ -609,7 +685,9 @@ A walkthrough of a multilingual AWS pipeline using Amazon Transcribe, Translate,
 
 # 🚀 What I'm Focusing On Next
 
-Terraform, Docker Swarm, and now Kubernetes fundamentals have officially graduated from **“things I need to learn”** to **“things I've built with.”** 🎓😅
+Terraform, Docker Swarm, and Kubernetes have officially graduated from **“things I need to learn”** to **“things I've built with.”** 🎓😅
+
+Kubernetes in particular has progressed from learning the individual building blocks to using those building blocks together in a multi-tier application.
 
 My next areas of focus include:
 
@@ -618,7 +696,11 @@ My next areas of focus include:
 * Monitoring and alerting
 * Site Reliability Engineering
 
-Kubernetes is not disappearing from the roadmap. The fundamentals project established the foundation, and future projects can build on it with more advanced orchestration, cloud-hosted Kubernetes, configuration management, observability, and deployment workflows.
+Kubernetes is not disappearing from the roadmap.
+
+The Fundamentals project established the foundation, and the WordPress + MySQL multi-tier project gave me the opportunity to use that foundation in a more application-like architecture.
+
+Future Kubernetes work can continue building from there through cloud-hosted Kubernetes, observability, configuration and secrets management, deployment automation, and more advanced application architectures.
 
 As I complete hands-on projects in these areas, they will continue making their way into the portfolio.
 
@@ -630,7 +712,7 @@ I have 18 years of experience supporting users in enterprise IT environments and
 
 My background includes technical support, troubleshooting, customer service, documentation, incident management, problem-solving, and supporting business-critical technology.
 
-I am expanding that experience into cloud engineering through hands-on projects involving AWS, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, Kubernetes, container orchestration, Amazon EFS, Jenkins, automation, monitoring, CI/CD, serverless technologies, and cloud operations.
+I am expanding that experience into cloud engineering through hands-on projects involving AWS, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, Kubernetes, multi-tier applications, container orchestration, Amazon EFS, Jenkins, automation, monitoring, CI/CD, serverless technologies, and cloud operations.
 
 The technologies are changing, but one part has stayed very familiar:
 
@@ -668,9 +750,11 @@ Future improvements may include:
 * Automated portfolio deployment with GitHub Actions
 * Terraform-managed portfolio infrastructure
 * Microsoft Azure projects
-* More advanced Kubernetes projects
 * Cloud-hosted Kubernetes
-* Additional monitoring and deployment automation
+* Kubernetes observability
+* Kubernetes configuration and secrets management
+* Deployment automation
+* Additional monitoring and alerting
 * New cloud architecture visualizations
 * More hands-on cloud and DevOps projects
 
