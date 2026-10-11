@@ -60,7 +60,7 @@ Building this portfolio has given me hands-on experience with:
 * Deployment troubleshooting
 * Technical documentation
 
-The portfolio has continued to grow alongside my technical skills and now showcases work involving AWS, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, Kubernetes, multi-tier applications, container orchestration, Amazon EFS, Jenkins, CI/CD, automation, IAM, serverless technologies, persistent storage, container networking, image versioning, desired-state reconciliation, and cloud troubleshooting.
+The portfolio has continued to grow alongside my technical skills and now showcases work involving AWS, Amazon EKS, Amazon ECR, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, Kubernetes, multi-tier applications, container orchestration, Amazon EFS, Jenkins, CI/CD, automation, IAM, serverless technologies, persistent storage, container networking, image versioning, desired-state reconciliation, autoscaling, monitoring, and cloud troubleshooting.
 
 My goal is not simply to show which technologies I have used.
 
@@ -118,6 +118,10 @@ These technologies represent tools and services I have practiced through hands-o
 * Amazon EC2
 * Amazon S3
 * Amazon EFS
+* Amazon EKS
+* Amazon ECR
+* Amazon VPC
+* Elastic Load Balancing
 * Amazon CloudFront
 * Amazon Route 53
 * AWS Certificate Manager
@@ -149,13 +153,17 @@ These technologies represent tools and services I have practiced through hands-o
 * Overlay Networking
 * Persistent Volumes
 * Kubernetes
+* Amazon EKS
 * MicroK8s
 * kubectl
+* eksctl
+* AWS CLI
 * Kubernetes Pods
 * Kubernetes Deployments
 * ReplicaSets
 * Kubernetes Services
 * ClusterIP Services
+* LoadBalancer Services
 * Labels and Selectors
 * EndpointSlices
 * Kubernetes YAML
@@ -163,7 +171,11 @@ These technologies represent tools and services I have practiced through hands-o
 * Desired-State Reconciliation
 * Self-Healing Workloads
 * Kubernetes Scaling
+* Horizontal Pod Autoscaling
+* Kubernetes Metrics Server
+* Resource Requests and Limits
 * Rolling Updates
+* Managed Node Groups
 * Multi-Tier Applications
 * Application-to-Database Communication
 * Kubernetes Troubleshooting
@@ -190,7 +202,107 @@ These technologies represent tools and services I have practiced through hands-o
 
 These are the projects where I get to build things, troubleshoot them, figure out why they broke, and occasionally wonder why I thought making the architecture more complicated was a good idea. 😅
 
-## ✨ ☸️ WordPress + MySQL Multi-Tier Application on Kubernetes
+## ✨ ☁️☸️ Amazon EKS Deployment
+
+***I put Kubernetes on AWS. Then I started deleting Pods. ☸️😈***
+
+Moved my Kubernetes learning from a local environment into AWS by building, deploying, scaling, monitoring, updating, and troubleshooting a containerized application on Amazon Elastic Kubernetes Service (EKS).
+
+Rather than stopping after getting a workload running, I followed the complete path from local application code to Docker, Amazon ECR, Kubernetes, AWS load balancing, autoscaling, and CloudWatch.
+
+The project included:
+
+* Amazon EKS
+* Kubernetes 1.36
+* Amazon EC2
+* Amazon ECR
+* Amazon VPC
+* Elastic Load Balancing
+* Amazon CloudWatch
+* eksctl
+* kubectl
+* AWS CLI
+* Linux / WSL
+* Docker
+* nginx
+* Managed node groups
+* Two Availability Zones
+* Private worker networking
+* Kubernetes Deployments
+* ReplicaSets
+* LoadBalancer Services
+* Resource requests and limits
+* Kubernetes Metrics Server
+* Horizontal Pod Autoscaling
+* Manual Pod scaling
+* Desired-state reconciliation
+* Pod self-healing
+* Rolling updates
+* Versioned container images
+* EKS API and audit logging
+* Resource cleanup and lifecycle management
+
+I created the EKS cluster using `eksctl` with a managed node group containing two `t3.medium` EC2 worker nodes distributed across two Availability Zones and configured with private networking.
+
+The application started with three nginx Pods managed through a Kubernetes Deployment and ReplicaSet. A Service of type `LoadBalancer` connected the Kubernetes workload to AWS load-balancing infrastructure and provided an externally reachable application endpoint.
+
+I then created a custom HTML/CSS application, packaged it into a Docker image, and pushed the versioned image to a private Amazon ECR repository.
+
+The release path became:
+
+```text
+Application Source
+      ↓
+Docker Build
+      ↓
+Image Tag
+      ↓
+Amazon ECR
+      ↓
+EKS Deployment
+      ↓
+ReplicaSet
+      ↓
+Application Pods
+```
+
+To test desired-state reconciliation, I deliberately deleted a running application Pod.
+
+The ReplicaSet detected that the actual state no longer matched the desired state and immediately created a replacement while the application remained available through the load balancer.
+
+I manually scaled the Deployment from three Pods to six and observed that the existing EC2 worker nodes had enough capacity to schedule the additional workloads.
+
+That helped reinforce an important distinction:
+
+```text
+Pod Scaling
+     ≠
+Node Scaling
+```
+
+I then installed Kubernetes Metrics Server and used `kubectl top` to inspect actual node and Pod CPU and memory consumption.
+
+A Horizontal Pod Autoscaler was configured with a minimum of three replicas, maximum of six replicas, and a 50% CPU target. After generating synthetic CPU load, the HPA automatically increased the application from three Pods to four. Once the load was removed and utilization dropped, Kubernetes returned the Deployment to its three-Pod baseline.
+
+For AWS-native operational visibility, I enabled EKS API and audit logging and verified the control plane was publishing log streams to Amazon CloudWatch.
+
+Finally, I modified the application, built and pushed a versioned `v2` image to ECR, updated the Deployment, and watched Kubernetes create a new ReplicaSet and perform a rolling update while the public application endpoint remained unchanged.
+
+One of the biggest lessons from this project was seeing where Kubernetes responsibilities end and AWS responsibilities begin.
+
+Kubernetes managed the workloads, desired state, Services, ReplicaSets, rolling updates, and autoscaling.
+
+AWS provided the underlying networking, compute, load balancing, container registry, and operational logging.
+
+Understanding how those layers connect turned EKS from “Kubernetes running somewhere in AWS” into an architecture I could actually follow and troubleshoot.
+
+💻 [View Repository](https://github.com/mandyreed223/amazon-eks-deployment)
+
+📖 [Read on Medium](https://medium.com/@mandymreed/i-put-kubernetes-on-aws-then-i-started-deleting-pods-%EF%B8%8F-6b5d9898773a)
+
+---
+
+## ☸️ WordPress + MySQL Multi-Tier Application on Kubernetes
 
 ***I put WordPress and MySQL on Kubernetes. Then MySQL fought back. ⚔️***
 
@@ -541,6 +653,28 @@ A successful deployment does not automatically mean the application actually wor
 
 Troubleshooting gets easier when I understand how every service connects instead of looking at one component in isolation.
 
+The EKS project extended that path across both Kubernetes and AWS:
+
+```text
+Source Code
+    ↓
+Docker Image
+    ↓
+Amazon ECR
+    ↓
+EKS Deployment
+    ↓
+ReplicaSet
+    ↓
+Pods
+    ↓
+Kubernetes Service
+    ↓
+AWS Load Balancer
+    ↓
+User
+```
+
 ### 🔐 Secure It, Then Prove It
 
 Least privilege is more meaningful when I test the permissions and verify that the application can do exactly what it needs.
@@ -551,11 +685,61 @@ Container orchestration became much easier to understand when I deliberately sta
 
 Docker Swarm introduced me to desired-state recovery by replacing containers and rescheduling tasks.
 
-Kubernetes took that concept further by letting me watch a Deployment, ReplicaSet, and Pods work together to maintain the number and configuration of workloads I declared.
+My local Kubernetes projects let me watch Deployments, ReplicaSets, and Pods work together to maintain the number and configuration of workloads I declared.
 
-If the actual state no longer matches the desired state, the orchestrator should recognize it and respond.
+Amazon EKS showed that the same Kubernetes concepts still apply when those workloads are running on AWS infrastructure.
 
-Watching that happen is a much better lesson than simply reading about it.
+Deleting an EKS Pod did not require me to repair the application manually. The ReplicaSet recognized that reality no longer matched the desired state and restored the missing workload while the application remained available.
+
+### ☁️ Kubernetes and AWS Operate at Different Layers
+
+One of the biggest lessons from the EKS project was understanding where Kubernetes responsibilities end and AWS responsibilities begin.
+
+Kubernetes managed Deployments, ReplicaSets, Pods, Services, desired state, rolling updates, and Horizontal Pod Autoscaling.
+
+AWS provided the underlying EC2 compute, VPC networking, load balancing, ECR image storage, EKS managed infrastructure, and CloudWatch logging.
+
+Neither layer exists in isolation.
+
+Understanding how the two layers connect made the environment much easier to reason about and troubleshoot.
+
+### 📈 Pods and Nodes Are Different Scaling Layers
+
+Scaling an application does not automatically mean scaling the infrastructure underneath it.
+
+When I manually increased the EKS Deployment from three Pods to six, Kubernetes scheduled the additional workloads onto the existing two worker nodes because sufficient capacity was still available.
+
+That reinforced an important distinction:
+
+**Pod scaling and node scaling solve different problems.**
+
+The Horizontal Pod Autoscaler then added another layer by adjusting application replicas automatically based on CPU utilization.
+
+### 📊 Resource Requests Affect More Than Scheduling
+
+CPU and memory requests help Kubernetes make scheduling decisions, but the EKS project showed me that resource requests can influence other Kubernetes behavior too.
+
+The HPA evaluated CPU utilization relative to the CPU request defined for each application Pod.
+
+That made resource configuration part of the autoscaling story rather than simply a manifest setting.
+
+### 🔄 Services Give Workloads a Stable Front Door
+
+Pods are replaceable.
+
+During self-healing, scaling, and rolling updates, the individual application Pods changed while the external application endpoint remained stable.
+
+The Kubernetes Service separated the application's network identity from the lifecycle of individual Pods, while AWS supplied the external load-balancing infrastructure.
+
+### 📦 Versioned Images Make Releases Easier to Understand
+
+Building separate `v1` and `v2` application images reinforced why container versions matter.
+
+Instead of overwriting an existing image, I could push a new version to ECR, update the Kubernetes Deployment, watch a new ReplicaSet appear, and observe Kubernetes perform the rolling update.
+
+The application changed.
+
+The public endpoint did not.
 
 ### 🧩 Labels Create Relationships
 
@@ -587,7 +771,7 @@ Adding stateful applications such as WordPress and MySQL forced me to think beyo
 
 A container problem is not always a Docker problem, and a Kubernetes problem is not always a Pod problem.
 
-Troubleshooting these projects has crossed containers, orchestration, Linux, AWS Security Groups, networking, memory, storage, SSH, Services, application configuration, databases, and the applications themselves.
+Troubleshooting these projects has crossed containers, orchestration, Linux, AWS Security Groups, networking, memory, storage, SSH, Services, application configuration, databases, load balancing, resource utilization, cloud infrastructure, and the applications themselves.
 
 Understanding the entire path matters.
 
@@ -603,6 +787,10 @@ Rebuilding my Docker + Apache project changed the questions I was asking. Instea
 
 Building cloud resources is fun. Knowing how to safely tear them down is part of understanding the full lifecycle.
 
+The EKS project reinforced this because the environment created billable AWS resources across EKS, EC2, load balancing, ECR, and CloudWatch.
+
+Cleanup was not complete until the resources were removed and the environment was verified.
+
 ---
 
 # ✍️ Project Stories & Technical Writing
@@ -612,6 +800,18 @@ Building the project is only half the story.
 I also document what happened along the way: the troubleshooting, mistakes, lessons learned, and occasional **“why is THAT happening?”** moments. 😅
 
 These articles focus less on simply listing technologies and more on explaining what I built, what went wrong, how I troubleshot it, and what I learned from the experience.
+
+## ☁️☸️ Amazon EKS Deployment
+
+***I Put Kubernetes on AWS. Then I Started Deleting Pods. ☸️😈***
+
+My first Amazon EKS project moved Kubernetes from my local environment into AWS and connected several technologies I had previously practiced separately.
+
+I built an EKS cluster, deployed and exposed a containerized application, stored versioned images in Amazon ECR, tested Pod self-healing, manually scaled workloads, configured Horizontal Pod Autoscaling, inspected resource metrics, enabled EKS control-plane logging in CloudWatch, and released an updated application through a rolling deployment.
+
+More importantly, the project helped me understand how Kubernetes and AWS operate at different layers while still forming one complete application path.
+
+📖 [Read on Medium](https://medium.com/@mandymreed/i-put-kubernetes-on-aws-then-i-started-deleting-pods-%EF%B8%8F-6b5d9898773a)
 
 ## ☸️ WordPress + MySQL on Kubernetes
 
@@ -687,7 +887,21 @@ A walkthrough of a multilingual AWS pipeline using Amazon Transcribe, Translate,
 
 Terraform, Docker Swarm, and Kubernetes have officially graduated from **“things I need to learn”** to **“things I've built with.”** 🎓😅
 
-Kubernetes in particular has progressed from learning the individual building blocks to using those building blocks together in a multi-tier application.
+Kubernetes in particular has now progressed through several layers of hands-on learning:
+
+```text
+Kubernetes Fundamentals
+        ↓
+Multi-Tier Application
+        ↓
+Application Troubleshooting
+        ↓
+Amazon EKS
+        ↓
+Cloud-Hosted Kubernetes
+```
+
+Moving Kubernetes into AWS helped connect my existing cloud experience with the container orchestration concepts I had been practicing locally.
 
 My next areas of focus include:
 
@@ -695,12 +909,15 @@ My next areas of focus include:
 * Cloud security
 * Monitoring and alerting
 * Site Reliability Engineering
+* Kubernetes observability
+* Kubernetes configuration and secrets management
+* Deployment automation
 
 Kubernetes is not disappearing from the roadmap.
 
-The Fundamentals project established the foundation, and the WordPress + MySQL multi-tier project gave me the opportunity to use that foundation in a more application-like architecture.
+The Fundamentals project established the foundation, the WordPress + MySQL project expanded that foundation into a multi-tier application, and Amazon EKS moved those concepts into AWS-managed infrastructure with cloud networking, load balancing, ECR, autoscaling, monitoring, and versioned application releases.
 
-Future Kubernetes work can continue building from there through cloud-hosted Kubernetes, observability, configuration and secrets management, deployment automation, and more advanced application architectures.
+Future Kubernetes work can build from there through deeper observability, configuration and secrets management, deployment automation, and more advanced cloud-native application architectures.
 
 As I complete hands-on projects in these areas, they will continue making their way into the portfolio.
 
@@ -712,7 +929,7 @@ I have 18 years of experience supporting users in enterprise IT environments and
 
 My background includes technical support, troubleshooting, customer service, documentation, incident management, problem-solving, and supporting business-critical technology.
 
-I am expanding that experience into cloud engineering through hands-on projects involving AWS, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, Kubernetes, multi-tier applications, container orchestration, Amazon EFS, Jenkins, automation, monitoring, CI/CD, serverless technologies, and cloud operations.
+I am expanding that experience into cloud engineering through hands-on projects involving AWS, Amazon EKS, Amazon ECR, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, Kubernetes, multi-tier applications, container orchestration, Amazon EFS, Jenkins, automation, monitoring, CI/CD, serverless technologies, autoscaling, and cloud operations.
 
 The technologies are changing, but one part has stayed very familiar:
 
@@ -750,10 +967,9 @@ Future improvements may include:
 * Automated portfolio deployment with GitHub Actions
 * Terraform-managed portfolio infrastructure
 * Microsoft Azure projects
-* Cloud-hosted Kubernetes
-* Kubernetes observability
+* Deeper Kubernetes observability
 * Kubernetes configuration and secrets management
-* Deployment automation
+* Kubernetes deployment automation
 * Additional monitoring and alerting
 * New cloud architecture visualizations
 * More hands-on cloud and DevOps projects
@@ -774,6 +990,6 @@ Future improvements may include:
 
 ## 👩‍💻 Mandy Reed
 
-Enterprise IT professional building hands-on cloud and DevOps engineering experience through AWS, Terraform, Infrastructure as Code, Linux, Docker, Kubernetes, container orchestration, persistent storage, automation, troubleshooting, and technical writing.
+Enterprise IT professional building hands-on cloud and DevOps engineering experience through AWS, Amazon EKS, Terraform, Infrastructure as Code, Linux, Docker, Kubernetes, container orchestration, persistent storage, autoscaling, monitoring, automation, troubleshooting, and technical writing.
 
 ☁️ **Build it. Troubleshoot it. Understand it. Then build something harder.** 🚀

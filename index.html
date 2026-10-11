@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Mandy Reed's cloud engineering portfolio featuring hands-on AWS, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, Kubernetes, multi-tier applications, container orchestration, Amazon EFS, Jenkins, GitHub Actions, CI/CD, automation, IAM, DNS, HTTPS, and cloud troubleshooting projects.">
+          content="Mandy Reed's cloud engineering portfolio featuring hands-on AWS, Amazon EKS, Amazon ECR, Terraform, Infrastructure as Code, Linux, Docker, Kubernetes, multi-tier applications, container orchestration, autoscaling, monitoring, Jenkins, GitHub Actions, CI/CD, automation, IAM, DNS, HTTPS, and cloud troubleshooting projects.">
 
     <title>Mandy Reed | Cloud Engineering Portfolio</title>
 
@@ -35,7 +35,7 @@
         </p>
 
         <p class="hero-subtitle">
-            AWS • Terraform • Linux • Docker • Kubernetes • Container Orchestration • Jenkins • GitHub Actions • CI/CD • Cloud Troubleshooting
+            AWS • Amazon EKS • Terraform • Linux • Docker • Kubernetes • Container Orchestration • GitHub Actions • CI/CD • Cloud Troubleshooting
         </p>
 
         <a href="#projects" class="button">
@@ -60,9 +60,9 @@
 
         <p>
             I am expanding that experience into cloud engineering through hands-on
-            projects using AWS, Terraform, Infrastructure as Code, Linux, Docker,
-            Docker Swarm, Kubernetes, multi-tier applications, Jenkins, GitHub Actions,
-            automation, monitoring, and CI/CD.
+            projects using AWS, Amazon EKS, Amazon ECR, Terraform, Infrastructure as Code,
+            Linux, Docker, Docker Swarm, Kubernetes, multi-tier applications, Jenkins,
+            GitHub Actions, automation, monitoring, autoscaling, and CI/CD.
         </p>
 
         <p>
@@ -104,6 +104,10 @@
             <span>EC2</span>
             <span>S3</span>
             <span>Amazon EFS</span>
+            <span>Amazon EKS</span>
+            <span>Amazon ECR</span>
+            <span>Amazon VPC</span>
+            <span>Elastic Load Balancing</span>
             <span>CloudFront</span>
             <span>Route 53</span>
             <span>AWS Certificate Manager</span>
@@ -135,18 +139,27 @@
             <span>Persistent Volumes</span>
 
             <span class="k8s-skill">Kubernetes</span>
+            <span class="k8s-skill">Amazon EKS</span>
             <span class="k8s-skill">MicroK8s</span>
             <span class="k8s-skill">kubectl</span>
+            <span class="k8s-skill">eksctl</span>
             <span class="k8s-skill">Kubernetes Pods</span>
             <span class="k8s-skill">Kubernetes Deployments</span>
             <span class="k8s-skill">ReplicaSets</span>
             <span class="k8s-skill">Kubernetes Services</span>
             <span class="k8s-skill">ClusterIP Services</span>
+            <span class="k8s-skill">LoadBalancer Services</span>
             <span class="k8s-skill">Labels & Selectors</span>
             <span class="k8s-skill">EndpointSlices</span>
             <span class="k8s-skill">Kubernetes YAML</span>
             <span class="k8s-skill">Desired-State Reconciliation</span>
+            <span class="k8s-skill">Self-Healing Workloads</span>
+            <span class="k8s-skill">Kubernetes Scaling</span>
+            <span class="k8s-skill">Horizontal Pod Autoscaling</span>
+            <span class="k8s-skill">Metrics Server</span>
+            <span class="k8s-skill">Resource Requests & Limits</span>
             <span class="k8s-skill">Rolling Updates</span>
+            <span class="k8s-skill">Managed Node Groups</span>
             <span class="k8s-skill">Multi-Tier Applications</span>
             <span class="k8s-skill">Application-to-Database Communication</span>
             <span class="k8s-skill">Kubernetes Troubleshooting</span>
@@ -154,6 +167,7 @@
             <span>MySQL</span>
             <span>Jenkins</span>
             <span>Dockerfile</span>
+            <span>AWS CLI</span>
             <span>Git</span>
             <span>GitHub</span>
             <span>GitHub Actions</span>
@@ -175,18 +189,19 @@
             <span>Cloud Security</span>
             <span>Monitoring and Alerting</span>
             <span>Site Reliability Engineering</span>
+            <span>Kubernetes Observability</span>
+            <span>Deployment Automation</span>
 
         </div>
 
         <p>
-            Kubernetes has officially moved from something I was preparing to learn
-            to something I am actively building with. ☸️ After starting with the
-            fundamentals, I expanded into a multi-tier WordPress and MySQL application
-            to practice workload communication, Services, persistent data, and
-            whole-path troubleshooting. I am continuing to expand my cloud and DevOps
-            skills through projects, with upcoming focus areas including Microsoft
-            Azure, cloud security, monitoring and alerting, and Site Reliability
-            Engineering.
+            Kubernetes has progressed from learning individual resources locally,
+            to building a multi-tier application, to deploying and operating workloads
+            on Amazon EKS. ☸️☁️ Moving Kubernetes into AWS helped connect the orchestration
+            concepts I had been practicing with cloud networking, compute, load balancing,
+            container registries, autoscaling, and monitoring. I am continuing to expand
+            those skills while moving into Microsoft Azure, deeper observability,
+            cloud security, deployment automation, and Site Reliability Engineering.
         </p>
 
     </section>
@@ -273,12 +288,45 @@
         </p>
 
 
-        <!-- KUBERNETES MULTI-TIER APPLICATION -->
+        <!-- AMAZON EKS DEPLOYMENT -->
         <div class="project-card featured-project">
 
             <div class="project-badge">
                 ✨ Newest Project
             </div>
+
+            <h3>☁️☸️ Amazon EKS Deployment</h3>
+
+            <p class="story-hook">
+                I put Kubernetes on AWS. Then I started deleting Pods. ☸️😈
+            </p>
+
+            <p>
+                Moved my Kubernetes learning from a local environment into AWS by
+                deploying and operating a containerized application on Amazon EKS.
+                Built a managed EKS cluster with private EC2 worker nodes across two
+                Availability Zones, pushed versioned Docker images to Amazon ECR,
+                exposed the application through a Kubernetes LoadBalancer Service,
+                and tested scaling, self-healing, and rolling updates. Added resource
+                requests and limits, Metrics Server, and Horizontal Pod Autoscaling,
+                then generated CPU load to watch the application automatically scale.
+                Enabled EKS API and audit logging in CloudWatch to add AWS-native
+                operational visibility and followed the complete path between
+                Kubernetes workloads and the AWS infrastructure underneath them.
+            </p>
+
+            <a href="https://github.com/mandyreed223/amazon-eks-deployment"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="project-button">
+                View Repository
+            </a>
+
+        </div>
+
+
+        <!-- KUBERNETES MULTI-TIER APPLICATION -->
+        <div class="project-card">
 
             <h3>☸️ WordPress + MySQL Multi-Tier Application on Kubernetes</h3>
 
@@ -706,6 +754,8 @@
                 <p>
                     Troubleshooting gets easier when I understand how every
                     service connects instead of looking at one component in isolation.
+                    EKS extended that path across Docker, ECR, Kubernetes workloads,
+                    Services, AWS load balancing, compute, networking, and monitoring.
                 </p>
 
             </div>
@@ -738,9 +788,47 @@
                 <p>
                     Orchestration became much easier to understand when I deliberately
                     removed workloads and watched the platform reconcile actual state
-                    back to desired state. Docker Swarm introduced the idea, and
-                    Kubernetes let me explore it through Deployments, ReplicaSets,
-                    Pods, scaling, and declarative configuration.
+                    back to desired state. Docker Swarm introduced the idea, local
+                    Kubernetes expanded it, and Amazon EKS proved those same Kubernetes
+                    behaviors continue when the workloads move into AWS.
+                </p>
+
+            </div>
+
+
+            <div class="lesson-card">
+
+                <div class="lesson-icon">
+                    ☁️
+                </div>
+
+                <h3>Kubernetes and AWS Operate at Different Layers</h3>
+
+                <p>
+                    EKS helped make the boundary much clearer. Kubernetes manages
+                    workloads, desired state, Services, rolling updates, and Pod
+                    autoscaling, while AWS provides the compute, networking, load
+                    balancing, container registry, managed control plane, and logging
+                    underneath it. Understanding both layers makes the complete
+                    application path easier to troubleshoot.
+                </p>
+
+            </div>
+
+
+            <div class="lesson-card">
+
+                <div class="lesson-icon">
+                    📈
+                </div>
+
+                <h3>Pod Scaling Is Not Node Scaling</h3>
+
+                <p>
+                    Scaling a Deployment changes the number of application Pods,
+                    not automatically the number of EC2 worker nodes. EKS reinforced
+                    that application scaling and infrastructure scaling are separate
+                    layers that solve different capacity problems.
                 </p>
 
             </div>
@@ -809,7 +897,9 @@
 
                 <p>
                     Building cloud resources is fun. Knowing how to safely tear
-                    them down is part of understanding the full lifecycle.
+                    them down is part of understanding the full lifecycle, especially
+                    when an environment includes EKS, EC2, load balancing, ECR,
+                    and CloudWatch resources.
                 </p>
 
             </div>
@@ -829,6 +919,31 @@
             along the way: the troubleshooting, mistakes, lessons learned, and occasional
             “why is THAT happening?” moments. 😅
         </p>
+
+
+        <!-- AMAZON EKS ARTICLE -->
+        <div class="article-card">
+
+            <h3>
+                ☁️☸️ I Put Kubernetes on AWS. Then I Started Deleting Pods. ☸️😈
+            </h3>
+
+            <p>
+                My first Amazon EKS project moved Kubernetes from a local environment
+                into AWS and connected container images, Amazon ECR, Kubernetes workloads,
+                AWS load balancing, resource metrics, Horizontal Pod Autoscaling,
+                CloudWatch logging, rolling updates, and self-healing into one complete
+                cloud-hosted application path.
+            </p>
+
+            <a href="https://medium.com/@mandymreed/i-put-kubernetes-on-aws-then-i-started-deleting-pods-%EF%B8%8F-6b5d9898773a"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="project-button">
+                Read on Medium
+            </a>
+
+        </div>
 
 
         <!-- KUBERNETES MULTI-TIER ARTICLE -->
