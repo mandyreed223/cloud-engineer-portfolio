@@ -60,7 +60,7 @@ Building this portfolio has given me hands-on experience with:
 * Deployment troubleshooting
 * Technical documentation
 
-The portfolio has continued to grow alongside my technical skills and now showcases work involving AWS, Amazon EKS, Amazon ECR, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, Kubernetes, multi-tier applications, container orchestration, Amazon EFS, Jenkins, CI/CD, automation, IAM, serverless technologies, persistent storage, container networking, image versioning, desired-state reconciliation, autoscaling, monitoring, and cloud troubleshooting.
+The portfolio has continued to grow alongside my technical skills and now showcases work involving AWS, Amazon EKS, Amazon ECR, Amazon EC2, Amazon VPC, Elastic Load Balancing, EC2 Auto Scaling, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, Kubernetes, multi-tier applications, container orchestration, Amazon EFS, Jenkins, CI/CD, automation, IAM, AWS Systems Manager, serverless technologies, persistent storage, container networking, image versioning, desired-state reconciliation, autoscaling, monitoring, highly available architectures, and cloud troubleshooting.
 
 My goal is not simply to show which technologies I have used.
 
@@ -122,6 +122,15 @@ These technologies represent tools and services I have practiced through hands-o
 * Amazon ECR
 * Amazon VPC
 * Elastic Load Balancing
+* Application Load Balancer
+* EC2 Auto Scaling
+* Launch Templates
+* Target Groups
+* AWS Systems Manager
+* NAT Gateway
+* Internet Gateway
+* Route Tables
+* Security Groups
 * Amazon CloudFront
 * Amazon Route 53
 * AWS Certificate Manager
@@ -140,6 +149,12 @@ These technologies represent tools and services I have practiced through hands-o
 
 * Terraform
 * Infrastructure as Code
+* Terraform Resource References
+* Terraform Remote State
+* S3 State Versioning
+* Terraform State Locking
+* Launch Template Versioning
+* EC2 Instance Refresh
 * Linux
 * Docker
 * Docker Compose
@@ -202,7 +217,347 @@ These technologies represent tools and services I have practiced through hands-o
 
 These are the projects where I get to build things, troubleshoot them, figure out why they broke, and occasionally wonder why I thought making the architecture more complicated was a good idea. 😅
 
-## ✨ ☁️☸️ Amazon EKS Deployment
+## ✨ 🏗️ Terraform Auto Scaling Web Application on AWS
+
+***I built an Auto Scaling architecture with Terraform. Then one tiny space broke everything. 😅***
+
+Built a highly available AWS web application with Terraform using an Application Load Balancer, Auto Scaling Group, private EC2 instances across multiple Availability Zones, secure administration through AWS Systems Manager Session Manager, and an encrypted S3 remote backend for Terraform state.
+
+The project included:
+
+* Terraform
+* Infrastructure as Code
+* Custom Amazon VPC
+* Two Availability Zones
+* Two public subnets
+* Two private subnets
+* Internet Gateway
+* NAT Gateway
+* Public and private route tables
+* Application Load Balancer
+* Target Group with HTTP health checks
+* EC2 Auto Scaling
+* EC2 Launch Template
+* Amazon EC2
+* Amazon Linux 2023
+* Apache HTTP Server
+* Security group-to-security group access
+* IAM instance profile
+* AWS Systems Manager Session Manager
+* EC2 User Data
+* Amazon S3 remote Terraform state
+* S3 state versioning
+* Server-side encryption
+* S3 public access blocking
+* Terraform state locking
+* Launch Template versioning
+* Auto Scaling Instance Refresh
+* Self-healing infrastructure
+* Infrastructure troubleshooting
+* Resource cleanup and lifecycle management
+
+The architecture separated the public-facing load-balancing layer from the application compute layer.
+
+```text
+User
+  ↓
+ALB DNS Name
+  ↓
+Application Load Balancer
+  ↓
+Target Group :80
+  ↓
+Auto Scaling Group
+  ↓
+Private EC2 Apache Web Servers
+```
+
+The internet-facing Application Load Balancer spans two public subnets while the EC2 instances run in private subnets across two Availability Zones.
+
+The EC2 instances do not receive public IP addresses.
+
+For outbound connectivity, the private instances follow this path:
+
+```text
+Private EC2
+     ↓
+Private Route Table
+     ↓
+NAT Gateway
+     ↓
+Public Subnet
+     ↓
+Internet Gateway
+     ↓
+Internet
+```
+
+That allows the instances to install packages and reach external services without exposing them directly to inbound internet traffic.
+
+The security design also separates the public and private layers.
+
+The Application Load Balancer accepts HTTP traffic from the internet, while the EC2 security group allows port 80 only from the ALB security group.
+
+```text
+Internet
+   ↓
+ALB Security Group
+   ↓
+Application Load Balancer
+   ↓
+EC2 Security Group
+   ↓
+Apache
+```
+
+One of my main goals with this project was strengthening my understanding of Terraform resource linkage.
+
+Instead of thinking of each Terraform resource as an isolated block, I followed the values passed between them.
+
+For example:
+
+```hcl
+resource "aws_security_group" "ec2" {
+  vpc_id = aws_vpc.main.id
+}
+```
+
+AWS assigns the VPC an actual ID after Terraform creates it.
+
+Terraform exposes that value through:
+
+```hcl
+aws_vpc.main.id
+```
+
+That value can then flow into another resource.
+
+The same pattern connects the rest of the architecture:
+
+```text
+VPC
+ ↓
+Subnets + Security Groups + Target Group
+
+Public Subnets
+ ↓
+Application Load Balancer
+
+Private Subnets
+ ↓
+Auto Scaling Group
+
+Launch Template
+ ↓
+Auto Scaling Group
+
+Target Group
+ ↓
+Auto Scaling Group + ALB Listener
+
+IAM Role
+ ↓
+Instance Profile
+ ↓
+Launch Template
+ ↓
+EC2
+```
+
+Those references also create implicit dependencies that help Terraform determine the correct resource creation order.
+
+The Auto Scaling Group was configured with:
+
+```text
+Minimum: 2
+Desired: 2
+Maximum: 5
+```
+
+It launches application instances across both private subnets and maintains two instances during normal operation.
+
+Then the project turned into a much more valuable troubleshooting exercise. 😅
+
+Terraform completed successfully and the Auto Scaling Group launched EC2 instances, but the Application Load Balancer Target Group reported:
+
+```text
+unhealthy
+Target.FailedHealthChecks
+```
+
+Terraform had successfully created the infrastructure.
+
+That did not mean the application was healthy.
+
+Instead of immediately changing resources, I followed the request path:
+
+```text
+Browser
+   ↓
+Application Load Balancer
+   ↓
+ALB Security Group
+   ↓
+Target Group
+   ↓
+EC2 Security Group
+   ↓
+Apache
+```
+
+The security groups were correct.
+
+The instances were in the expected private subnets.
+
+The NAT Gateway and route tables provided the expected outbound path.
+
+Meanwhile, the Auto Scaling Group kept terminating unhealthy instances and launching replacements.
+
+That revealed an important distinction:
+
+**Auto Scaling was not broken. It was correctly reacting to unhealthy instances.**
+
+But every replacement instance received the same Launch Template configuration.
+
+```text
+Launch Instance
+      ↓
+Application Unhealthy
+      ↓
+ELB Health Check Fails
+      ↓
+ASG Terminates Instance
+      ↓
+ASG Launches Replacement
+      ↓
+Replacement Receives Same Configuration
+      ↓
+Failure Repeats
+```
+
+Replacing infrastructure does not fix a bad launch configuration.
+
+Because the EC2 instances were intentionally private and did not allow SSH, I added AWS Systems Manager access through Terraform rather than opening port 22.
+
+The management path became:
+
+```text
+IAM Role
+   ↓
+AmazonSSMManagedInstanceCore
+   ↓
+IAM Instance Profile
+   ↓
+Launch Template
+   ↓
+EC2
+   ↓
+Systems Manager Session Manager
+```
+
+That allowed secure access without a public IP, inbound SSH, or an SSH key pair.
+
+Once connected, I discovered Apache had never been installed.
+
+The cloud-init logs then pointed toward the EC2 User Data script.
+
+The root cause?
+
+A single leading space before:
+
+```bash
+#!/bin/bash
+```
+
+That tiny formatting problem created the complete failure chain:
+
+```text
+User Data Fails
+      ↓
+Apache Never Installs
+      ↓
+Nothing Listens on Port 80
+      ↓
+ALB Health Check Fails
+      ↓
+Instance Becomes Unhealthy
+      ↓
+ASG Replaces Instance
+      ↓
+Replacement Receives Same Broken User Data
+      ↓
+Cycle Repeats
+```
+
+To fix the problem, I moved the bootstrap logic into a standalone `user_data.sh` file and loaded it through Terraform:
+
+```hcl
+user_data = base64encode(file("${path.module}/user_data.sh"))
+```
+
+The corrected configuration created Launch Template version 3.
+
+Because creating a new Launch Template version does not automatically replace existing EC2 instances, I initiated an Auto Scaling Instance Refresh.
+
+The refresh gradually replaced the existing instances with instances using the corrected Launch Template.
+
+Both instances eventually became healthy and `InService`, and the application loaded successfully through the ALB.
+
+🟢 Green Means GO!
+
+I then deliberately terminated one healthy EC2 instance to test Auto Scaling self-healing.
+
+```text
+Desired Capacity = 2
+
+One Instance Terminated
+        ↓
+Actual Capacity = 1
+        ↓
+ASG Detects Capacity Mismatch
+        ↓
+Replacement EC2 Launched
+        ↓
+Replacement Enters InService
+        ↓
+ALB Health Checks Pass
+        ↓
+Healthy Capacity = 2
+```
+
+The Auto Scaling Group restored desired capacity without manual intervention.
+
+Finally, I migrated Terraform state from the local machine into an encrypted Amazon S3 remote backend with versioning, public access blocking, and state locking.
+
+After migration, I ran `terraform plan` again.
+
+Terraform read the remote state from S3, refreshed the real AWS resources, compared them with the configuration, and returned:
+
+```text
+No changes. Your infrastructure matches the configuration.
+```
+
+That confirmed the complete relationship:
+
+```text
+Terraform Configuration
+        ↓
+S3 Remote State
+        ↓
+Real AWS Infrastructure
+        ↓
+No Differences
+        ↓
+🟢 GMG
+```
+
+💻 [View Repository](https://github.com/mandyreed223/terraform-asg-deployment)
+
+📖 [Read on Medium](https://medium.com/@mandymreed/%EF%B8%8F-i-built-an-auto-scaling-architecture-with-terraform-then-one-tiny-space-broke-everything-c1f29147dcd5)
+
+---
+
+## ☁️☸️ Amazon EKS Deployment
 
 ***I put Kubernetes on AWS. Then I started deleting Pods. ☸️😈***
 
@@ -649,11 +1004,53 @@ The technical skills matter, but some of the best lessons happen somewhere betwe
 
 A successful deployment does not automatically mean the application actually works. I validate the environment and prove the application works too.
 
+The Terraform Auto Scaling project reinforced this at the infrastructure layer.
+
+A successful `terraform apply` meant Terraform had created the requested AWS resources. It did not prove that User Data executed successfully, Apache installed, the Target Group considered the instances healthy, or the load balancer could serve the application.
+
+### 🔗 Infrastructure Is a Chain of References
+
+Terraform became much easier to understand when I stopped thinking about resources as isolated blocks and started following the values moving between them.
+
+The VPC provides an ID used by subnets, Security Groups, and the Target Group.
+
+Subnet IDs determine where the load balancer and Auto Scaling instances are placed.
+
+The Target Group connects the application fleet to the load balancer.
+
+The Launch Template defines how new EC2 instances should be created.
+
+The Auto Scaling Group references the Launch Template, private subnets, and Target Group to turn those individual resources into a working architecture.
+
+Those references are what connect Terraform resources into a system.
+
 ### 🔎 Follow the Entire Path
 
 Troubleshooting gets easier when I understand how every service connects instead of looking at one component in isolation.
 
-The EKS project extended that path across both Kubernetes and AWS:
+The Terraform Auto Scaling project created another complete troubleshooting path:
+
+```text
+Terraform
+    ↓
+AWS Infrastructure
+    ↓
+Launch Template
+    ↓
+EC2 Instance
+    ↓
+User Data
+    ↓
+Apache
+    ↓
+Target Group
+    ↓
+Application Load Balancer
+    ↓
+User
+```
+
+The EKS project extended that same whole-path thinking across both Kubernetes and AWS:
 
 ```text
 Source Code
@@ -675,9 +1072,29 @@ AWS Load Balancer
 User
 ```
 
+### 🧩 Tiny Configuration Errors Can Break Big Architectures
+
+One leading space before `#!/bin/bash` was enough to stop EC2 User Data from working correctly.
+
+The VPC could be correct.
+
+The Auto Scaling Group could be correct.
+
+The Launch Template could successfully create an instance.
+
+The load balancer could exist.
+
+And the application could still fail because the bootstrap process did not execute correctly.
+
+The size of the configuration mistake does not determine the size of its impact.
+
 ### 🔐 Secure It, Then Prove It
 
-Least privilege is more meaningful when I test the permissions and verify that the application can do exactly what it needs.
+Least privilege is more meaningful when I test the permissions and verify that the environment can do exactly what it needs.
+
+The Terraform Auto Scaling project also reinforced that private instances do not automatically require inbound SSH access.
+
+AWS Systems Manager Session Manager gave me secure diagnostic access to the private EC2 instances without adding public IP addresses, opening port 22, or managing SSH keys.
 
 ### ♻️ Desired State Is Something You Can Test
 
@@ -685,11 +1102,17 @@ Container orchestration became much easier to understand when I deliberately sta
 
 Docker Swarm introduced me to desired-state recovery by replacing containers and rescheduling tasks.
 
-My local Kubernetes projects let me watch Deployments, ReplicaSets, and Pods work together to maintain the number and configuration of workloads I declared.
+My local Kubernetes projects let me watch Deployments, ReplicaSets, and Pods work together to maintain the workloads I declared.
 
-Amazon EKS showed that the same Kubernetes concepts still apply when those workloads are running on AWS infrastructure.
+Amazon EKS showed that the same Kubernetes concepts still apply when those workloads run on AWS infrastructure.
 
-Deleting an EKS Pod did not require me to repair the application manually. The ReplicaSet recognized that reality no longer matched the desired state and restored the missing workload while the application remained available.
+The Terraform Auto Scaling project demonstrated desired capacity at the EC2 infrastructure layer.
+
+After I deliberately terminated one healthy instance, the Auto Scaling Group detected that actual capacity no longer matched desired capacity and launched a replacement.
+
+Different technologies, same important idea:
+
+**Define the state you want, then observe how the platform responds when reality changes.**
 
 ### ☁️ Kubernetes and AWS Operate at Different Layers
 
@@ -703,17 +1126,17 @@ Neither layer exists in isolation.
 
 Understanding how the two layers connect made the environment much easier to reason about and troubleshoot.
 
-### 📈 Pods and Nodes Are Different Scaling Layers
+### 📈 Scaling Happens at Different Layers
 
-Scaling an application does not automatically mean scaling the infrastructure underneath it.
+Scaling an application does not always mean scaling the same thing.
 
-When I manually increased the EKS Deployment from three Pods to six, Kubernetes scheduled the additional workloads onto the existing two worker nodes because sufficient capacity was still available.
+In EKS, I manually increased the Deployment from three Pods to six and Kubernetes scheduled those workloads onto the existing worker nodes because sufficient compute capacity was still available.
 
-That reinforced an important distinction:
+The Horizontal Pod Autoscaler added another layer by automatically changing application replicas based on CPU utilization.
 
-**Pod scaling and node scaling solve different problems.**
+The Terraform Auto Scaling project moved the scaling conversation to EC2 infrastructure, where the Auto Scaling Group maintains the desired number of application instances.
 
-The Horizontal Pod Autoscaler then added another layer by adjusting application replicas automatically based on CPU utilization.
+Understanding which layer is scaling makes the behavior much easier to reason about.
 
 ### 📊 Resource Requests Affect More Than Scheduling
 
@@ -723,23 +1146,27 @@ The HPA evaluated CPU utilization relative to the CPU request defined for each a
 
 That made resource configuration part of the autoscaling story rather than simply a manifest setting.
 
-### 🔄 Services Give Workloads a Stable Front Door
+### 🔄 Stable Entry Points Matter
 
-Pods are replaceable.
+Individual workloads are replaceable.
 
-During self-healing, scaling, and rolling updates, the individual application Pods changed while the external application endpoint remained stable.
+During Kubernetes self-healing, scaling, and rolling updates, individual Pods changed while the Kubernetes Service and external application endpoint remained stable.
 
-The Kubernetes Service separated the application's network identity from the lifecycle of individual Pods, while AWS supplied the external load-balancing infrastructure.
+The Terraform Auto Scaling architecture reinforced a similar idea at the EC2 layer.
 
-### 📦 Versioned Images Make Releases Easier to Understand
+Individual EC2 instances could be terminated and replaced while the Application Load Balancer remained the stable public entry point.
 
-Building separate `v1` and `v2` application images reinforced why container versions matter.
+### 📦 Versioning Makes Changes Easier to Understand
 
-Instead of overwriting an existing image, I could push a new version to ECR, update the Kubernetes Deployment, watch a new ReplicaSet appear, and observe Kubernetes perform the rolling update.
+Building separate `v1` and `v2` container images in the EKS project reinforced why application versions matter.
 
-The application changed.
+The Terraform Auto Scaling project applied a similar concept to infrastructure configuration through Launch Template versions.
 
-The public endpoint did not.
+After correcting the User Data script, Terraform created Launch Template version 3.
+
+I then used Instance Refresh to roll the corrected configuration across the Auto Scaling Group.
+
+Versioning made it clear which configuration the replacement instances were actually using.
 
 ### 🧩 Labels Create Relationships
 
@@ -751,15 +1178,15 @@ A Pod can be running and a Service can exist, but if their labels and selectors 
 
 Understanding those relationships made Kubernetes networking much easier to reason about and troubleshoot.
 
-### 🔗 A Healthy Pod Does Not Mean a Healthy Application
+### 🔗 A Healthy Resource Does Not Mean a Healthy Application
 
 The multi-tier Kubernetes project reinforced that troubleshooting cannot stop when individual Pods show `Running`.
 
-WordPress and MySQL may each have workloads in Kubernetes, but the complete application still depends on the relationships between workloads, Services, selectors, configuration, networking, storage, and database connectivity.
+The Terraform Auto Scaling project reinforced the same principle from another direction.
 
-A healthy resource is only one part of a healthy application.
+An EC2 instance can be `running` while the application inside it is completely unusable.
 
-That lesson pushed my troubleshooting from checking individual Kubernetes objects toward following the complete application path.
+Health must be evaluated at the layer that actually matters to the application.
 
 ### 💾 Persistent Data Changes Everything
 
@@ -769,9 +1196,13 @@ Adding stateful applications such as WordPress and MySQL forced me to think beyo
 
 ### 🧩 The Problem May Be Somewhere Else
 
-A container problem is not always a Docker problem, and a Kubernetes problem is not always a Pod problem.
+A container problem is not always a Docker problem.
 
-Troubleshooting these projects has crossed containers, orchestration, Linux, AWS Security Groups, networking, memory, storage, SSH, Services, application configuration, databases, load balancing, resource utilization, cloud infrastructure, and the applications themselves.
+A Kubernetes problem is not always a Pod problem.
+
+An unhealthy EC2 instance in an Auto Scaling architecture is not automatically an Auto Scaling problem.
+
+Troubleshooting these projects has crossed containers, orchestration, Linux, AWS Security Groups, networking, memory, storage, SSH, Systems Manager, Services, application configuration, databases, load balancing, Launch Templates, User Data, resource utilization, cloud infrastructure, and the applications themselves.
 
 Understanding the entire path matters.
 
@@ -787,7 +1218,9 @@ Rebuilding my Docker + Apache project changed the questions I was asking. Instea
 
 Building cloud resources is fun. Knowing how to safely tear them down is part of understanding the full lifecycle.
 
-The EKS project reinforced this because the environment created billable AWS resources across EKS, EC2, load balancing, ECR, and CloudWatch.
+The EKS project reinforced this across EKS, EC2, load balancing, ECR, and CloudWatch.
+
+The Terraform Auto Scaling project reinforced it again across VPC networking, NAT, load balancing, Auto Scaling, EC2, and supporting resources.
 
 Cleanup was not complete until the resources were removed and the environment was verified.
 
@@ -800,6 +1233,18 @@ Building the project is only half the story.
 I also document what happened along the way: the troubleshooting, mistakes, lessons learned, and occasional **“why is THAT happening?”** moments. 😅
 
 These articles focus less on simply listing technologies and more on explaining what I built, what went wrong, how I troubleshot it, and what I learned from the experience.
+
+## 🏗️ Terraform Auto Scaling Architecture on AWS
+
+***I Built an Auto Scaling Architecture with Terraform. Then One Tiny Space Broke Everything.***
+
+Built a highly available AWS web architecture with Terraform using a custom VPC, multi-AZ public and private networking, an Application Load Balancer, private EC2 instances, Launch Templates, and an Auto Scaling Group.
+
+The project became an especially useful troubleshooting exercise when a tiny formatting problem in EC2 User Data prevented the application bootstrap process from working correctly.
+
+Following the complete path led to the root cause, a corrected Launch Template version, an Instance Refresh that rolled the fix across the fleet, and healthy application targets behind the load balancer.
+
+📖 [Read on Medium](https://medium.com/@mandymreed/%EF%B8%8F-i-built-an-auto-scaling-architecture-with-terraform-then-one-tiny-space-broke-everything-c1f29147dcd5)
 
 ## ☁️☸️ Amazon EKS Deployment
 
@@ -887,7 +1332,7 @@ A walkthrough of a multilingual AWS pipeline using Amazon Transcribe, Translate,
 
 Terraform, Docker Swarm, and Kubernetes have officially graduated from **“things I need to learn”** to **“things I've built with.”** 🎓😅
 
-Kubernetes in particular has now progressed through several layers of hands-on learning:
+My Kubernetes learning has progressed through several layers of hands-on work:
 
 ```text
 Kubernetes Fundamentals
@@ -898,10 +1343,30 @@ Application Troubleshooting
         ↓
 Amazon EKS
         ↓
-Cloud-Hosted Kubernetes
+Cloud-Native Operations
 ```
 
 Moving Kubernetes into AWS helped connect my existing cloud experience with the container orchestration concepts I had been practicing locally.
+
+Terraform has followed its own progression:
+
+```text
+Terraform Fundamentals
+        ↓
+Individual AWS Resources
+        ↓
+Jenkins on AWS
+        ↓
+Resource Linkage
+        ↓
+Multi-AZ Auto Scaling Architecture
+        ↓
+Infrastructure Operations
+```
+
+My earlier Terraform work focused on automating individual AWS workloads and learning the basics of Infrastructure as Code.
+
+The Auto Scaling project expanded that experience into an architecture where VPC networking, public and private subnets, load balancing, Launch Templates, Auto Scaling, IAM, Systems Manager, application bootstrapping, and remote Terraform state all had to work together.
 
 My next areas of focus include:
 
@@ -912,12 +1377,15 @@ My next areas of focus include:
 * Kubernetes observability
 * Kubernetes configuration and secrets management
 * Deployment automation
+* Deeper Terraform architecture and automation
 
 Kubernetes is not disappearing from the roadmap.
 
 The Fundamentals project established the foundation, the WordPress + MySQL project expanded that foundation into a multi-tier application, and Amazon EKS moved those concepts into AWS-managed infrastructure with cloud networking, load balancing, ECR, autoscaling, monitoring, and versioned application releases.
 
-Future Kubernetes work can build from there through deeper observability, configuration and secrets management, deployment automation, and more advanced cloud-native application architectures.
+Terraform is also moving beyond simply provisioning resources and toward understanding how complete cloud architectures are defined, connected, changed, troubleshot, and maintained as code.
+
+Future work can build from there through deeper observability, configuration and secrets management, deployment automation, monitoring, cloud architecture, and more advanced infrastructure automation.
 
 As I complete hands-on projects in these areas, they will continue making their way into the portfolio.
 
@@ -929,7 +1397,7 @@ I have 18 years of experience supporting users in enterprise IT environments and
 
 My background includes technical support, troubleshooting, customer service, documentation, incident management, problem-solving, and supporting business-critical technology.
 
-I am expanding that experience into cloud engineering through hands-on projects involving AWS, Amazon EKS, Amazon ECR, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, Kubernetes, multi-tier applications, container orchestration, Amazon EFS, Jenkins, automation, monitoring, CI/CD, serverless technologies, autoscaling, and cloud operations.
+I am expanding that experience into cloud engineering through hands-on projects involving AWS, highly available cloud architectures, Amazon EKS, Amazon ECR, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, Kubernetes, multi-tier applications, container orchestration, Amazon EFS, Jenkins, automation, monitoring, CI/CD, serverless technologies, autoscaling, load balancing, and cloud operations.
 
 The technologies are changing, but one part has stayed very familiar:
 
@@ -990,6 +1458,6 @@ Future improvements may include:
 
 ## 👩‍💻 Mandy Reed
 
-Enterprise IT professional building hands-on cloud and DevOps engineering experience through AWS, Amazon EKS, Terraform, Infrastructure as Code, Linux, Docker, Kubernetes, container orchestration, persistent storage, autoscaling, monitoring, automation, troubleshooting, and technical writing.
+Enterprise IT professional building hands-on cloud and DevOps engineering experience through AWS, highly available cloud architectures, Amazon EKS, Terraform, Infrastructure as Code, Linux, Docker, Kubernetes, container orchestration, load balancing, autoscaling, monitoring, automation, troubleshooting, and technical writing.
 
 ☁️ **Build it. Troubleshoot it. Understand it. Then build something harder.** 🚀

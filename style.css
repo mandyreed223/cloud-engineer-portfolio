@@ -282,6 +282,28 @@ p {
 }
 
 
+/* Terraform identity */
+
+.skills .skill-list .terraform-skill {
+    background: linear-gradient(
+        135deg,
+        #f1eafa,
+        #f8f4fc
+    );
+    color: #63369a;
+    border-color: rgba(123, 66, 188, 0.16);
+}
+
+.skills .skill-list .terraform-skill:hover {
+    background: linear-gradient(
+        135deg,
+        #e8dcf5,
+        #f3ecfa
+    );
+    box-shadow: 0 6px 13px rgba(123, 66, 188, 0.15);
+}
+
+
 /* Next-focus identity */
 
 .next-focus .skill-list span {
@@ -418,47 +440,48 @@ p {
 
 /* ==============================
    FEATURED / NEWEST PROJECT
+   Terraform identity
    ============================== */
 
 .featured-project {
     border-left-width: 7px;
-    border-left-color: #326ce5;
+    border-left-color: #7b42bc;
     background:
         radial-gradient(
             circle at top right,
-            rgba(50, 108, 229, 0.09),
+            rgba(123, 66, 188, 0.10),
             transparent 30%
         ),
         linear-gradient(
             135deg,
-            #f8fbff 0%,
-            #f4f7fb 50%,
-            #eef3f9 100%
+            #fbf9fe 0%,
+            #f7f4fb 50%,
+            #f2eef8 100%
         );
     box-shadow:
-        0 7px 22px rgba(50, 108, 229, 0.09),
+        0 7px 22px rgba(123, 66, 188, 0.10),
         0 2px 6px rgba(35, 47, 62, 0.05);
 }
 
 .featured-project::after {
     background: linear-gradient(
         90deg,
-        #326ce5,
-        rgba(50, 108, 229, 0.08) 65%,
+        #7b42bc,
+        rgba(123, 66, 188, 0.10) 65%,
         transparent
     );
 }
 
 .featured-project h3 {
-    color: #2456a6;
+    color: #63369a;
 }
 
 .project-badge {
     display: inline-block;
     background: linear-gradient(
         135deg,
-        #326ce5,
-        #4f83ee
+        #7b42bc,
+        #9466c7
     );
     color: white;
     padding: 6px 12px;
@@ -466,7 +489,15 @@ p {
     font-size: 13px;
     font-weight: bold;
     margin-bottom: 12px;
-    box-shadow: 0 3px 8px rgba(50, 108, 229, 0.20);
+    box-shadow: 0 3px 8px rgba(123, 66, 188, 0.20);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.featured-project:hover .project-badge {
+    transform: translateY(-2px) rotate(-1deg);
+    box-shadow: 0 5px 12px rgba(123, 66, 188, 0.25);
 }
 
 
@@ -663,6 +694,16 @@ footer a:hover {
     text-decoration: underline;
 }
 
+.footer-signoff {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    color: #cfd8e3;
+    font-size: 14px;
+    font-style: italic;
+    letter-spacing: 0.2px;
+}
+
 
 /* ==============================
    ACCESSIBILITY
@@ -805,3 +846,11 @@ footer a:hover {
         padding: 18px;
     }
 }
+
+
+/*
+   ☁️ You found the CSS.
+
+   Yes, this portfolio has probably been broken at least once.
+   That's usually where the learning starts. 😅
+*/
