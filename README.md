@@ -538,6 +538,7 @@ The latest architecture integrates VPC networking, public and private subnets, A
 I continue to strengthen these capabilities through hands-on implementation, troubleshooting, and operational problem-solving while expanding my expertise in:
 
 * Microsoft Azure
+* Google Cloud Platform (GCP)
 * Cloud security
 * Monitoring and observability
 * Site Reliability Engineering
@@ -545,7 +546,6 @@ I continue to strengthen these capabilities through hands-on implementation, tro
 * Deployment automation
 * SQL and database fundamentals
 * Deeper Terraform architecture and automation
-* Multi-cloud fundamentals, including GCP
 
 My objective is to develop a well-rounded cloud engineering skill set focused on reliability, scalability, security, automation, and operational excellence across modern enterprise environments.
 
