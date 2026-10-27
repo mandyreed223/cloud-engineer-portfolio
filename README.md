@@ -1,16 +1,18 @@
 # ☁️ Cloud Engineering Portfolio
 
-> Building cloud projects, breaking things responsibly, and documenting what I learn along the way. ☁️🛠️
+> Building cloud systems, breaking things responsibly, troubleshooting what happens next, and documenting the journey. ☁️🛠️
 
-Welcome to my cloud engineering portfolio!
+Welcome to my cloud engineering portfolio.
 
-This project brings together my enterprise IT background with the cloud and DevOps skills I am developing through hands-on projects, troubleshooting, automation, Infrastructure as Code, containerization, orchestration, and technical writing.
+I’m an enterprise IT professional with 18 years of experience supporting users and business-critical technology environments, including more than 21 years with Allstate. I’m building on that foundation through hands-on cloud engineering and DevOps projects focused on AWS, Terraform, Infrastructure as Code, Linux, Docker, Kubernetes, automation, monitoring, reliability, and troubleshooting.
 
-## 🚀 Live Website
+Rather than stopping when something deploys successfully, I test behavior, follow dependencies, troubleshoot failures, validate recovery, and document what I learn.
 
-🌐 [mandyreed.com](https://mandyreed.com)
+## 🚀 Live Portfolio
 
-The portfolio is delivered through AWS using a custom domain, HTTPS, Amazon CloudFront, Amazon S3, Route 53, and AWS Certificate Manager.
+🌐 **[mandyreed.com](https://mandyreed.com)**
+
+The portfolio itself is an AWS project, delivered through Amazon S3, CloudFront, Route 53, and AWS Certificate Manager.
 
 ---
 
@@ -32,444 +34,250 @@ The website is built with HTML and CSS, maintained in GitHub, stored in Amazon S
 💻 Portfolio Website
 ```
 
-Amazon Route 53 provides DNS routing for the custom domain.
+**Amazon Route 53** provides DNS routing for the custom domain.
 
-AWS Certificate Manager provides the TLS certificate used by CloudFront to securely serve both `mandyreed.com` and `www.mandyreed.com` over HTTPS.
+**AWS Certificate Manager** provides the TLS certificate used by CloudFront to securely serve `mandyreed.com` and `www.mandyreed.com` over HTTPS.
 
 Source code and version history are maintained in GitHub.
 
 ---
 
-## 👋 About This Project
+## 👋 About Me
 
-What started as a place to showcase cloud projects became a cloud project of its own. 😅
+I’m an enterprise IT professional with 18 years of experience supporting users and business-critical technology environments, including more than 21 years with Allstate. My background includes technical troubleshooting, incident resolution, customer support, documentation, access management, Microsoft 365, Active Directory, and enterprise IT operations.
 
-Building this portfolio has given me hands-on experience with:
+Building on that foundation, I’ve expanded my hands-on experience into cloud engineering and DevOps through projects using AWS, Terraform, Infrastructure as Code, Linux, Docker, Kubernetes, Amazon EKS, Amazon ECR, CI/CD, automation, monitoring, autoscaling, databases, and highly available cloud architectures.
 
-* Amazon S3
-* Amazon CloudFront
-* Amazon Route 53
-* AWS Certificate Manager
-* DNS
-* HTTPS/TLS
-* CDN caching
-* Cache invalidation
-* Git and GitHub
-* HTML and CSS
-* Responsive web design
-* Deployment troubleshooting
-* Technical documentation
+My approach is centered on understanding how systems connect and what happens when they fail. Rather than stopping when something deploys successfully, I test behavior, troubleshoot failures, validate recovery, and document what I learn. This has allowed me to apply the troubleshooting mindset developed throughout my IT career to increasingly complex cloud and DevOps environments.
 
-The portfolio has continued to grow alongside my technical skills and now showcases work involving AWS, Amazon EKS, Amazon ECR, Amazon EC2, Amazon VPC, Elastic Load Balancing, EC2 Auto Scaling, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, Kubernetes, multi-tier applications, container orchestration, Amazon EFS, Jenkins, CI/CD, automation, IAM, AWS Systems Manager, serverless technologies, persistent storage, container networking, image versioning, desired-state reconciliation, autoscaling, monitoring, highly available architectures, and cloud troubleshooting.
+My goal is to combine my enterprise IT experience with modern cloud engineering practices to build reliable, secure, scalable, and maintainable systems while continuing to deepen my expertise in cloud operations and automation.
 
-My goal is not simply to show which technologies I have used.
-
-I want the projects to demonstrate how I approach technical problems: understanding how services connect, troubleshooting failures, validating that environments actually work, improving security and repeatability, and documenting what I learn along the way.
+> **Something isn't working. Figure out why. 🔎**
 
 ---
 
-## ✨ Portfolio Features
+# 🛠️ Cloud & DevOps Skills
 
-* Professional cloud engineering portfolio
-* Custom `mandyreed.com` domain
-* HTTPS/TLS-secured delivery
-* Route 53 DNS routing
-* CloudFront content delivery
-* Responsive desktop and mobile design
-* Cloud and DevOps skills showcase
-* Featured project repositories
-* Project stories and technical writing
-* AWS architecture documentation
-* Current learning roadmap
-* GitHub, LinkedIn, and Medium integration
-* Engineering lessons learned through hands-on projects
+These technologies represent tools, services, and engineering concepts I have used through hands-on projects.
 
----
+### ☁️ AWS & Cloud
 
-## 🛠️ Technologies Used to Build the Portfolio
+- Amazon EC2
+- Amazon S3
+- Amazon EFS
+- Amazon EKS
+- Amazon ECR
+- Amazon VPC
+- Application Load Balancer
+- Elastic Load Balancing
+- EC2 Auto Scaling
+- Launch Templates
+- Target Groups
+- Amazon RDS for MySQL
+- Multi-AZ RDS
+- AWS Systems Manager Session Manager
+- AWS Secrets Manager
+- Amazon CloudWatch
+- CloudWatch Alarms
+- NAT Gateway
+- Internet Gateway
+- Route Tables
+- Security Groups
+- IAM
+- Lambda
+- API Gateway
+- DynamoDB
+- CloudFront
+- Route 53
+- AWS Certificate Manager
+- Bedrock
+- Rekognition
+- Polly
+- Transcribe
+- Translate
 
-### Frontend
+### 🏗️ Terraform & Infrastructure as Code
 
-* HTML5
-* CSS3
-* Responsive web design
+- Terraform
+- Infrastructure as Code
+- Terraform Resource References
+- Terraform Remote State
+- S3 State Versioning
+- Terraform State Locking
+- Launch Template Versioning
+- EC2 Instance Refresh
+- Multi-AZ Architecture
+- Infrastructure Lifecycle Management
+- Infrastructure Troubleshooting
 
-### AWS
+### ☸️ Kubernetes & Containers
 
-* Amazon S3
-* Amazon CloudFront
-* Amazon Route 53
-* AWS Certificate Manager
+- Kubernetes
+- Amazon EKS
+- MicroK8s
+- kubectl
+- eksctl
+- Pods
+- Deployments
+- ReplicaSets
+- Services
+- ClusterIP Services
+- LoadBalancer Services
+- Labels and Selectors
+- EndpointSlices
+- Kubernetes YAML
+- Desired-State Reconciliation
+- Self-Healing Workloads
+- Horizontal Pod Autoscaling
+- Metrics Server
+- Resource Requests and Limits
+- Rolling Updates
+- Managed Node Groups
+- Multi-Tier Applications
+- Kubernetes Troubleshooting
+- Docker
+- Docker Compose
+- Docker Swarm
+- Docker Stack
+- Dockerfiles
+- Docker Networking
+- Docker Secrets
+- Overlay Networking
+- Container Troubleshooting
+- Image Versioning
+- Persistent Volumes
 
-### Development Tools
+### 🔧 DevOps, Automation & Operations
 
-* Git
-* GitHub
-* Visual Studio Code
+- Linux
+- AWS CLI
+- Git
+- GitHub
+- GitHub Actions
+- Jenkins
+- CI/CD
+- Monitoring and Alerting
+- Application Bootstrapping
+- EC2 User Data
+- Systems Troubleshooting
+- Failure and Recovery Testing
 
----
+### 🗄️ Applications & Data
 
-# ☁️ Cloud & DevOps Skills Featured
-
-These technologies represent tools and services I have practiced through hands-on projects:
-
-### AWS
-
-* Amazon EC2
-* Amazon S3
-* Amazon EFS
-* Amazon EKS
-* Amazon ECR
-* Amazon VPC
-* Elastic Load Balancing
-* Application Load Balancer
-* EC2 Auto Scaling
-* Launch Templates
-* Target Groups
-* AWS Systems Manager
-* NAT Gateway
-* Internet Gateway
-* Route Tables
-* Security Groups
-* Amazon CloudFront
-* Amazon Route 53
-* AWS Certificate Manager
-* AWS Lambda
-* AWS IAM
-* Amazon DynamoDB
-* Amazon API Gateway
-* Amazon CloudWatch
-* Amazon Bedrock
-* Amazon Rekognition
-* Amazon Polly
-* Amazon Transcribe
-* Amazon Translate
-
-### Infrastructure & DevOps
-
-* Terraform
-* Infrastructure as Code
-* Terraform Resource References
-* Terraform Remote State
-* S3 State Versioning
-* Terraform State Locking
-* Launch Template Versioning
-* EC2 Instance Refresh
-* Linux
-* Docker
-* Docker Compose
-* Docker Swarm
-* Docker Stack
-* Container Orchestration
-* Docker Secrets
-* Docker Networking
-* Docker Image Versioning
-* Container Troubleshooting
-* Overlay Networking
-* Persistent Volumes
-* Kubernetes
-* Amazon EKS
-* MicroK8s
-* kubectl
-* eksctl
-* AWS CLI
-* Kubernetes Pods
-* Kubernetes Deployments
-* ReplicaSets
-* Kubernetes Services
-* ClusterIP Services
-* LoadBalancer Services
-* Labels and Selectors
-* EndpointSlices
-* Kubernetes YAML
-* Declarative Configuration
-* Desired-State Reconciliation
-* Self-Healing Workloads
-* Kubernetes Scaling
-* Horizontal Pod Autoscaling
-* Kubernetes Metrics Server
-* Resource Requests and Limits
-* Rolling Updates
-* Managed Node Groups
-* Multi-Tier Applications
-* Application-to-Database Communication
-* Kubernetes Troubleshooting
-* Jenkins
-* Dockerfiles
-* Git
-* GitHub
-* GitHub Actions
-* CI/CD
-
-### Applications & Data
-
-* Apache HTTP Server
-* nginx
-* WordPress
-* MySQL
-* Shared File Storage
-* NFS
-* Persistent Application Data
+- MySQL
+- MariaDB Client
+- SQL
+- Apache HTTP Server
+- nginx
+- WordPress
+- Persistent Application Data
+- Shared File Storage
+- NFS
+- Application-to-Database Communication
 
 ---
 
-# 💻 Featured Cloud & DevOps Projects
+# ⭐ Featured Cloud & DevOps Projects
 
-These are the projects where I get to build things, troubleshoot them, figure out why they broke, and occasionally wonder why I thought making the architecture more complicated was a good idea. 😅
+These projects represent some of my strongest recent work and the progression from individual technologies into complete cloud architectures.
 
-## ✨ 🏗️ Terraform Auto Scaling Web Application on AWS
+## ✨ 🏗️ Highly Available 2-Tier AWS Architecture with Terraform
 
-***I built an Auto Scaling architecture with Terraform. Then one tiny space broke everything. 😅***
+> **🎃 Terraform Built It. I Broke It. Auto Scaling Brought It Back From the Dead.**
 
-Built a highly available AWS web application with Terraform using an Application Load Balancer, Auto Scaling Group, private EC2 instances across multiple Availability Zones, secure administration through AWS Systems Manager Session Manager, and an encrypted S3 remote backend for Terraform state.
+Built a production-inspired, highly available AWS architecture entirely with Terraform and deliberately tested it for failure, recovery, database persistence, monitoring, and complete teardown.
 
-The project included:
-
-* Terraform
-* Infrastructure as Code
-* Custom Amazon VPC
-* Two Availability Zones
-* Two public subnets
-* Two private subnets
-* Internet Gateway
-* NAT Gateway
-* Public and private route tables
-* Application Load Balancer
-* Target Group with HTTP health checks
-* EC2 Auto Scaling
-* EC2 Launch Template
-* Amazon EC2
-* Amazon Linux 2023
-* Apache HTTP Server
-* Security group-to-security group access
-* IAM instance profile
-* AWS Systems Manager Session Manager
-* EC2 User Data
-* Amazon S3 remote Terraform state
-* S3 state versioning
-* Server-side encryption
-* S3 public access blocking
-* Terraform state locking
-* Launch Template versioning
-* Auto Scaling Instance Refresh
-* Self-healing infrastructure
-* Infrastructure troubleshooting
-* Resource cleanup and lifecycle management
-
-The architecture separated the public-facing load-balancing layer from the application compute layer.
+### Architecture
 
 ```text
 User
   ↓
-ALB DNS Name
+Internet
   ↓
-Application Load Balancer
-  ↓
-Target Group :80
-  ↓
-Auto Scaling Group
-  ↓
-Private EC2 Apache Web Servers
-```
-
-The internet-facing Application Load Balancer spans two public subnets while the EC2 instances run in private subnets across two Availability Zones.
-
-The EC2 instances do not receive public IP addresses.
-
-For outbound connectivity, the private instances follow this path:
-
-```text
-Private EC2
-     ↓
-Private Route Table
-     ↓
-NAT Gateway
-     ↓
-Public Subnet
-     ↓
 Internet Gateway
-     ↓
-Internet
+  ↓
+Application Load Balancer
+  ↓
+Auto Scaling Group
+  ↓
+Private EC2 Instances
+  ↓
+Amazon RDS MySQL
 ```
 
-That allows the instances to install packages and reach external services without exposing them directly to inbound internet traffic.
+The environment uses a custom VPC across two Availability Zones with:
 
-The security design also separates the public and private layers.
+- Two public subnets
+- Two private application subnets
+- Two private database subnets
+- Application Load Balancer
+- Auto Scaling Group
+- Private EC2 instances
+- One NAT Gateway per Availability Zone
+- Multi-AZ Amazon RDS for MySQL
+- AWS Systems Manager Session Manager
+- AWS Secrets Manager
+- Amazon CloudWatch
+- CloudWatch alarm monitoring
+- Security group chaining
+- Terraform-managed infrastructure
 
-The Application Load Balancer accepts HTTP traffic from the internet, while the EC2 security group allows port 80 only from the ALB security group.
+The security path follows the application tiers:
 
 ```text
 Internet
    ↓
 ALB Security Group
-   ↓
-Application Load Balancer
-   ↓
-EC2 Security Group
-   ↓
-Apache
-```
-
-One of my main goals with this project was strengthening my understanding of Terraform resource linkage.
-
-Instead of thinking of each Terraform resource as an isolated block, I followed the values passed between them.
-
-For example:
-
-```hcl
-resource "aws_security_group" "ec2" {
-  vpc_id = aws_vpc.main.id
-}
-```
-
-AWS assigns the VPC an actual ID after Terraform creates it.
-
-Terraform exposes that value through:
-
-```hcl
-aws_vpc.main.id
-```
-
-That value can then flow into another resource.
-
-The same pattern connects the rest of the architecture:
-
-```text
-VPC
- ↓
-Subnets + Security Groups + Target Group
-
-Public Subnets
- ↓
-Application Load Balancer
-
-Private Subnets
- ↓
-Auto Scaling Group
-
-Launch Template
- ↓
-Auto Scaling Group
-
-Target Group
- ↓
-Auto Scaling Group + ALB Listener
-
-IAM Role
- ↓
-Instance Profile
- ↓
-Launch Template
- ↓
-EC2
-```
-
-Those references also create implicit dependencies that help Terraform determine the correct resource creation order.
-
-The Auto Scaling Group was configured with:
-
-```text
-Minimum: 2
-Desired: 2
-Maximum: 5
-```
-
-It launches application instances across both private subnets and maintains two instances during normal operation.
-
-Then the project turned into a much more valuable troubleshooting exercise. 😅
-
-Terraform completed successfully and the Auto Scaling Group launched EC2 instances, but the Application Load Balancer Target Group reported:
-
-```text
-unhealthy
-Target.FailedHealthChecks
-```
-
-Terraform had successfully created the infrastructure.
-
-That did not mean the application was healthy.
-
-Instead of immediately changing resources, I followed the request path:
-
-```text
-Browser
-   ↓
-Application Load Balancer
-   ↓
-ALB Security Group
-   ↓
-Target Group
+HTTP :80
    ↓
 EC2 Security Group
+HTTP :80 from ALB only
    ↓
-Apache
+RDS Security Group
+MySQL :3306 from EC2 only
 ```
 
-The security groups were correct.
+I connected to the private application tier through Systems Manager Session Manager and used the MariaDB client to work directly with the RDS database. I created a simple service-desk-style `tickets` table, inserted records, queried them, and updated data with SQL.
 
-The instances were in the expected private subnets.
+Then I deliberately terminated an EC2 instance managed by the Auto Scaling Group.
 
-The NAT Gateway and route tables provided the expected outbound path.
+The ASG detected that capacity had fallen below the desired state and launched a replacement instance. The replacement inherited the Launch Template configuration, ran the bootstrap process, installed Apache and the MariaDB client, registered with the Target Group, passed ALB health checks, and began receiving traffic.
 
-Meanwhile, the Auto Scaling Group kept terminating unhealthy instances and launching replacements.
+The original compute instance was gone.
 
-That revealed an important distinction:
+The database records were still there.
 
-**Auto Scaling was not broken. It was correctly reacting to unhealthy instances.**
+That reinforced one of the most important architectural lessons in the project:
 
-But every replacement instance received the same Launch Template configuration.
+> **Compute can be disposable. Application data cannot.**
 
-```text
-Launch Instance
-      ↓
-Application Unhealthy
-      ↓
-ELB Health Check Fails
-      ↓
-ASG Terminates Instance
-      ↓
-ASG Launches Replacement
-      ↓
-Replacement Receives Same Configuration
-      ↓
-Failure Repeats
-```
+CloudWatch also captured the recovery process through the Target Group's `UnHealthyHostCount` metric. The unhealthy-host count temporarily increased during the failure test and returned to zero after the replacement instance became healthy.
 
-Replacing infrastructure does not fix a bad launch configuration.
+**Built. Tested. Broken on purpose. Recovered. Monitored. Destroyed. 💚**
 
-Because the EC2 instances were intentionally private and did not allow SSH, I added AWS Systems Manager access through Terraform rather than opening port 22.
+💻 **[View Repository](https://github.com/mandyreed223/terraform-ha-2tier-aws)**
 
-The management path became:
+✍️ **[Read the Story on Medium](https://medium.com/@mandymreed/i-built-a-highly-available-aws-architecture-then-i-started-killing-ec2-instances-6f6996657256)**
 
-```text
-IAM Role
-   ↓
-AmazonSSMManagedInstanceCore
-   ↓
-IAM Instance Profile
-   ↓
-Launch Template
-   ↓
-EC2
-   ↓
-Systems Manager Session Manager
-```
+---
 
-That allowed secure access without a public IP, inbound SSH, or an SSH key pair.
+## 🏗️ Terraform Auto Scaling Architecture on AWS
 
-Once connected, I discovered Apache had never been installed.
+> **I built an Auto Scaling architecture with Terraform. Then one tiny space broke everything. 😅**
 
-The cloud-init logs then pointed toward the EC2 User Data script.
+Built a highly available AWS web architecture with Terraform using a custom VPC, multi-AZ networking, an Application Load Balancer, private EC2 instances, Launch Templates, Auto Scaling, Systems Manager, and remote Terraform state.
 
-The root cause?
+The project became a much deeper troubleshooting exercise when Terraform successfully created the infrastructure but the Target Group repeatedly reported unhealthy instances.
 
-A single leading space before:
+Following the complete application path eventually led to the root cause:
 
 ```bash
-#!/bin/bash
+ #!/bin/bash
 ```
 
-That tiny formatting problem created the complete failure chain:
+One leading space before the User Data shebang prevented the bootstrap process from running correctly.
+
+That tiny error created a much larger failure chain:
 
 ```text
 User Data Fails
@@ -484,871 +292,229 @@ Instance Becomes Unhealthy
       ↓
 ASG Replaces Instance
       ↓
-Replacement Receives Same Broken User Data
+Replacement Receives Same Broken Configuration
       ↓
 Cycle Repeats
 ```
 
-To fix the problem, I moved the bootstrap logic into a standalone `user_data.sh` file and loaded it through Terraform:
+After correcting the User Data, Terraform created a new Launch Template version. I used EC2 Instance Refresh to roll the corrected configuration across the fleet, then deliberately terminated a healthy instance and watched Auto Scaling restore desired capacity.
 
-```hcl
-user_data = base64encode(file("${path.module}/user_data.sh"))
-```
+The project also strengthened my understanding of Terraform resource linkage by following values such as VPC IDs, subnet IDs, Security Group IDs, Target Group ARNs, Launch Template references, and IAM resources as they moved between Terraform resources.
 
-The corrected configuration created Launch Template version 3.
+💻 **[View Repository](https://github.com/mandyreed223/terraform-asg-deployment)**
 
-Because creating a new Launch Template version does not automatically replace existing EC2 instances, I initiated an Auto Scaling Instance Refresh.
-
-The refresh gradually replaced the existing instances with instances using the corrected Launch Template.
-
-Both instances eventually became healthy and `InService`, and the application loaded successfully through the ALB.
-
-🟢 Green Means GO!
-
-I then deliberately terminated one healthy EC2 instance to test Auto Scaling self-healing.
-
-```text
-Desired Capacity = 2
-
-One Instance Terminated
-        ↓
-Actual Capacity = 1
-        ↓
-ASG Detects Capacity Mismatch
-        ↓
-Replacement EC2 Launched
-        ↓
-Replacement Enters InService
-        ↓
-ALB Health Checks Pass
-        ↓
-Healthy Capacity = 2
-```
-
-The Auto Scaling Group restored desired capacity without manual intervention.
-
-Finally, I migrated Terraform state from the local machine into an encrypted Amazon S3 remote backend with versioning, public access blocking, and state locking.
-
-After migration, I ran `terraform plan` again.
-
-Terraform read the remote state from S3, refreshed the real AWS resources, compared them with the configuration, and returned:
-
-```text
-No changes. Your infrastructure matches the configuration.
-```
-
-That confirmed the complete relationship:
-
-```text
-Terraform Configuration
-        ↓
-S3 Remote State
-        ↓
-Real AWS Infrastructure
-        ↓
-No Differences
-        ↓
-🟢 GMG
-```
-
-💻 [View Repository](https://github.com/mandyreed223/terraform-asg-deployment)
-
-📖 [Read on Medium](https://medium.com/@mandymreed/%EF%B8%8F-i-built-an-auto-scaling-architecture-with-terraform-then-one-tiny-space-broke-everything-c1f29147dcd5)
+✍️ **[Read the Story on Medium](https://medium.com/@mandymreed/%EF%B8%8F-i-built-an-auto-scaling-architecture-with-terraform-then-one-tiny-space-broke-everything-c1f29147dcd5)**
 
 ---
 
 ## ☁️☸️ Amazon EKS Deployment
 
-***I put Kubernetes on AWS. Then I started deleting Pods. ☸️😈***
+> **I put Kubernetes on AWS. Then I started deleting Pods. ☸️😈**
 
-Moved my Kubernetes learning from a local environment into AWS by building, deploying, scaling, monitoring, updating, and troubleshooting a containerized application on Amazon Elastic Kubernetes Service (EKS).
+Moved Kubernetes from a local environment into AWS by deploying and operating a containerized application on Amazon EKS.
 
-Rather than stopping after getting a workload running, I followed the complete path from local application code to Docker, Amazon ECR, Kubernetes, AWS load balancing, autoscaling, and CloudWatch.
+The project connected:
 
-The project included:
+- Amazon EKS
+- Managed EC2 worker nodes
+- Amazon ECR
+- Docker
+- Kubernetes Deployments and ReplicaSets
+- LoadBalancer Services
+- Resource requests and limits
+- Metrics Server
+- Horizontal Pod Autoscaling
+- Rolling updates
+- Pod self-healing
+- CloudWatch control-plane logging
 
-* Amazon EKS
-* Kubernetes 1.36
-* Amazon EC2
-* Amazon ECR
-* Amazon VPC
-* Elastic Load Balancing
-* Amazon CloudWatch
-* eksctl
-* kubectl
-* AWS CLI
-* Linux / WSL
-* Docker
-* nginx
-* Managed node groups
-* Two Availability Zones
-* Private worker networking
-* Kubernetes Deployments
-* ReplicaSets
-* LoadBalancer Services
-* Resource requests and limits
-* Kubernetes Metrics Server
-* Horizontal Pod Autoscaling
-* Manual Pod scaling
-* Desired-state reconciliation
-* Pod self-healing
-* Rolling updates
-* Versioned container images
-* EKS API and audit logging
-* Resource cleanup and lifecycle management
+I deliberately deleted a running application Pod and watched the ReplicaSet restore the desired state.
 
-I created the EKS cluster using `eksctl` with a managed node group containing two `t3.medium` EC2 worker nodes distributed across two Availability Zones and configured with private networking.
+I manually scaled the application from three Pods to six, then configured an HPA with a three-Pod minimum, six-Pod maximum, and 50% CPU target. After generating CPU load, Kubernetes automatically increased the application from three Pods to four and later returned it to the three-Pod baseline.
 
-The application started with three nginx Pods managed through a Kubernetes Deployment and ReplicaSet. A Service of type `LoadBalancer` connected the Kubernetes workload to AWS load-balancing infrastructure and provided an externally reachable application endpoint.
-
-I then created a custom HTML/CSS application, packaged it into a Docker image, and pushed the versioned image to a private Amazon ECR repository.
-
-The release path became:
+The project helped make the boundary between Kubernetes and AWS much clearer:
 
 ```text
-Application Source
-      ↓
-Docker Build
-      ↓
-Image Tag
-      ↓
-Amazon ECR
-      ↓
-EKS Deployment
-      ↓
-ReplicaSet
-      ↓
-Application Pods
+Kubernetes
+Deployments • ReplicaSets • Pods • Services • HPA
+                     ↕
+AWS
+EKS • EC2 • VPC • Load Balancing • ECR • CloudWatch
 ```
 
-To test desired-state reconciliation, I deliberately deleted a running application Pod.
+💻 **[View Repository](https://github.com/mandyreed223/amazon-eks-deployment)**
 
-The ReplicaSet detected that the actual state no longer matched the desired state and immediately created a replacement while the application remained available through the load balancer.
-
-I manually scaled the Deployment from three Pods to six and observed that the existing EC2 worker nodes had enough capacity to schedule the additional workloads.
-
-That helped reinforce an important distinction:
-
-```text
-Pod Scaling
-     ≠
-Node Scaling
-```
-
-I then installed Kubernetes Metrics Server and used `kubectl top` to inspect actual node and Pod CPU and memory consumption.
-
-A Horizontal Pod Autoscaler was configured with a minimum of three replicas, maximum of six replicas, and a 50% CPU target. After generating synthetic CPU load, the HPA automatically increased the application from three Pods to four. Once the load was removed and utilization dropped, Kubernetes returned the Deployment to its three-Pod baseline.
-
-For AWS-native operational visibility, I enabled EKS API and audit logging and verified the control plane was publishing log streams to Amazon CloudWatch.
-
-Finally, I modified the application, built and pushed a versioned `v2` image to ECR, updated the Deployment, and watched Kubernetes create a new ReplicaSet and perform a rolling update while the public application endpoint remained unchanged.
-
-One of the biggest lessons from this project was seeing where Kubernetes responsibilities end and AWS responsibilities begin.
-
-Kubernetes managed the workloads, desired state, Services, ReplicaSets, rolling updates, and autoscaling.
-
-AWS provided the underlying networking, compute, load balancing, container registry, and operational logging.
-
-Understanding how those layers connect turned EKS from “Kubernetes running somewhere in AWS” into an architecture I could actually follow and troubleshoot.
-
-💻 [View Repository](https://github.com/mandyreed223/amazon-eks-deployment)
-
-📖 [Read on Medium](https://medium.com/@mandymreed/i-put-kubernetes-on-aws-then-i-started-deleting-pods-%EF%B8%8F-6b5d9898773a)
+✍️ **[Read the Story on Medium](https://medium.com/@mandymreed/i-put-kubernetes-on-aws-then-i-started-deleting-pods-%EF%B8%8F-6b5d9898773a)**
 
 ---
 
 ## ☸️ WordPress + MySQL Multi-Tier Application on Kubernetes
 
-***I put WordPress and MySQL on Kubernetes. Then MySQL fought back. ⚔️***
+> **I put WordPress and MySQL on Kubernetes. Then MySQL fought back. ⚔️**
 
-Built a multi-tier WordPress and MySQL application on Kubernetes, taking the concepts from my Kubernetes Fundamentals project and using them together as part of a larger application architecture.
-
-Instead of working with a single nginx workload, this project introduced application-to-database communication and reinforced how Kubernetes resources depend on one another for the complete application path to work.
+Built a multi-tier WordPress and MySQL application on Kubernetes, moving beyond individual resources into application-to-database communication.
 
 The project included:
 
-* Kubernetes
-* MicroK8s
-* Ubuntu on WSL2
-* kubectl
-* WordPress
-* MySQL
-* Multi-tier application architecture
-* Kubernetes Deployments
-* Kubernetes Services
-* ClusterIP networking
-* Labels and selectors
-* Application-to-database communication
-* Persistent application data
-* Declarative YAML
-* Resource inspection
-* Kubernetes networking
-* Kubernetes troubleshooting
-* Whole-path application validation
+- Kubernetes Deployments
+- Services
+- ClusterIP networking
+- Labels and selectors
+- ConfigMaps and Secrets
+- Persistent storage
+- Readiness behavior
+- Application-to-database communication
+- Kubernetes DNS
+- Whole-path troubleshooting
 
-This project built directly on the fundamentals I had already practiced with Pods, Deployments, Services, labels, selectors, and declarative configuration.
+The project reinforced that a Pod showing `Running` does not automatically mean the application is healthy.
 
-The difference was that those resources were no longer being explored individually.
+Troubleshooting meant following the complete path between workloads, Services, configuration, storage, networking, database connectivity, and the application itself.
 
-They had to work together.
+💻 **[View Repository](https://github.com/mandyreed223/kubernetes-multitier-application)**
 
-WordPress needed to communicate with MySQL through Kubernetes, which meant the application path depended on more than whether individual Pods appeared healthy.
-
-That became especially clear when MySQL decided not to cooperate. 😅
-
-Troubleshooting the application reinforced an important lesson: a Pod showing `Running` does not automatically mean the application is healthy.
-
-The complete path can involve workloads, Services, labels, selectors, configuration, storage, networking, database connectivity, and the application itself.
-
-Instead of treating each Kubernetes resource as an isolated component, I worked through the relationships between them and followed the application path to understand where communication was failing.
-
-The result was an important progression from learning Kubernetes resources individually to using those resources together as part of a multi-tier application.
-
-💻 [View Repository](https://github.com/mandyreed223/kubernetes-multitier-application)
-
-📖 [Read on Medium](https://medium.com/@mandymreed/i-put-wordpress-and-mysql-on-kubernetes-then-mysql-fought-back-%EF%B8%8F-05a6370e0926)
+✍️ **[Read the Story on Medium](https://medium.com/@mandymreed/i-put-wordpress-and-mysql-on-kubernetes-then-mysql-fought-back-%EF%B8%8F-05a6370e0926)**
 
 ---
 
-## ☸️ Kubernetes Fundamentals
+# 🧪 More Hands-On Projects
 
-***Kubernetes said desired state. I said prove it. ☸️***
+My portfolio also includes projects covering Kubernetes fundamentals and troubleshooting, Docker orchestration, Jenkins, CI/CD, serverless AWS services, automation, and cloud-hosted applications.
 
-Built my first hands-on Kubernetes application using MicroK8s on Ubuntu in WSL2.
-
-The project started with a single nginx Pod and gradually moved through the Kubernetes controller and networking layers until the application was managed declaratively using Deployments, ReplicaSets, Services, and YAML.
-
-The project included:
-
-* MicroK8s
-* Ubuntu on WSL2
-* kubectl
-* nginx
-* Kubernetes Pods
-* Deployments
-* ReplicaSets
-* ClusterIP Services
-* Labels and selectors
-* EndpointSlices
-* Declarative YAML
-* Server-side dry runs
-* Scaling
-* Desired-state reconciliation
-* Pod self-healing
-* Rolling updates
-* Resource inspection
-* Kubernetes troubleshooting
-
-Rather than stopping when the application was running, I deliberately tested the behavior Kubernetes is designed to provide.
-
-I scaled the Deployment to multiple replicas and inspected how the Deployment, ReplicaSet, and Pods related to one another.
-
-Then I deleted a Pod on purpose.
-
-Kubernetes immediately created a replacement because the actual state no longer matched the desired state defined by the Deployment.
-
-That was the moment desired-state reconciliation stopped being an abstract Kubernetes concept and became something I could actually observe.
-
-I also created a ClusterIP Service and explored how labels and selectors connect the Service to the correct Pods while EndpointSlices track the available application endpoints.
-
-The project included a rolling nginx image update so I could watch Kubernetes replace Pods while maintaining the Deployment's desired state.
-
-Finally, I moved the application into reusable YAML and rebuilt it declaratively.
-
-That step also created one of the most useful troubleshooting lessons in the project: a Deployment selector is immutable after creation. Instead of simply working around the error, I traced the relationship between the Deployment selector, Pod template labels, and Service selector, corrected the manifests, recreated the resources, and validated the complete application path again.
-
-The result was not just my first Kubernetes deployment.
-
-It was my first hands-on look at how Kubernetes uses **controllers, desired state, labels, selectors, Services, and declarative configuration to manage an application as a system**.
-
-💻 [View Repository](https://github.com/mandyreed223/kubernetes-fundamentals)
-
-📖 [Read on Medium](https://medium.com/@mandymreed/kubernetes-said-desired-state-i-said-prove-it-%EF%B8%8F-e8fbe1469ec3)
+| Project | Focus | GitHub | Story |
+|---|---|---|---|
+| ☸️ Kubernetes Fundamentals | Deployments, ReplicaSets, Services, scaling, self-healing, YAML | [Repository](https://github.com/mandyreed223/kubernetes-fundamentals) | [Medium](https://medium.com/@mandymreed/kubernetes-said-desired-state-i-said-prove-it-%EF%B8%8F-e8fbe1469ec3) |
+| 🔎 Kubernetes Troubleshooting Lab | Broken images, CrashLoopBackOff, selectors, probes, resource issues | [Repository](https://github.com/mandyreed223/kubernetes-troubleshooting-lab) | Portfolio project |
+| 🐳 WordPress + MySQL Docker Swarm | Multi-service orchestration, EFS, secrets, persistence, failover | [Repository](https://github.com/mandyreed223/wordpress-docker-swarm-aws) | [Medium](https://medium.com/@mandymreed/i-put-wordpress-on-docker-swarm-then-things-got-real-438cbb166861) |
+| 🐳 Docker Swarm on AWS | Multi-node orchestration, scaling, self-healing, node draining | [Repository](https://github.com/mandyreed223/docker-swarm-aws-lab) | [Medium](https://medium.com/@mandymreed/i-built-a-docker-swarm-then-i-started-killing-containers-14bfd9fb54ae) |
+| 🏗️ Jenkins on AWS with Terraform | Terraform, EC2, IAM, S3, User Data | [Repository](https://github.com/mandyreed223/terraform-jenkins-aws) | [Medium](https://medium.com/@mandymreed/i-put-jenkins-on-aws-with-terraform-because-apparently-clicking-buttons-was-too-easy-%EF%B8%8F-%EF%B8%8F-d6a39afaa125) |
+| 🐳 Docker + Jenkins Lab | Container lifecycle, persistent volumes, Compose, custom images | [Repository](https://github.com/mandyreed223/docker-jenkins-lab) | [Medium](https://medium.com/@mandymreed/i-put-jenkins-in-a-container-then-started-deleting-things-e947c8bca954) |
+| 🐳 Docker + Apache Rebuild | Dockerfiles, image versioning, networking, repeatable builds | [Repository](https://github.com/mandyreed223/docker-apache-webapp) | [Medium](https://medium.com/@mandymreed/it-worked-on-my-machine-until-it-didnt-3d2df233c995) |
+| 🌐 AWS Cloud Engineering Portfolio | S3, CloudFront, Route 53, ACM, DNS, HTTPS | [Repository](https://github.com/mandyreed223/cloud-engineer-portfolio) | [Medium](https://medium.com/@mandymreed/so-i-decided-i-needed-a-portfolio-website-what-could-possibly-go-wrong-5a726e889864) |
+| 🌍 Multilingual Audio Pipeline | Transcribe, Translate, Polly, Lambda, S3 | [Repository](https://github.com/mandyreed223/multilingual-audio-pipeline) | [Medium](https://medium.com/@mandymreed/teaching-the-cloud-to-speak-every-language-df07b5764134) |
+| 🤖 Prompt Deployment Pipeline | GitHub, S3, Bedrock, CI/CD-style workflow | [Repository](https://github.com/mandyreed223/prompt-deployment-pipeline) | Project documentation |
+| 👁️ Rekognition Image Labeling Pipeline | Rekognition, DynamoDB, Lambda, S3 | [Repository](https://github.com/mandyreed223/rekognition-image-labeling-pipeline) | Project documentation |
+| 🔊 Polly Text-to-Speech API | Polly, Lambda, API Gateway, S3 | [Repository](https://github.com/mandyreed223/polly_text_to_speech_pipeline) | Project documentation |
+| 🌐 Static Website Pipeline | S3, CloudFront, CodePipeline | [Repository](https://github.com/mandyreed223/static_website_pipeline_project) | Project documentation |
+| ✅ Required Files Checker | GitHub Actions, CloudWatch, CI validation | [Repository](https://github.com/mandyreed223/file_checker_project) | Project documentation |
 
 ---
 
-## 🐳 WordPress + MySQL Docker Swarm on AWS
+# 🧠 Engineering Approach
 
-***I put WordPress on Docker Swarm. Then things got real. 🐳🔥***
-
-Built a multi-service WordPress and MySQL application across a three-node Docker Swarm running on AWS EC2.
-
-This project took the concepts from my original Docker Swarm lab and added something that changes the conversation quite a bit: **stateful application data**.
-
-The project included:
-
-* Three Ubuntu EC2 instances
-* One Docker Swarm manager and two workers
-* WordPress
-* MySQL
-* Docker Stack
-* Multi-service orchestration
-* Overlay networking
-* Docker Secrets
-* Amazon EFS shared storage
-* NFS
-* Persistent WordPress content
-* Docker service inspection and logging
-* Service scaling and rescheduling
-* Worker-node failure testing
-* Desired-state recovery
-* AWS Security Groups
-* Linux system troubleshooting
-
-I mounted Amazon EFS across the Swarm nodes so WordPress content could remain available regardless of which node ran the container and verified shared files across containers.
-
-I also deliberately removed a worker node to observe how Swarm rescheduled services and restored the desired state.
-
-Of course, the infrastructure did not make it easy. 😅
-
-One worker experienced intermittent SSH connectivity and memory pressure, which turned the project into a deeper troubleshooting exercise involving `top`, `free`, `df`, `journalctl`, `systemctl`, Docker events, listening ports, firewall checks, Security Groups, and eventually a reboot.
-
-The result was much more than a working WordPress site. It became an exercise in understanding how **orchestration, networking, storage, application state, Linux, and AWS infrastructure all interact**.
-
-💻 [View Repository](https://github.com/mandyreed223/wordpress-docker-swarm-aws)
-
-📖 [Read on Medium](https://medium.com/@mandymreed/i-put-wordpress-on-docker-swarm-then-things-got-real-438cbb166861)
-
----
-
-## 🐳 Docker Swarm on AWS
-
-***I built a Docker Swarm. Then I started killing containers. 🐳💀***
-
-Built a three-node Docker Swarm across AWS EC2 instances to explore multi-node container orchestration, service deployment, scaling, self-healing, Docker Stack, and cluster resiliency.
-
-The project included:
-
-* Three AWS EC2 Linux nodes
-* Docker Swarm initialization
-* Manager and worker nodes
-* Replicated services
-* Global services
-* Service scaling
-* Docker Stack deployments
-* Overlay networking
-* Routing mesh testing
-* Node draining
-* Task rescheduling
-* Self-healing and desired-state reconciliation
-* Container failure testing
-
-Rather than stopping once the cluster was running, I intentionally removed containers and changed node availability to observe how Docker Swarm responded and restored the desired state.
-
-I also drained a worker node and validated that the Swarm routing mesh could continue serving the published application through the node while tasks were running elsewhere in the cluster.
-
-💻 [View Repository](https://github.com/mandyreed223/docker-swarm-aws-lab)
-
-📖 [Read on Medium](https://medium.com/@mandymreed/i-built-a-docker-swarm-then-i-started-killing-containers-14bfd9fb54ae)
-
----
-
-## 🏗️ Jenkins on AWS with Terraform
-
-***It started with one manually deployed Jenkins server. Then I decided Terraform should do the work. 😅***
-
-Deployed Jenkins on AWS using Terraform, progressing from a manual proof of concept to reusable Infrastructure as Code.
-
-The project included:
-
-* Amazon EC2
-* Terraform
-* Security Groups
-* Automated Jenkins installation with User Data
-* Private Amazon S3 artifact storage
-* IAM Role and Instance Profile
-* Least-privilege S3 permissions
-* AWS temporary credential validation
-* S3 artifact upload and download testing
-* Terraform lifecycle management and cleanup
-
-Rather than stopping when `terraform apply` succeeded, I validated that EC2 assumed the correct IAM role and proved that the server could interact with S3 without storing AWS credentials on the instance.
-
-💻 [View Repository](https://github.com/mandyreed223/terraform-jenkins-aws)
-
-📖 [Read on Medium](https://medium.com/@mandymreed/i-put-jenkins-on-aws-with-terraform-because-apparently-clicking-buttons-was-too-easy-%EF%B8%8F-%EF%B8%8F-d6a39afaa125)
-
----
-
-## 🐳 Docker + Jenkins Lab
-
-***What happens when you start deleting Jenkins containers on purpose? Turns out, quite a lot. 🐳😂***
-
-Built and managed Jenkins in Docker while exploring container lifecycle, persistent storage, Docker Compose, and custom image creation.
-
-Tested data persistence by intentionally removing and recreating Jenkins containers, then built a custom Jenkins image using a Dockerfile and verified the customization inside the running container.
-
-💻 [View Repository](https://github.com/mandyreed223/docker-jenkins-lab)
-
-📖 [Read on Medium](https://medium.com/@mandymreed/i-put-jenkins-in-a-container-then-started-deleting-things-e947c8bca954)
-
----
-
-## 🐳 Docker + Apache Web App Rebuild
-
-***Same project. Different engineer. 🐳***
-
-Revisited and rebuilt one of my earliest Docker projects after gaining more hands-on experience with containers, networking, troubleshooting, and repeatable deployments.
-
-The original project helped me understand the basic idea of putting an application inside a container. The rebuild focused much more on understanding **how and why the pieces work together**.
-
-The rebuild included:
-
-* Dockerfiles
-* Docker image builds
-* Image tagging and versioning
-* Docker layer caching
-* Apache HTTP Server
-* Multiple running containers
-* Host-to-container port mapping
-* Docker networking
-* Container inspection
-* Container logs
-* Container lifecycle management
-* Application validation
-* Docker cleanup
-* Troubleshooting port conflicts
-* Troubleshooting container-name conflicts
-* Troubleshooting Docker Engine availability
-* Comparing container build approaches
-
-Rather than manually configuring a running container and treating the finished container as the product, I used a Dockerfile to define a repeatable build process and create reusable images.
-
-I also ran multiple containers from the application images using different host ports, inspected their configuration and networking, and practiced separating the concepts of **Dockerfile → image → container**.
-
-The biggest difference from the first version was not the application itself.
-
-It was how I approached it.
-
-The first time, I was learning how to make Docker work.
-
-This time, I wanted to understand what Docker was actually doing.
-
-💻 [View Repository](https://github.com/mandyreed223/docker-apache-webapp)
-
-📖 [Read the Updated Project Story on Medium](https://medium.com/@mandymreed/it-worked-on-my-machine-until-it-didnt-3d2df233c995)
-
----
-
-## ☁️ AWS Cloud Engineering Portfolio
-
-***Building a portfolio was easy. Getting DNS, HTTPS, caching, and a custom domain to cooperate was the adventure. 🌐***
-
-Designed and deployed this portfolio using Amazon S3, CloudFront, Route 53, and AWS Certificate Manager.
-
-Configured a custom domain with DNS routing and HTTPS/TLS, maintained source control through GitHub, and troubleshot deployment, caching, domain registration, DNS, and content delivery issues.
-
-🌐 [View Live Portfolio](https://mandyreed.com)
-
-💻 [View Repository](https://github.com/mandyreed223/cloud-engineer-portfolio)
-
-📖 [Read on Medium](https://medium.com/@mandymreed/so-i-decided-i-needed-a-portfolio-website-what-could-possibly-go-wrong-5a726e889864)
-
----
-
-## 🤖 Prompt Deployment Pipeline
-
-Built a CI/CD-style workflow using GitHub, Amazon S3, and Amazon Bedrock.
-
-💻 [View Repository](https://github.com/mandyreed223/prompt-deployment-pipeline)
-
----
-
-## 🌎 Multilingual Audio Pipeline
-
-Created an AWS pipeline using Amazon Transcribe, Amazon Translate, Amazon Polly, AWS Lambda, and Amazon S3.
-
-💻 [View Repository](https://github.com/mandyreed223/multilingual-audio-pipeline)
-
-📖 [Read on Medium](https://medium.com/@mandymreed/teaching-the-cloud-to-speak-every-language-df07b5764134)
-
----
-
-## 👁️ Rekognition Image Labeling Pipeline
-
-Built an image-processing workflow using Amazon Rekognition, Amazon DynamoDB, AWS Lambda, and Amazon S3.
-
-💻 [View Repository](https://github.com/mandyreed223/rekognition-image-labeling-pipeline)
-
----
-
-## 🔊 Polly Text-to-Speech API Pipeline
-
-Created a serverless text-to-speech solution using Amazon Polly, AWS Lambda, Amazon API Gateway, and Amazon S3.
-
-💻 [View Repository](https://github.com/mandyreed223/polly_text_to_speech_pipeline)
-
----
-
-## 🌐 Static Website Pipeline
-
-Built and deployed a static website using Amazon S3, Amazon CloudFront, and AWS CodePipeline.
-
-💻 [View Repository](https://github.com/mandyreed223/static_website_pipeline_project)
-
----
-
-## ✅ Required Files Checker
-
-Created a GitHub Actions workflow that validates required repository files and logs results to Amazon CloudWatch.
-
-💻 [View Repository](https://github.com/mandyreed223/file_checker_project)
-
----
-
-# 🧠 Things My Projects Have Taught Me
-
-The technical skills matter, but some of the best lessons happen somewhere between **“this should work”** and **“why is THAT happening?”** 😅
+The technical tools change from project to project, but several principles keep showing up.
 
 ### ☁️ Deployment Is Only Step One
 
-A successful deployment does not automatically mean the application actually works. I validate the environment and prove the application works too.
+A successful deployment does not automatically mean the application works.
 
-The Terraform Auto Scaling project reinforced this at the infrastructure layer.
+`terraform apply` can succeed while User Data fails.
 
-A successful `terraform apply` meant Terraform had created the requested AWS resources. It did not prove that User Data executed successfully, Apache installed, the Target Group considered the instances healthy, or the load balancer could serve the application.
+An EC2 instance can show `running` while nothing is listening on port 80.
+
+A Kubernetes Pod can show `Running` while the application path is broken.
+
+I validate the infrastructure **and** the application behavior.
 
 ### 🔗 Infrastructure Is a Chain of References
 
-Terraform became much easier to understand when I stopped thinking about resources as isolated blocks and started following the values moving between them.
+Terraform became easier to understand when I stopped seeing resources as isolated blocks and started following the values between them.
 
-The VPC provides an ID used by subnets, Security Groups, and the Target Group.
+```text
+VPC
+ ↓
+Subnets + Security Groups
+ ↓
+Load Balancer + Application Tier
+ ↓
+Database Tier
+```
 
-Subnet IDs determine where the load balancer and Auto Scaling instances are placed.
+A reference such as:
 
-The Target Group connects the application fleet to the load balancer.
+```hcl
+vpc_id = aws_vpc.main.id
+```
 
-The Launch Template defines how new EC2 instances should be created.
+means Terraform takes the real VPC ID created by `aws_vpc.main` and passes it into the dependent resource.
 
-The Auto Scaling Group references the Launch Template, private subnets, and Target Group to turn those individual resources into a working architecture.
-
-Those references are what connect Terraform resources into a system.
+Those references connect individual resources into an architecture and also help Terraform determine dependency order.
 
 ### 🔎 Follow the Entire Path
 
-Troubleshooting gets easier when I understand how every service connects instead of looking at one component in isolation.
-
-The Terraform Auto Scaling project created another complete troubleshooting path:
+When something fails, I try to follow the request or dependency path rather than guessing at individual components.
 
 ```text
-Terraform
-    ↓
-AWS Infrastructure
-    ↓
-Launch Template
-    ↓
-EC2 Instance
-    ↓
-User Data
-    ↓
-Apache
-    ↓
+User
+ ↓
+Load Balancer
+ ↓
 Target Group
-    ↓
-Application Load Balancer
-    ↓
-User
+ ↓
+EC2
+ ↓
+Application
+ ↓
+Database
 ```
 
-The EKS project extended that same whole-path thinking across both Kubernetes and AWS:
-
-```text
-Source Code
-    ↓
-Docker Image
-    ↓
-Amazon ECR
-    ↓
-EKS Deployment
-    ↓
-ReplicaSet
-    ↓
-Pods
-    ↓
-Kubernetes Service
-    ↓
-AWS Load Balancer
-    ↓
-User
-```
-
-### 🧩 Tiny Configuration Errors Can Break Big Architectures
-
-One leading space before `#!/bin/bash` was enough to stop EC2 User Data from working correctly.
-
-The VPC could be correct.
-
-The Auto Scaling Group could be correct.
-
-The Launch Template could successfully create an instance.
-
-The load balancer could exist.
-
-And the application could still fail because the bootstrap process did not execute correctly.
-
-The size of the configuration mistake does not determine the size of its impact.
-
-### 🔐 Secure It, Then Prove It
-
-Least privilege is more meaningful when I test the permissions and verify that the environment can do exactly what it needs.
-
-The Terraform Auto Scaling project also reinforced that private instances do not automatically require inbound SSH access.
-
-AWS Systems Manager Session Manager gave me secure diagnostic access to the private EC2 instances without adding public IP addresses, opening port 22, or managing SSH keys.
+The same approach applies to Kubernetes, containers, CI/CD, and cloud infrastructure.
 
 ### ♻️ Desired State Is Something You Can Test
 
-Container orchestration became much easier to understand when I deliberately started removing workloads instead of simply reading about self-healing.
+Docker Swarm, Kubernetes, and EC2 Auto Scaling reinforced the same idea at different layers:
 
-Docker Swarm introduced me to desired-state recovery by replacing containers and rescheduling tasks.
+> Define the state you want, deliberately change reality, and observe how the platform responds.
 
-My local Kubernetes projects let me watch Deployments, ReplicaSets, and Pods work together to maintain the workloads I declared.
+Deleting Pods, removing containers, draining nodes, and terminating EC2 instances turned self-healing from documentation into observable behavior.
 
-Amazon EKS showed that the same Kubernetes concepts still apply when those workloads run on AWS infrastructure.
+### 💾 Compute Can Be Disposable. Data Cannot.
 
-The Terraform Auto Scaling project demonstrated desired capacity at the EC2 infrastructure layer.
+The HA Terraform architecture made this especially clear.
 
-After I deliberately terminated one healthy instance, the Auto Scaling Group detected that actual capacity no longer matched desired capacity and launched a replacement.
+I terminated an application instance and allowed Auto Scaling to replace it. The compute changed, but the records stored in RDS remained available to the replacement instance.
 
-Different technologies, same important idea:
+Persistent data needs an architecture independent of disposable compute.
 
-**Define the state you want, then observe how the platform responds when reality changes.**
+### 🔐 Secure It, Then Prove It
 
-### ☁️ Kubernetes and AWS Operate at Different Layers
+Private EC2 instances do not automatically require inbound SSH.
 
-One of the biggest lessons from the EKS project was understanding where Kubernetes responsibilities end and AWS responsibilities begin.
+Systems Manager Session Manager has allowed me to troubleshoot private instances without public IP addresses, port 22, or SSH key management.
 
-Kubernetes managed Deployments, ReplicaSets, Pods, Services, desired state, rolling updates, and Horizontal Pod Autoscaling.
+Security controls are more meaningful when I validate that the intended access path actually works.
 
-AWS provided the underlying EC2 compute, VPC networking, load balancing, ECR image storage, EKS managed infrastructure, and CloudWatch logging.
+### 📈 Monitor the Recovery, Not Just the Failure
 
-Neither layer exists in isolation.
+The HA Terraform project added another layer to failure testing.
 
-Understanding how the two layers connect made the environment much easier to reason about and troubleshoot.
-
-### 📈 Scaling Happens at Different Layers
-
-Scaling an application does not always mean scaling the same thing.
-
-In EKS, I manually increased the Deployment from three Pods to six and Kubernetes scheduled those workloads onto the existing worker nodes because sufficient compute capacity was still available.
-
-The Horizontal Pod Autoscaler added another layer by automatically changing application replicas based on CPU utilization.
-
-The Terraform Auto Scaling project moved the scaling conversation to EC2 infrastructure, where the Auto Scaling Group maintains the desired number of application instances.
-
-Understanding which layer is scaling makes the behavior much easier to reason about.
-
-### 📊 Resource Requests Affect More Than Scheduling
-
-CPU and memory requests help Kubernetes make scheduling decisions, but the EKS project showed me that resource requests can influence other Kubernetes behavior too.
-
-The HPA evaluated CPU utilization relative to the CPU request defined for each application Pod.
-
-That made resource configuration part of the autoscaling story rather than simply a manifest setting.
-
-### 🔄 Stable Entry Points Matter
-
-Individual workloads are replaceable.
-
-During Kubernetes self-healing, scaling, and rolling updates, individual Pods changed while the Kubernetes Service and external application endpoint remained stable.
-
-The Terraform Auto Scaling architecture reinforced a similar idea at the EC2 layer.
-
-Individual EC2 instances could be terminated and replaced while the Application Load Balancer remained the stable public entry point.
-
-### 📦 Versioning Makes Changes Easier to Understand
-
-Building separate `v1` and `v2` container images in the EKS project reinforced why application versions matter.
-
-The Terraform Auto Scaling project applied a similar concept to infrastructure configuration through Launch Template versions.
-
-After correcting the User Data script, Terraform created Launch Template version 3.
-
-I then used Instance Refresh to roll the corrected configuration across the Auto Scaling Group.
-
-Versioning made it clear which configuration the replacement instances were actually using.
-
-### 🧩 Labels Create Relationships
-
-My Kubernetes projects reinforced that having healthy individual resources does not automatically mean the application path is correct.
-
-Deployment selectors, Pod labels, and Service selectors create relationships between Kubernetes resources.
-
-A Pod can be running and a Service can exist, but if their labels and selectors do not line up, the Service will not route traffic to the intended workload.
-
-Understanding those relationships made Kubernetes networking much easier to reason about and troubleshoot.
-
-### 🔗 A Healthy Resource Does Not Mean a Healthy Application
-
-The multi-tier Kubernetes project reinforced that troubleshooting cannot stop when individual Pods show `Running`.
-
-The Terraform Auto Scaling project reinforced the same principle from another direction.
-
-An EC2 instance can be `running` while the application inside it is completely unusable.
-
-Health must be evaluated at the layer that actually matters to the application.
-
-### 💾 Persistent Data Changes Everything
-
-Containers can disappear and be recreated. Application data cannot be treated the same way.
-
-Adding stateful applications such as WordPress and MySQL forced me to think beyond whether a container or Pod was running and start considering where data lives, how workloads access it, what happens when workloads move or restart, and how storage affects application recovery.
-
-### 🧩 The Problem May Be Somewhere Else
-
-A container problem is not always a Docker problem.
-
-A Kubernetes problem is not always a Pod problem.
-
-An unhealthy EC2 instance in an Auto Scaling architecture is not automatically an Auto Scaling problem.
-
-Troubleshooting these projects has crossed containers, orchestration, Linux, AWS Security Groups, networking, memory, storage, SSH, Systems Manager, Services, application configuration, databases, load balancing, Launch Templates, User Data, resource utilization, cloud infrastructure, and the applications themselves.
-
-Understanding the entire path matters.
-
-### 🔄 Rebuilding Old Work Shows Progress
-
-One of the most useful ways to see how much I have learned is to revisit something I built earlier.
-
-Rebuilding my Docker + Apache project changed the questions I was asking. Instead of simply asking whether I could get a container running, I was thinking about image construction, layers, versioning, networking, port mappings, repeatability, inspection, troubleshooting, and lifecycle management.
-
-**Same project. Different engineer.**
+It was not enough to terminate an instance and watch Auto Scaling create another one. CloudWatch provided visibility into the unhealthy-host condition and its return to normal after the replacement target became healthy.
 
 ### 🧹 Clean Up Counts Too
 
-Building cloud resources is fun. Knowing how to safely tear them down is part of understanding the full lifecycle.
+Building cloud resources is fun.
 
-The EKS project reinforced this across EKS, EC2, load balancing, ECR, and CloudWatch.
-
-The Terraform Auto Scaling project reinforced it again across VPC networking, NAT, load balancing, Auto Scaling, EC2, and supporting resources.
-
-Cleanup was not complete until the resources were removed and the environment was verified.
+Understanding dependencies well enough to safely destroy the environment is part of understanding the full lifecycle too.
 
 ---
 
-# ✍️ Project Stories & Technical Writing
+# 🚀 Current Focus
 
-Building the project is only half the story.
-
-I also document what happened along the way: the troubleshooting, mistakes, lessons learned, and occasional **“why is THAT happening?”** moments. 😅
-
-These articles focus less on simply listing technologies and more on explaining what I built, what went wrong, how I troubleshot it, and what I learned from the experience.
-
-## 🏗️ Terraform Auto Scaling Architecture on AWS
-
-***I Built an Auto Scaling Architecture with Terraform. Then One Tiny Space Broke Everything.***
-
-Built a highly available AWS web architecture with Terraform using a custom VPC, multi-AZ public and private networking, an Application Load Balancer, private EC2 instances, Launch Templates, and an Auto Scaling Group.
-
-The project became an especially useful troubleshooting exercise when a tiny formatting problem in EC2 User Data prevented the application bootstrap process from working correctly.
-
-Following the complete path led to the root cause, a corrected Launch Template version, an Instance Refresh that rolled the fix across the fleet, and healthy application targets behind the load balancer.
-
-📖 [Read on Medium](https://medium.com/@mandymreed/%EF%B8%8F-i-built-an-auto-scaling-architecture-with-terraform-then-one-tiny-space-broke-everything-c1f29147dcd5)
-
-## ☁️☸️ Amazon EKS Deployment
-
-***I Put Kubernetes on AWS. Then I Started Deleting Pods. ☸️😈***
-
-My first Amazon EKS project moved Kubernetes from my local environment into AWS and connected several technologies I had previously practiced separately.
-
-I built an EKS cluster, deployed and exposed a containerized application, stored versioned images in Amazon ECR, tested Pod self-healing, manually scaled workloads, configured Horizontal Pod Autoscaling, inspected resource metrics, enabled EKS control-plane logging in CloudWatch, and released an updated application through a rolling deployment.
-
-More importantly, the project helped me understand how Kubernetes and AWS operate at different layers while still forming one complete application path.
-
-📖 [Read on Medium](https://medium.com/@mandymreed/i-put-kubernetes-on-aws-then-i-started-deleting-pods-%EF%B8%8F-6b5d9898773a)
-
-## ☸️ WordPress + MySQL on Kubernetes
-
-***I Put WordPress and MySQL on Kubernetes. Then MySQL Fought Back. ⚔️***
-
-My second hands-on Kubernetes project moved beyond exploring individual Kubernetes resources and into a multi-tier application where WordPress and MySQL had to communicate through Kubernetes.
-
-The project became a practical lesson in Services, selectors, application-to-database communication, persistent data, networking, and why a Pod showing `Running` does not automatically mean the application works.
-
-📖 [Read on Medium](https://medium.com/@mandymreed/i-put-wordpress-and-mysql-on-kubernetes-then-mysql-fought-back-%EF%B8%8F-05a6370e0926)
-
-## ☸️ Kubernetes Fundamentals
-
-***Kubernetes Said Desired State. I Said Prove It. ☸️***
-
-My first hands-on Kubernetes project started with a single nginx Pod and grew into Deployments, ReplicaSets, Services, scaling, self-healing, rolling updates, labels and selectors, EndpointSlices, declarative YAML, and an unexpectedly useful troubleshooting lesson involving an immutable Deployment selector.
-
-📖 [Read on Medium](https://medium.com/@mandymreed/kubernetes-said-desired-state-i-said-prove-it-%EF%B8%8F-e8fbe1469ec3)
-
-### 🐳 WordPress + MySQL Docker Swarm
-
-***I Put WordPress on Docker Swarm. Then Things Got Real.***
-
-What started as a multi-container deployment became a hands-on lesson in Docker Swarm, WordPress, MySQL, Amazon EFS, Docker Secrets, persistent storage, service recovery, and whole-path troubleshooting.
-
-📖 [Read on Medium](https://medium.com/@mandymreed/i-put-wordpress-on-docker-swarm-then-things-got-real-438cbb166861)
-
-### 🐳 Docker Swarm on AWS
-
-***I Built a Docker Swarm. Then I Started Killing Containers. 🐳💀***
-
-Three EC2 servers, one Docker Swarm, and a crash course in scaling, self-healing, Docker Stack, and why containers apparently don't stay dead.
-
-📖 [Read on Medium](https://medium.com/@mandymreed/i-built-a-docker-swarm-then-i-started-killing-containers-14bfd9fb54ae)
-
-### 🛠️ Jenkins on AWS with Terraform
-
-From manually deploying Jenkins to reusable Infrastructure as Code, IAM role-based S3 access, environment validation, and safe Terraform cleanup.
-
-📖 [Read on Medium](https://medium.com/@mandymreed/i-put-jenkins-on-aws-with-terraform-because-apparently-clicking-buttons-was-too-easy-%EF%B8%8F-%EF%B8%8F-d6a39afaa125)
-
-### 🐳 Docker + Jenkins Lab
-
-A hands-on Docker and Jenkins story covering container lifecycle, persistent volumes, Docker Compose, custom Docker images, and the surprisingly useful lesson that deleting a container does not have to mean deleting your data.
-
-📖 [Read on Medium](https://medium.com/@mandymreed/i-put-jenkins-in-a-container-then-started-deleting-things-e947c8bca954)
-
-### 🐳 Docker + Apache: It Worked On My Machine... Until It Didn't
-
-One of my earliest Docker stories, now revisited with a second chapter.
-
-The updated article follows the original container experiment into a more intentional rebuild using Dockerfiles, reusable images, image versioning, layer caching, multiple containers, port mapping, networking, inspection, troubleshooting, and lifecycle management.
-
-The application may look familiar. The way I approached it definitely does not. 🐳
-
-📖 [Read the Updated Story on Medium](https://medium.com/@mandymreed/it-worked-on-my-machine-until-it-didnt-3d2df233c995)
-
-### 🌐 AWS Cloud Engineering Portfolio
-
-A behind-the-scenes look at building and deploying this cloud engineering portfolio, including the deployment, caching, DNS, and custom domain issues I troubleshot along the way.
-
-📖 [Read on Medium](https://medium.com/@mandymreed/so-i-decided-i-needed-a-portfolio-website-what-could-possibly-go-wrong-5a726e889864)
-
-### 🌍 Multilingual Audio Pipeline
-
-A walkthrough of a multilingual AWS pipeline using Amazon Transcribe, Translate, Polly, Lambda, S3, and CloudWatch.
-
-📖 [Read on Medium](https://medium.com/@mandymreed/teaching-the-cloud-to-speak-every-language-df07b5764134)
-
----
-
-# 🚀 What I'm Focusing On Next
-
-Terraform, Docker Swarm, and Kubernetes have officially graduated from **“things I need to learn”** to **“things I've built with.”** 🎓😅
-
-My Kubernetes learning has progressed through several layers of hands-on work:
+My hands-on Kubernetes experience has progressed from managing individual resources to building multi-tier applications, troubleshooting workloads, and deploying cloud-based environments on Amazon EKS.
 
 ```text
 Kubernetes Fundamentals
         ↓
-Multi-Tier Application
+Multi-Tier Applications
         ↓
-Application Troubleshooting
+Troubleshooting
         ↓
 Amazon EKS
         ↓
 Cloud-Native Operations
 ```
 
-Moving Kubernetes into AWS helped connect my existing cloud experience with the container orchestration concepts I had been practicing locally.
-
-Terraform has followed its own progression:
+My Terraform experience has followed a similar progression from provisioning individual AWS resources to building increasingly connected multi-AZ architectures.
 
 ```text
 Terraform Fundamentals
@@ -1361,86 +527,75 @@ Resource Linkage
         ↓
 Multi-AZ Auto Scaling Architecture
         ↓
-Infrastructure Operations
+Highly Available 2-Tier Architecture
+        ↓
+Infrastructure Operations & Reliability
 ```
 
-My earlier Terraform work focused on automating individual AWS workloads and learning the basics of Infrastructure as Code.
+The latest architecture integrates VPC networking, public and private subnets, Application Load Balancing, private EC2 instances, Launch Templates, Auto Scaling, IAM, Systems Manager, NAT, Multi-AZ RDS, Secrets Manager, CloudWatch monitoring, application bootstrapping, SQL validation, and failure-recovery testing.
 
-The Auto Scaling project expanded that experience into an architecture where VPC networking, public and private subnets, load balancing, Launch Templates, Auto Scaling, IAM, Systems Manager, application bootstrapping, and remote Terraform state all had to work together.
+I continue to strengthen these capabilities through hands-on implementation, troubleshooting, and operational problem-solving while expanding my expertise in:
 
-My next areas of focus include:
+- Microsoft Azure
+- Cloud security
+- Monitoring and observability
+- Site Reliability Engineering
+- Kubernetes observability
+- Deployment automation
+- SQL and database fundamentals
+- Deeper Terraform architecture and automation
+- Multi-cloud fundamentals, including GCP
 
-* Microsoft Azure
-* Cloud security
-* Monitoring and alerting
-* Site Reliability Engineering
-* Kubernetes observability
-* Kubernetes configuration and secrets management
-* Deployment automation
-* Deeper Terraform architecture and automation
-
-Kubernetes is not disappearing from the roadmap.
-
-The Fundamentals project established the foundation, the WordPress + MySQL project expanded that foundation into a multi-tier application, and Amazon EKS moved those concepts into AWS-managed infrastructure with cloud networking, load balancing, ECR, autoscaling, monitoring, and versioned application releases.
-
-Terraform is also moving beyond simply provisioning resources and toward understanding how complete cloud architectures are defined, connected, changed, troubleshot, and maintained as code.
-
-Future work can build from there through deeper observability, configuration and secrets management, deployment automation, monitoring, cloud architecture, and more advanced infrastructure automation.
-
-As I complete hands-on projects in these areas, they will continue making their way into the portfolio.
+My objective is to develop a well-rounded cloud engineering skill set focused on reliability, scalability, security, automation, and operational excellence across modern enterprise environments.
 
 ---
 
 # 💼 Professional Background
 
-I have 18 years of experience supporting users in enterprise IT environments and 21 years with Allstate.
+I have 18 years of experience supporting users in enterprise IT environments and more than 21 years with Allstate.
 
-My background includes technical support, troubleshooting, customer service, documentation, incident management, problem-solving, and supporting business-critical technology.
+My professional background includes technical troubleshooting, incident resolution, customer support, documentation, access management, Microsoft 365, Active Directory, and supporting business-critical technology.
 
-I am expanding that experience into cloud engineering through hands-on projects involving AWS, highly available cloud architectures, Amazon EKS, Amazon ECR, Terraform, Infrastructure as Code, Linux, Docker, Docker Swarm, Kubernetes, multi-tier applications, container orchestration, Amazon EFS, Jenkins, automation, monitoring, CI/CD, serverless technologies, autoscaling, load balancing, and cloud operations.
+My cloud and DevOps work builds on that foundation through hands-on engineering projects rather than replacing the story that came before it.
 
-The technologies are changing, but one part has stayed very familiar:
+The technologies may be changing, but one part remains very familiar:
 
-**Something isn't working. Figure out why. 🔎**
+> **Something isn't working. Figure out why. 🔎**
 
 ---
 
-# 🔧 Portfolio Troubleshooting & Lessons Learned
+# 🔧 Portfolio Troubleshooting
 
-Building and maintaining this portfolio has involved real troubleshooting rather than following a perfectly successful deployment path.
+The portfolio itself has been part of the hands-on work.
 
-A few examples:
+Building and maintaining it has included:
 
-* Diagnosed a Git push failure caused by a repository that had not yet been created
-* Identified CloudFront caching when GitHub and S3 contained updated content but the live website continued displaying the previous version
-* Used CloudFront cache invalidation to refresh deployed website content
-* Troubleshot an initial Route 53 domain registration failure
-* Configured the Route 53 hosted zone
-* Used DNS validation for an ACM TLS certificate
-* Configured HTTPS for both the root domain and `www` subdomain
-* Added alternate domain names to CloudFront
-* Created Route 53 A and AAAA alias records
-* Learned how DNS, TLS, CloudFront, S3, source control, and the live website fit together
+- Troubleshooting Git and repository issues
+- Diagnosing CloudFront caching when updated content was already present in GitHub and S3
+- Using CloudFront cache invalidations during deployments
+- Troubleshooting Route 53 domain registration and DNS configuration
+- Configuring the Route 53 hosted zone
+- Using DNS validation for the ACM TLS certificate
+- Configuring HTTPS for the root and `www` domains
+- Adding alternate domain names to CloudFront
+- Creating Route 53 alias records
+- Understanding how GitHub, S3, CloudFront, Route 53, DNS, TLS, and the live website connect
 
-These experiences are an important part of the project because understanding the complete path makes troubleshooting much more effective.
+What started as a place to showcase cloud projects became another cloud project of its own. 😅
 
 ---
 
 # 🔮 What's Next for the Portfolio?
 
-The portfolio will continue evolving as my skills and projects grow.
+The portfolio will continue evolving with the work behind it.
 
-Future improvements may include:
+Potential future improvements include:
 
-* Automated portfolio deployment with GitHub Actions
-* Terraform-managed portfolio infrastructure
-* Microsoft Azure projects
-* Deeper Kubernetes observability
-* Kubernetes configuration and secrets management
-* Kubernetes deployment automation
-* Additional monitoring and alerting
-* New cloud architecture visualizations
-* More hands-on cloud and DevOps projects
+- Automated portfolio deployment with GitHub Actions
+- Terraform-managed portfolio infrastructure
+- Additional architecture visualizations
+- Continued UI and accessibility improvements
+- New cloud and DevOps projects as they are completed
 
 ---
 
@@ -1458,6 +613,6 @@ Future improvements may include:
 
 ## 👩‍💻 Mandy Reed
 
-Enterprise IT professional building hands-on cloud and DevOps engineering experience through AWS, highly available cloud architectures, Amazon EKS, Terraform, Infrastructure as Code, Linux, Docker, Kubernetes, container orchestration, load balancing, autoscaling, monitoring, automation, troubleshooting, and technical writing.
+Enterprise IT professional building hands-on cloud and DevOps engineering experience through AWS, Terraform, Infrastructure as Code, highly available architectures, Amazon EKS, Linux, Docker, Kubernetes, databases, monitoring, automation, troubleshooting, and technical writing.
 
 ☁️ **Build it. Troubleshoot it. Understand it. Then build something harder.** 🚀
