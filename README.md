@@ -62,118 +62,118 @@ These technologies represent tools, services, and engineering concepts I have us
 
 ### ☁️ AWS & Cloud
 
-- Amazon EC2
-- Amazon S3
-- Amazon EFS
-- Amazon EKS
-- Amazon ECR
-- Amazon VPC
-- Application Load Balancer
-- Elastic Load Balancing
-- EC2 Auto Scaling
-- Launch Templates
-- Target Groups
-- Amazon RDS for MySQL
-- Multi-AZ RDS
-- AWS Systems Manager Session Manager
-- AWS Secrets Manager
-- Amazon CloudWatch
-- CloudWatch Alarms
-- NAT Gateway
-- Internet Gateway
-- Route Tables
-- Security Groups
-- IAM
-- Lambda
-- API Gateway
-- DynamoDB
-- CloudFront
-- Route 53
-- AWS Certificate Manager
-- Bedrock
-- Rekognition
-- Polly
-- Transcribe
-- Translate
+* Amazon EC2
+* Amazon S3
+* Amazon EFS
+* Amazon EKS
+* Amazon ECR
+* Amazon VPC
+* Application Load Balancer
+* Elastic Load Balancing
+* EC2 Auto Scaling
+* Launch Templates
+* Target Groups
+* Amazon RDS for MySQL
+* Multi-AZ RDS
+* AWS Systems Manager Session Manager
+* AWS Secrets Manager
+* Amazon CloudWatch
+* CloudWatch Alarms
+* NAT Gateway
+* Internet Gateway
+* Route Tables
+* Security Groups
+* IAM
+* Lambda
+* API Gateway
+* DynamoDB
+* CloudFront
+* Route 53
+* AWS Certificate Manager
+* Bedrock
+* Rekognition
+* Polly
+* Transcribe
+* Translate
 
 ### 🏗️ Terraform & Infrastructure as Code
 
-- Terraform
-- Infrastructure as Code
-- Terraform Resource References
-- Terraform Remote State
-- S3 State Versioning
-- Terraform State Locking
-- Launch Template Versioning
-- EC2 Instance Refresh
-- Multi-AZ Architecture
-- Infrastructure Lifecycle Management
-- Infrastructure Troubleshooting
+* Terraform
+* Infrastructure as Code
+* Terraform Resource References
+* Terraform Remote State
+* S3 State Versioning
+* Terraform State Locking
+* Launch Template Versioning
+* EC2 Instance Refresh
+* Multi-AZ Architecture
+* Infrastructure Lifecycle Management
+* Infrastructure Troubleshooting
 
 ### ☸️ Kubernetes & Containers
 
-- Kubernetes
-- Amazon EKS
-- MicroK8s
-- kubectl
-- eksctl
-- Pods
-- Deployments
-- ReplicaSets
-- Services
-- ClusterIP Services
-- LoadBalancer Services
-- Labels and Selectors
-- EndpointSlices
-- Kubernetes YAML
-- Desired-State Reconciliation
-- Self-Healing Workloads
-- Horizontal Pod Autoscaling
-- Metrics Server
-- Resource Requests and Limits
-- Rolling Updates
-- Managed Node Groups
-- Multi-Tier Applications
-- Kubernetes Troubleshooting
-- Docker
-- Docker Compose
-- Docker Swarm
-- Docker Stack
-- Dockerfiles
-- Docker Networking
-- Docker Secrets
-- Overlay Networking
-- Container Troubleshooting
-- Image Versioning
-- Persistent Volumes
+* Kubernetes
+* Amazon EKS
+* MicroK8s
+* kubectl
+* eksctl
+* Pods
+* Deployments
+* ReplicaSets
+* Services
+* ClusterIP Services
+* LoadBalancer Services
+* Labels and Selectors
+* EndpointSlices
+* Kubernetes YAML
+* Desired-State Reconciliation
+* Self-Healing Workloads
+* Horizontal Pod Autoscaling
+* Metrics Server
+* Resource Requests and Limits
+* Rolling Updates
+* Managed Node Groups
+* Multi-Tier Applications
+* Kubernetes Troubleshooting
+* Docker
+* Docker Compose
+* Docker Swarm
+* Docker Stack
+* Dockerfiles
+* Docker Networking
+* Docker Secrets
+* Overlay Networking
+* Container Troubleshooting
+* Image Versioning
+* Persistent Volumes
 
 ### 🔧 DevOps, Automation & Operations
 
-- Linux
-- AWS CLI
-- Git
-- GitHub
-- GitHub Actions
-- Jenkins
-- CI/CD
-- Monitoring and Alerting
-- Application Bootstrapping
-- EC2 User Data
-- Systems Troubleshooting
-- Failure and Recovery Testing
+* Linux
+* AWS CLI
+* Git
+* GitHub
+* GitHub Actions
+* Jenkins
+* CI/CD
+* Monitoring and Alerting
+* Application Bootstrapping
+* EC2 User Data
+* Systems Troubleshooting
+* Failure and Recovery Testing
 
 ### 🗄️ Applications & Data
 
-- MySQL
-- MariaDB Client
-- SQL
-- Apache HTTP Server
-- nginx
-- WordPress
-- Persistent Application Data
-- Shared File Storage
-- NFS
-- Application-to-Database Communication
+* MySQL
+* MariaDB Client
+* SQL
+* Apache HTTP Server
+* nginx
+* WordPress
+* Persistent Application Data
+* Shared File Storage
+* NFS
+* Application-to-Database Communication
 
 ---
 
@@ -207,20 +207,20 @@ Amazon RDS MySQL
 
 The environment uses a custom VPC across two Availability Zones with:
 
-- Two public subnets
-- Two private application subnets
-- Two private database subnets
-- Application Load Balancer
-- Auto Scaling Group
-- Private EC2 instances
-- One NAT Gateway per Availability Zone
-- Multi-AZ Amazon RDS for MySQL
-- AWS Systems Manager Session Manager
-- AWS Secrets Manager
-- Amazon CloudWatch
-- CloudWatch alarm monitoring
-- Security group chaining
-- Terraform-managed infrastructure
+* Two public subnets
+* Two private application subnets
+* Two private database subnets
+* Application Load Balancer
+* Auto Scaling Group
+* Private EC2 instances
+* One NAT Gateway per Availability Zone
+* Multi-AZ Amazon RDS for MySQL
+* AWS Systems Manager Session Manager
+* AWS Secrets Manager
+* Amazon CloudWatch
+* CloudWatch alarm monitoring
+* Security group chaining
+* Terraform-managed infrastructure
 
 The security path follows the application tiers:
 
@@ -315,18 +315,18 @@ Moved Kubernetes from a local environment into AWS by deploying and operating a 
 
 The project connected:
 
-- Amazon EKS
-- Managed EC2 worker nodes
-- Amazon ECR
-- Docker
-- Kubernetes Deployments and ReplicaSets
-- LoadBalancer Services
-- Resource requests and limits
-- Metrics Server
-- Horizontal Pod Autoscaling
-- Rolling updates
-- Pod self-healing
-- CloudWatch control-plane logging
+* Amazon EKS
+* Managed EC2 worker nodes
+* Amazon ECR
+* Docker
+* Kubernetes Deployments and ReplicaSets
+* LoadBalancer Services
+* Resource requests and limits
+* Metrics Server
+* Horizontal Pod Autoscaling
+* Rolling updates
+* Pod self-healing
+* CloudWatch control-plane logging
 
 I deliberately deleted a running application Pod and watched the ReplicaSet restore the desired state.
 
@@ -356,16 +356,16 @@ Built a multi-tier WordPress and MySQL application on Kubernetes, moving beyond 
 
 The project included:
 
-- Kubernetes Deployments
-- Services
-- ClusterIP networking
-- Labels and selectors
-- ConfigMaps and Secrets
-- Persistent storage
-- Readiness behavior
-- Application-to-database communication
-- Kubernetes DNS
-- Whole-path troubleshooting
+* Kubernetes Deployments
+* Services
+* ClusterIP networking
+* Labels and selectors
+* ConfigMaps and Secrets
+* Persistent storage
+* Readiness behavior
+* Application-to-database communication
+* Kubernetes DNS
+* Whole-path troubleshooting
 
 The project reinforced that a Pod showing `Running` does not automatically mean the application is healthy.
 
@@ -381,22 +381,23 @@ Troubleshooting meant following the complete path between workloads, Services, c
 
 My portfolio also includes projects covering Kubernetes fundamentals and troubleshooting, Docker orchestration, Jenkins, CI/CD, serverless AWS services, automation, and cloud-hosted applications.
 
-| Project | Focus | GitHub | Story |
-|---|---|---|---|
-| ☸️ Kubernetes Fundamentals | Deployments, ReplicaSets, Services, scaling, self-healing, YAML | [Repository](https://github.com/mandyreed223/kubernetes-fundamentals) | [Medium](https://medium.com/@mandymreed/kubernetes-said-desired-state-i-said-prove-it-%EF%B8%8F-e8fbe1469ec3) |
-| 🔎 Kubernetes Troubleshooting Lab | Broken images, CrashLoopBackOff, selectors, probes, resource issues | [Repository](https://github.com/mandyreed223/kubernetes-troubleshooting-lab) | Portfolio project |
-| 🐳 WordPress + MySQL Docker Swarm | Multi-service orchestration, EFS, secrets, persistence, failover | [Repository](https://github.com/mandyreed223/wordpress-docker-swarm-aws) | [Medium](https://medium.com/@mandymreed/i-put-wordpress-on-docker-swarm-then-things-got-real-438cbb166861) |
-| 🐳 Docker Swarm on AWS | Multi-node orchestration, scaling, self-healing, node draining | [Repository](https://github.com/mandyreed223/docker-swarm-aws-lab) | [Medium](https://medium.com/@mandymreed/i-built-a-docker-swarm-then-i-started-killing-containers-14bfd9fb54ae) |
-| 🏗️ Jenkins on AWS with Terraform | Terraform, EC2, IAM, S3, User Data | [Repository](https://github.com/mandyreed223/terraform-jenkins-aws) | [Medium](https://medium.com/@mandymreed/i-put-jenkins-on-aws-with-terraform-because-apparently-clicking-buttons-was-too-easy-%EF%B8%8F-%EF%B8%8F-d6a39afaa125) |
-| 🐳 Docker + Jenkins Lab | Container lifecycle, persistent volumes, Compose, custom images | [Repository](https://github.com/mandyreed223/docker-jenkins-lab) | [Medium](https://medium.com/@mandymreed/i-put-jenkins-in-a-container-then-started-deleting-things-e947c8bca954) |
-| 🐳 Docker + Apache Rebuild | Dockerfiles, image versioning, networking, repeatable builds | [Repository](https://github.com/mandyreed223/docker-apache-webapp) | [Medium](https://medium.com/@mandymreed/it-worked-on-my-machine-until-it-didnt-3d2df233c995) |
-| 🌐 AWS Cloud Engineering Portfolio | S3, CloudFront, Route 53, ACM, DNS, HTTPS | [Repository](https://github.com/mandyreed223/cloud-engineer-portfolio) | [Medium](https://medium.com/@mandymreed/so-i-decided-i-needed-a-portfolio-website-what-could-possibly-go-wrong-5a726e889864) |
-| 🌍 Multilingual Audio Pipeline | Transcribe, Translate, Polly, Lambda, S3 | [Repository](https://github.com/mandyreed223/multilingual-audio-pipeline) | [Medium](https://medium.com/@mandymreed/teaching-the-cloud-to-speak-every-language-df07b5764134) |
-| 🤖 Prompt Deployment Pipeline | GitHub, S3, Bedrock, CI/CD-style workflow | [Repository](https://github.com/mandyreed223/prompt-deployment-pipeline) | Project documentation |
-| 👁️ Rekognition Image Labeling Pipeline | Rekognition, DynamoDB, Lambda, S3 | [Repository](https://github.com/mandyreed223/rekognition-image-labeling-pipeline) | Project documentation |
-| 🔊 Polly Text-to-Speech API | Polly, Lambda, API Gateway, S3 | [Repository](https://github.com/mandyreed223/polly_text_to_speech_pipeline) | Project documentation |
-| 🌐 Static Website Pipeline | S3, CloudFront, CodePipeline | [Repository](https://github.com/mandyreed223/static_website_pipeline_project) | Project documentation |
-| ✅ Required Files Checker | GitHub Actions, CloudWatch, CI validation | [Repository](https://github.com/mandyreed223/file_checker_project) | Project documentation |
+| Project                                 | Focus                                                               | GitHub                                                                            | Story                                                                                                                                                          |
+| --------------------------------------- | ------------------------------------------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ☸️ Kubernetes Fundamentals              | Deployments, ReplicaSets, Services, scaling, self-healing, YAML     | [Repository](https://github.com/mandyreed223/kubernetes-fundamentals)             | [Medium](https://medium.com/@mandymreed/kubernetes-said-desired-state-i-said-prove-it-%EF%B8%8F-e8fbe1469ec3)                                                  |
+| 🔎 Kubernetes Troubleshooting Lab       | Broken images, CrashLoopBackOff, selectors, probes, resource issues | [Repository](https://github.com/mandyreed223/kubernetes-troubleshooting-lab)      | Portfolio project                                                                                                                                              |
+| 🐳 WordPress + MySQL Docker Swarm       | Multi-service orchestration, EFS, secrets, persistence, failover    | [Repository](https://github.com/mandyreed223/wordpress-docker-swarm-aws)          | [Medium](https://medium.com/@mandymreed/i-put-wordpress-on-docker-swarm-then-things-got-real-438cbb166861)                                                     |
+| 🐳 Docker Swarm on AWS                  | Multi-node orchestration, scaling, self-healing, node draining      | [Repository](https://github.com/mandyreed223/docker-swarm-aws-lab)                | [Medium](https://medium.com/@mandymreed/i-built-a-docker-swarm-then-i-started-killing-containers-14bfd9fb54ae)                                                 |
+| 🏗️ Jenkins on AWS with Terraform       | Terraform, EC2, IAM, S3, User Data                                  | [Repository](https://github.com/mandyreed223/terraform-jenkins-aws)               | [Medium](https://medium.com/@mandymreed/i-put-jenkins-on-aws-with-terraform-because-apparently-clicking-buttons-was-too-easy-%EF%B8%8F-%EF%B8%8F-d6a39afaa125) |
+| 🐳 Docker + Jenkins Lab                 | Container lifecycle, persistent volumes, Compose, custom images     | [Repository](https://github.com/mandyreed223/docker-jenkins-lab)                  | [Medium](https://medium.com/@mandymreed/i-put-jenkins-in-a-container-then-started-deleting-things-e947c8bca954)                                                |
+| 🐳 Docker + Apache Rebuild              | Dockerfiles, image versioning, networking, repeatable builds        | [Repository](https://github.com/mandyreed223/docker-apache-webapp)                | [Medium](https://medium.com/@mandymreed/it-worked-on-my-machine-until-it-didnt-3d2df233c995)                                                                   |
+| 🌐 AWS Cloud Engineering Portfolio      | S3, CloudFront, Route 53, ACM, DNS, HTTPS                           | [Repository](https://github.com/mandyreed223/cloud-engineer-portfolio)            | [Medium](https://medium.com/@mandymreed/so-i-decided-i-needed-a-portfolio-website-what-could-possibly-go-wrong-5a726e889864)                                   |
+| ⚡ Lambda EC2 Shutdown Automation        | Lambda, EC2, Python, IAM, serverless cloud automation               | [Repository](https://github.com/mandyreed223/lambda_to_stop_ec2_instances)        | [Medium](https://medium.com/@mandymreed/teaching-the-cloud-when-to-sleep-automating-ec2-shutdowns-with-aws-lambda-be8f63055408)                                |
+| 🌍 Multilingual Audio Pipeline          | Transcribe, Translate, Polly, Lambda, S3                            | [Repository](https://github.com/mandyreed223/multilingual-audio-pipeline)         | [Medium](https://medium.com/@mandymreed/teaching-the-cloud-to-speak-every-language-df07b5764134)                                                               |
+| 🤖 Prompt Deployment Pipeline           | GitHub, S3, Bedrock, CI/CD-style workflow                           | [Repository](https://github.com/mandyreed223/prompt-deployment-pipeline)          | [Medium](https://medium.com/@mandymreed/teaching-the-cloud-how-to-write-bbfcd091634f)                                                                          |
+| 👁️ Rekognition Image Labeling Pipeline | Rekognition, DynamoDB, Lambda, S3                                   | [Repository](https://github.com/mandyreed223/rekognition-image-labeling-pipeline) | [Medium](https://medium.com/@mandymreed/when-your-ci-pipeline-starts-recognizing-pictures-be370329bacb)                                                        |
+| 🔊 Polly Text-to-Speech API             | Polly, Lambda, API Gateway, S3                                      | [Repository](https://github.com/mandyreed223/polly_text_to_speech_pipeline)       | [Medium](https://medium.com/@mandymreed/teaching-the-cloud-to-read-aloud-building-a-text-to-speech-ci-cd-pipeline-with-amazon-polly-2ea8df17d30f)              |
+| 🌐 Static Website Pipeline              | S3, CloudFront, CodePipeline                                        | [Repository](https://github.com/mandyreed223/static_website_pipeline_project)     | [Medium](https://medium.com/@mandymreed/from-git-commit-to-global-cdn-building-a-real-ci-cd-pipeline-on-aws-9c4bffa6eba2)                                      |
+| ✅ Required Files Checker                | GitHub Actions, CloudWatch, CI validation                           | [Repository](https://github.com/mandyreed223/file_checker_project)                | [Medium](https://medium.com/@mandymreed/no-readme-no-entry-the-repo-bouncers-guide-to-ci-cd-enforcement-5685445ee1d9)                                          |
 
 ---
 
@@ -536,15 +537,15 @@ The latest architecture integrates VPC networking, public and private subnets, A
 
 I continue to strengthen these capabilities through hands-on implementation, troubleshooting, and operational problem-solving while expanding my expertise in:
 
-- Microsoft Azure
-- Cloud security
-- Monitoring and observability
-- Site Reliability Engineering
-- Kubernetes observability
-- Deployment automation
-- SQL and database fundamentals
-- Deeper Terraform architecture and automation
-- Multi-cloud fundamentals, including GCP
+* Microsoft Azure
+* Cloud security
+* Monitoring and observability
+* Site Reliability Engineering
+* Kubernetes observability
+* Deployment automation
+* SQL and database fundamentals
+* Deeper Terraform architecture and automation
+* Multi-cloud fundamentals, including GCP
 
 My objective is to develop a well-rounded cloud engineering skill set focused on reliability, scalability, security, automation, and operational excellence across modern enterprise environments.
 
@@ -570,16 +571,16 @@ The portfolio itself has been part of the hands-on work.
 
 Building and maintaining it has included:
 
-- Troubleshooting Git and repository issues
-- Diagnosing CloudFront caching when updated content was already present in GitHub and S3
-- Using CloudFront cache invalidations during deployments
-- Troubleshooting Route 53 domain registration and DNS configuration
-- Configuring the Route 53 hosted zone
-- Using DNS validation for the ACM TLS certificate
-- Configuring HTTPS for the root and `www` domains
-- Adding alternate domain names to CloudFront
-- Creating Route 53 alias records
-- Understanding how GitHub, S3, CloudFront, Route 53, DNS, TLS, and the live website connect
+* Troubleshooting Git and repository issues
+* Diagnosing CloudFront caching when updated content was already present in GitHub and S3
+* Using CloudFront cache invalidations during deployments
+* Troubleshooting Route 53 domain registration and DNS configuration
+* Configuring the Route 53 hosted zone
+* Using DNS validation for the ACM TLS certificate
+* Configuring HTTPS for the root and `www` domains
+* Adding alternate domain names to CloudFront
+* Creating Route 53 alias records
+* Understanding how GitHub, S3, CloudFront, Route 53, DNS, TLS, and the live website connect
 
 What started as a place to showcase cloud projects became another cloud project of its own. 😅
 
@@ -591,11 +592,11 @@ The portfolio will continue evolving with the work behind it.
 
 Potential future improvements include:
 
-- Automated portfolio deployment with GitHub Actions
-- Terraform-managed portfolio infrastructure
-- Additional architecture visualizations
-- Continued UI and accessibility improvements
-- New cloud and DevOps projects as they are completed
+* Automated portfolio deployment with GitHub Actions
+* Terraform-managed portfolio infrastructure
+* Additional architecture visualizations
+* Continued UI and accessibility improvements
+* New cloud and DevOps projects as they are completed
 
 ---
 

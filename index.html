@@ -1,348 +1,518 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="Mandy Reed's cloud engineering portfolio featuring hands-on AWS, Terraform, highly available multi-AZ architecture, Amazon RDS, EC2 Auto Scaling, Application Load Balancing, Amazon EKS, Kubernetes, Docker, CI/CD, monitoring, automation, and cloud troubleshooting projects.">
-
-    <title>Mandy Reed | Cloud Engineering Portfolio</title>
-
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-    <!-- HERO -->
-    <header class="hero">
-
-        <img src="images/mandy-profile.png"
-             alt="Mandy Reed"
-             class="profile-photo">
-
-        <h1>Mandy Reed</h1>
-
-        <p class="hero-title">
-            ☁️ Cloud Engineer | Enterprise IT Professional
-        </p>
-
-        <p class="hero-story">
-            Building cloud infrastructure, testing resilience, troubleshooting failures,
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Mandy Reed's cloud engineering portfolio featuring hands-on AWS, Terraform, highly available multi-AZ architecture, Amazon RDS, EC2 Auto Scaling, Application Load Balancing, Amazon EKS, Kubernetes, Docker, CI/CD, monitoring, automation, and cloud troubleshooting projects." name="description"/>
+  <title>
+   Mandy Reed | Cloud Engineering Portfolio
+  </title>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <!-- HERO -->
+  <header class="hero">
+   <img alt="Mandy Reed" class="profile-photo" src="images/mandy-profile.png"/>
+   <h1>
+    Mandy Reed
+   </h1>
+   <p class="hero-title">
+    ☁️ Cloud Engineer | Enterprise IT Professional
+   </p>
+   <p class="hero-story">
+    Building cloud infrastructure, testing resilience, troubleshooting failures,
             and documenting the engineering behind it. ☁️🛠️
-        </p>
-
-        <p class="hero-subtitle">
-            AWS • Terraform • Infrastructure as Code • High Availability • Amazon EKS • Kubernetes • Linux • Docker • CI/CD • Cloud Troubleshooting
-        </p>
-
-        <a href="#projects" class="button">
-            🚀 Explore My Projects
-        </a>
-
-    </header>
-
-
-    <!-- ABOUT -->
-    <section class="about">
-
-        <h2>👋 About Me</h2>
-
-        <p>
-            I’m an enterprise IT professional with 18 years of experience supporting users
+   </p>
+   <p class="hero-subtitle">
+    AWS • Terraform • Infrastructure as Code • High Availability • Amazon EKS • Kubernetes • Linux • Docker • CI/CD • Cloud Troubleshooting
+   </p>
+   <a class="button" href="#projects">
+    🚀 Explore My Projects
+   </a>
+  </header>
+  <!-- ABOUT -->
+  <section class="about">
+   <h2>
+    👋 About Me
+   </h2>
+   <p>
+    I’m an enterprise IT professional with 18 years of experience supporting users
             and business-critical technology environments, including more than 21 years with
             Allstate. My background includes technical troubleshooting, incident resolution,
             customer support, documentation, access management, Microsoft 365, Active Directory,
             and enterprise IT operations.
-        </p>
-
-        <p>
-            Building on that foundation, I’ve expanded my hands-on experience into cloud
+   </p>
+   <p>
+    Building on that foundation, I’ve expanded my hands-on experience into cloud
             engineering and DevOps through projects using AWS, Terraform, Infrastructure as Code,
             Linux, Docker, Kubernetes, Amazon EKS, Amazon ECR, CI/CD, automation, monitoring,
             autoscaling, databases, and highly available cloud architectures.
-        </p>
-
-        <p>
-            My approach is centered on understanding how systems connect and what happens when
+   </p>
+   <p>
+    My approach is centered on understanding how systems connect and what happens when
             they fail. Rather than stopping when something deploys successfully, I test behavior,
             troubleshoot failures, validate recovery, and document what I learn. This allows me
             to apply the troubleshooting mindset developed throughout my IT career to increasingly
             complex cloud and DevOps environments.
-        </p>
-
-        <p>
-            My goal is to combine my enterprise IT experience with modern cloud engineering
+   </p>
+   <p>
+    My goal is to combine my enterprise IT experience with modern cloud engineering
             practices to build reliable, secure, scalable, and maintainable systems while
             continuing to deepen my expertise in cloud operations and automation.
-        </p>
-
-    </section>
-
-
-    <!-- TARGET ROLES -->
-    <section class="roles">
-
-        <h2>🎯 Cloud & DevOps Career Focus</h2>
-
-        <div class="skill-list">
-
-            <span>Cloud Support Engineer</span>
-            <span>Junior Cloud Engineer</span>
-            <span>Cloud Operations Engineer</span>
-            <span>DevOps Support Engineer</span>
-            <span>Site Reliability Engineering Associate</span>
-
-        </div>
-
-    </section>
-
-
-    <!-- PRACTICED SKILLS -->
-    <section class="skills">
-
-        <h2>☁️ Cloud & DevOps Skills</h2>
-
-        <div class="skill-list">
-
-            <span>AWS</span>
-            <span>EC2</span>
-            <span>EC2 Auto Scaling</span>
-            <span>Launch Templates</span>
-            <span>Application Load Balancer</span>
-            <span>Target Groups</span>
-            <span>AWS Systems Manager</span>
-            <span>S3</span>
-            <span>Amazon EFS</span>
-            <span>Amazon EKS</span>
-            <span>Amazon ECR</span>
-            <span>Amazon VPC</span>
-            <span>Public & Private Subnets</span>
-            <span>NAT Gateway</span>
-            <span>Internet Gateway</span>
-            <span>Route Tables</span>
-            <span>Security Groups</span>
-            <span>Elastic Load Balancing</span>
-            <span>CloudFront</span>
-            <span>Route 53</span>
-            <span>AWS Certificate Manager</span>
-            <span>DNS</span>
-            <span>HTTPS/TLS</span>
-            <span>Lambda</span>
-            <span>IAM</span>
-            <span>CloudWatch</span>
-            <span>CloudWatch Alarms</span>
-            <span>Amazon RDS</span>
-            <span>RDS MySQL</span>
-            <span>Multi-AZ RDS</span>
-            <span>AWS Secrets Manager</span>
-            <span>High Availability</span>
-            <span>DynamoDB</span>
-            <span>API Gateway</span>
-            <span>Amazon Polly</span>
-            <span>Amazon Rekognition</span>
-            <span>Amazon Transcribe</span>
-            <span>Amazon Translate</span>
-            <span>Amazon Bedrock</span>
-
-            <span class="terraform-skill">Terraform</span>
-            <span class="terraform-skill">Infrastructure as Code</span>
-            <span class="terraform-skill">Terraform Resource References</span>
-            <span class="terraform-skill">Terraform Remote State</span>
-            <span class="terraform-skill">S3 State Versioning</span>
-            <span class="terraform-skill">Terraform State Locking</span>
-            <span class="terraform-skill">EC2 Instance Refresh</span>
-
-            <span>Linux</span>
-            <span>Docker</span>
-            <span>Docker Compose</span>
-            <span>Docker Swarm</span>
-            <span>Docker Stack</span>
-            <span>Container Orchestration</span>
-            <span>Docker Secrets</span>
-            <span>Docker Networking</span>
-            <span>Docker Image Versioning</span>
-            <span>Container Troubleshooting</span>
-            <span>Overlay Networking</span>
-            <span>Persistent Volumes</span>
-
-            <span class="k8s-skill">Kubernetes</span>
-            <span class="k8s-skill">Amazon EKS</span>
-            <span class="k8s-skill">MicroK8s</span>
-            <span class="k8s-skill">kubectl</span>
-            <span class="k8s-skill">eksctl</span>
-            <span class="k8s-skill">Kubernetes Pods</span>
-            <span class="k8s-skill">Kubernetes Deployments</span>
-            <span class="k8s-skill">ReplicaSets</span>
-            <span class="k8s-skill">Kubernetes Services</span>
-            <span class="k8s-skill">ClusterIP Services</span>
-            <span class="k8s-skill">LoadBalancer Services</span>
-            <span class="k8s-skill">Labels & Selectors</span>
-            <span class="k8s-skill">EndpointSlices</span>
-            <span class="k8s-skill">Kubernetes YAML</span>
-            <span class="k8s-skill">Desired-State Reconciliation</span>
-            <span class="k8s-skill">Self-Healing Workloads</span>
-            <span class="k8s-skill">Kubernetes Scaling</span>
-            <span class="k8s-skill">Horizontal Pod Autoscaling</span>
-            <span class="k8s-skill">Metrics Server</span>
-            <span class="k8s-skill">Resource Requests & Limits</span>
-            <span class="k8s-skill">Rolling Updates</span>
-            <span class="k8s-skill">Managed Node Groups</span>
-            <span class="k8s-skill">Multi-Tier Applications</span>
-            <span class="k8s-skill">Application-to-Database Communication</span>
-            <span class="k8s-skill">Kubernetes Troubleshooting</span>
-
-            <span>MySQL</span>
-            <span>SQL</span>
-            <span>Jenkins</span>
-            <span>Dockerfile</span>
-            <span>AWS CLI</span>
-            <span>Git</span>
-            <span>GitHub</span>
-            <span>GitHub Actions</span>
-            <span>CI/CD</span>
-
-        </div>
-
-    </section>
-
-
-    <!-- NEXT FOCUS -->
-    <section class="next-focus">
-
-        <h2>🚀 What I Am Focusing On Next</h2>
-
-        <div class="skill-list">
-            <span>Microsoft Azure</span>
-            <span>Observability</span>
-            <span>Cloud Security</span>
-            <span>Monitoring and Alerting</span>
-            <span>Site Reliability Engineering</span>
-            <span>Kubernetes Observability</span>
-            <span>Deployment Automation</span>
-            <span>Deeper Terraform Automation</span>
-        </div>
-
-        <p>
-            My hands-on Kubernetes experience has progressed from managing individual resources
+   </p>
+  </section>
+  <!-- TARGET ROLES -->
+  <section class="roles">
+   <h2>
+    🎯 Cloud &amp; DevOps Career Focus
+   </h2>
+   <div class="skill-list">
+    <span>
+     Cloud Support Engineer
+    </span>
+    <span>
+     Junior Cloud Engineer
+    </span>
+    <span>
+     Cloud Operations Engineer
+    </span>
+    <span>
+     DevOps Support Engineer
+    </span>
+    <span>
+     Site Reliability Engineering Associate
+    </span>
+   </div>
+  </section>
+  <!-- PRACTICED SKILLS -->
+  <section class="skills">
+   <h2>
+    ☁️ Cloud &amp; DevOps Skills
+   </h2>
+   <div class="skill-list">
+    <span>
+     AWS
+    </span>
+    <span>
+     EC2
+    </span>
+    <span>
+     EC2 Auto Scaling
+    </span>
+    <span>
+     Launch Templates
+    </span>
+    <span>
+     Application Load Balancer
+    </span>
+    <span>
+     Target Groups
+    </span>
+    <span>
+     AWS Systems Manager
+    </span>
+    <span>
+     S3
+    </span>
+    <span>
+     Amazon EFS
+    </span>
+    <span>
+     Amazon EKS
+    </span>
+    <span>
+     Amazon ECR
+    </span>
+    <span>
+     Amazon VPC
+    </span>
+    <span>
+     Public &amp; Private Subnets
+    </span>
+    <span>
+     NAT Gateway
+    </span>
+    <span>
+     Internet Gateway
+    </span>
+    <span>
+     Route Tables
+    </span>
+    <span>
+     Security Groups
+    </span>
+    <span>
+     Elastic Load Balancing
+    </span>
+    <span>
+     CloudFront
+    </span>
+    <span>
+     Route 53
+    </span>
+    <span>
+     AWS Certificate Manager
+    </span>
+    <span>
+     DNS
+    </span>
+    <span>
+     HTTPS/TLS
+    </span>
+    <span>
+     Lambda
+    </span>
+    <span>
+     IAM
+    </span>
+    <span>
+     CloudWatch
+    </span>
+    <span>
+     CloudWatch Alarms
+    </span>
+    <span>
+     Amazon RDS
+    </span>
+    <span>
+     RDS MySQL
+    </span>
+    <span>
+     Multi-AZ RDS
+    </span>
+    <span>
+     AWS Secrets Manager
+    </span>
+    <span>
+     High Availability
+    </span>
+    <span>
+     DynamoDB
+    </span>
+    <span>
+     API Gateway
+    </span>
+    <span>
+     Amazon Polly
+    </span>
+    <span>
+     Amazon Rekognition
+    </span>
+    <span>
+     Amazon Transcribe
+    </span>
+    <span>
+     Amazon Translate
+    </span>
+    <span>
+     Amazon Bedrock
+    </span>
+    <span class="terraform-skill">
+     Terraform
+    </span>
+    <span class="terraform-skill">
+     Infrastructure as Code
+    </span>
+    <span class="terraform-skill">
+     Terraform Resource References
+    </span>
+    <span class="terraform-skill">
+     Terraform Remote State
+    </span>
+    <span class="terraform-skill">
+     S3 State Versioning
+    </span>
+    <span class="terraform-skill">
+     Terraform State Locking
+    </span>
+    <span class="terraform-skill">
+     EC2 Instance Refresh
+    </span>
+    <span>
+     Linux
+    </span>
+    <span>
+     Docker
+    </span>
+    <span>
+     Docker Compose
+    </span>
+    <span>
+     Docker Swarm
+    </span>
+    <span>
+     Docker Stack
+    </span>
+    <span>
+     Container Orchestration
+    </span>
+    <span>
+     Docker Secrets
+    </span>
+    <span>
+     Docker Networking
+    </span>
+    <span>
+     Docker Image Versioning
+    </span>
+    <span>
+     Container Troubleshooting
+    </span>
+    <span>
+     Overlay Networking
+    </span>
+    <span>
+     Persistent Volumes
+    </span>
+    <span class="k8s-skill">
+     Kubernetes
+    </span>
+    <span class="k8s-skill">
+     Amazon EKS
+    </span>
+    <span class="k8s-skill">
+     MicroK8s
+    </span>
+    <span class="k8s-skill">
+     kubectl
+    </span>
+    <span class="k8s-skill">
+     eksctl
+    </span>
+    <span class="k8s-skill">
+     Kubernetes Pods
+    </span>
+    <span class="k8s-skill">
+     Kubernetes Deployments
+    </span>
+    <span class="k8s-skill">
+     ReplicaSets
+    </span>
+    <span class="k8s-skill">
+     Kubernetes Services
+    </span>
+    <span class="k8s-skill">
+     ClusterIP Services
+    </span>
+    <span class="k8s-skill">
+     LoadBalancer Services
+    </span>
+    <span class="k8s-skill">
+     Labels &amp; Selectors
+    </span>
+    <span class="k8s-skill">
+     EndpointSlices
+    </span>
+    <span class="k8s-skill">
+     Kubernetes YAML
+    </span>
+    <span class="k8s-skill">
+     Desired-State Reconciliation
+    </span>
+    <span class="k8s-skill">
+     Self-Healing Workloads
+    </span>
+    <span class="k8s-skill">
+     Kubernetes Scaling
+    </span>
+    <span class="k8s-skill">
+     Horizontal Pod Autoscaling
+    </span>
+    <span class="k8s-skill">
+     Metrics Server
+    </span>
+    <span class="k8s-skill">
+     Resource Requests &amp; Limits
+    </span>
+    <span class="k8s-skill">
+     Rolling Updates
+    </span>
+    <span class="k8s-skill">
+     Managed Node Groups
+    </span>
+    <span class="k8s-skill">
+     Multi-Tier Applications
+    </span>
+    <span class="k8s-skill">
+     Application-to-Database Communication
+    </span>
+    <span class="k8s-skill">
+     Kubernetes Troubleshooting
+    </span>
+    <span>
+     MySQL
+    </span>
+    <span>
+     SQL
+    </span>
+    <span>
+     Jenkins
+    </span>
+    <span>
+     Dockerfile
+    </span>
+    <span>
+     AWS CLI
+    </span>
+    <span>
+     Git
+    </span>
+    <span>
+     GitHub
+    </span>
+    <span>
+     GitHub Actions
+    </span>
+    <span>
+     CI/CD
+    </span>
+   </div>
+  </section>
+  <!-- NEXT FOCUS -->
+  <section class="next-focus">
+   <h2>
+    🚀 What I Am Focusing On Next
+   </h2>
+   <div class="skill-list">
+    <span>
+     Microsoft Azure
+    </span>
+    <span>
+     Observability
+    </span>
+    <span>
+     Cloud Security
+    </span>
+    <span>
+     Monitoring and Alerting
+    </span>
+    <span>
+     Site Reliability Engineering
+    </span>
+    <span>
+     Kubernetes Observability
+    </span>
+    <span>
+     Deployment Automation
+    </span>
+    <span>
+     Deeper Terraform Automation
+    </span>
+   </div>
+   <p>
+    My hands-on Kubernetes experience has progressed from managing individual resources
             to building multi-tier applications, troubleshooting workloads, and deploying
             cloud-based environments on Amazon EKS. Similarly, my Terraform experience has
             evolved from provisioning individual AWS resources to building multi-AZ architectures
             that integrate VPC networking, private EC2 instances, Application Load Balancers,
             Launch Templates, Auto Scaling, IAM, Systems Manager, Multi-AZ RDS, monitoring,
             application bootstrapping, and remote state management.
-        </p>
-
-        <p>
-            I continue to strengthen these capabilities through hands-on implementation,
+   </p>
+   <p>
+    I continue to strengthen these capabilities through hands-on implementation,
             troubleshooting, and operational problem-solving while expanding my expertise in
             Microsoft Azure, observability, cloud security, deployment automation, and Site
             Reliability Engineering (SRE). My objective is to develop a well-rounded cloud
             engineering skill set focused on reliability, scalability, security, automation,
             and operational excellence across modern enterprise environments.
-        </p>
-
-    </section>
-
-
-    <!-- PORTFOLIO ARCHITECTURE -->
-    <section class="architecture">
-
-        <h2>🏗️ Portfolio Architecture</h2>
-
-        <p>
-            This portfolio is built with HTML and CSS, maintained in GitHub,
+   </p>
+  </section>
+  <!-- PORTFOLIO ARCHITECTURE -->
+  <section class="architecture">
+   <h2>
+    🏗️ Portfolio Architecture
+   </h2>
+   <p>
+    This portfolio is built with HTML and CSS, maintained in GitHub,
             stored in Amazon S3, and delivered securely through Amazon CloudFront.
             Amazon Route 53 provides DNS routing for the custom domain, while
             AWS Certificate Manager provides the TLS certificate used for HTTPS.
-        </p>
-
-        <div class="architecture-diagram">
-
-            <div class="architecture-box">
-                👤 Visitor
-            </div>
-
-            <div class="architecture-arrow">
-                ↓
-            </div>
-
-            <div class="architecture-box">
-                🌐 mandyreed.com
-            </div>
-
-            <div class="architecture-arrow">
-                ↓
-            </div>
-
-            <div class="architecture-box">
-                🧭 Amazon Route 53
-            </div>
-
-            <div class="architecture-arrow">
-                ↓
-            </div>
-
-            <div class="architecture-box">
-                🔒 Amazon CloudFront + HTTPS
-            </div>
-
-            <div class="architecture-arrow">
-                ↓
-            </div>
-
-            <div class="architecture-box">
-                🪣 Amazon S3
-            </div>
-
-            <div class="architecture-arrow">
-                ↓
-            </div>
-
-            <div class="architecture-box">
-                💻 Portfolio Website
-            </div>
-
-        </div>
-
-        <p>
-            AWS Certificate Manager secures both mandyreed.com and
+   </p>
+   <div class="architecture-diagram">
+    <div class="architecture-box">
+     👤 Visitor
+    </div>
+    <div class="architecture-arrow">
+     ↓
+    </div>
+    <div class="architecture-box">
+     🌐 mandyreed.com
+    </div>
+    <div class="architecture-arrow">
+     ↓
+    </div>
+    <div class="architecture-box">
+     🧭 Amazon Route 53
+    </div>
+    <div class="architecture-arrow">
+     ↓
+    </div>
+    <div class="architecture-box">
+     🔒 Amazon CloudFront + HTTPS
+    </div>
+    <div class="architecture-arrow">
+     ↓
+    </div>
+    <div class="architecture-box">
+     🪣 Amazon S3
+    </div>
+    <div class="architecture-arrow">
+     ↓
+    </div>
+    <div class="architecture-box">
+     💻 Portfolio Website
+    </div>
+   </div>
+   <p>
+    AWS Certificate Manager secures both mandyreed.com and
             www.mandyreed.com with HTTPS. Source code and version history
             are maintained in GitHub.
-        </p>
-
-    </section>
-
-
-    <!-- FEATURED PROJECTS -->
-    <section id="projects" class="projects">
-
-        <h2>💻 Cloud & DevOps Projects</h2>
-
-        <p class="section-intro">
-            Hands-on cloud and DevOps projects focused on architecture, automation,
+   </p>
+  </section>
+  <!-- FEATURED PROJECTS -->
+  <section class="projects" id="projects">
+   <h2>
+    💻 Cloud &amp; DevOps Projects
+   </h2>
+   <p class="section-intro">
+    Hands-on cloud and DevOps projects focused on architecture, automation,
             troubleshooting, resilience, and understanding how the pieces connect.
             GitHub shows the build. Medium tells the story. 💚
-        </p>
-
-
-        <!-- HIGHLY AVAILABLE 2-TIER TERRAFORM -->
-        <div class="project-card featured-project">
-
-            <div class="project-badge">
-                ✨ Newest Project
-            </div>
-
-            <h3>🏗️ Highly Available 2-Tier AWS Architecture with Terraform</h3>
-
-            <p class="story-hook">
-                Built. Tested. Broken on purpose. Recovered. Monitored. Destroyed. 💚
-            </p>
-
-            <p>
-                Built a production-inspired, highly available AWS architecture entirely with
+   </p>
+   <!-- ENGINEERING FOCUS TERMINAL -->
+   <div aria-label="Current engineering focus and method" class="focus-terminal">
+    <div class="terminal-command">
+     <span class="terminal-prompt">
+      mandy@cloud:~$
+     </span>
+     current_focus
+    </div>
+    <div class="terminal-output">
+     AWS • Terraform • Kubernetes • Reliability • Automation
+    </div>
+    <div class="terminal-command">
+     <span class="terminal-prompt">
+      mandy@cloud:~$
+     </span>
+     engineering_method
+    </div>
+    <div class="terminal-output">
+     Build → Break → Troubleshoot → Validate → Document
+    </div>
+   </div>
+   <!-- HIGHLY AVAILABLE 2-TIER TERRAFORM -->
+   <div class="project-card featured-project">
+    <div class="project-badge">
+     ✨ Newest Project
+    </div>
+    <h3>
+     🏗️ Highly Available 2-Tier AWS Architecture with Terraform
+    </h3>
+    <p class="story-hook">
+     Built. Tested. Broken on purpose. Recovered. Monitored. Destroyed. 💚
+    </p>
+    <p>
+     Built a production-inspired, highly available AWS architecture entirely with
                 Terraform across two Availability Zones. Designed separate public, private
                 application, and private database tiers using an Application Load Balancer,
                 Auto Scaling Group, private EC2 instances, NAT Gateways, Multi-AZ Amazon RDS
@@ -351,38 +521,26 @@
                 and update sample data. Then deliberately terminated an EC2 instance to validate
                 Auto Scaling recovery, ALB target health, persistent database data, and CloudWatch
                 visibility throughout the failure and recovery cycle.
-            </p>
-
-            <div class="project-links">
-                <a href="https://github.com/mandyreed223/terraform-ha-2tier-aws"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="project-button">
-                    💻 View GitHub
-                </a>
-
-                <a href="https://medium.com/@mandymreed/i-built-a-highly-available-aws-architecture-then-i-started-killing-ec2-instances-6f6996657256"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="project-button">
-                    ✍️ Medium Story
-                </a>
-            </div>
-
-        </div>
-
-
-        <!-- TERRAFORM AUTO SCALING -->
-        <div class="project-card">
-
-            <h3>🏗️ Terraform Auto Scaling Architecture on AWS</h3>
-
-            <p class="story-hook">
-                I built an Auto Scaling architecture with Terraform. Then one tiny space broke everything. 😅
-            </p>
-
-            <p>
-                Built a highly available AWS web architecture with Terraform using
+    </p>
+    <div class="project-links">
+     <a class="project-button" href="https://github.com/mandyreed223/terraform-ha-2tier-aws" rel="noopener noreferrer" target="_blank">
+      💻 View GitHub
+     </a>
+     <a class="project-button" href="https://medium.com/@mandymreed/i-built-a-highly-available-aws-architecture-then-i-started-killing-ec2-instances-6f6996657256" rel="noopener noreferrer" target="_blank">
+      ✍️ Read the Story
+     </a>
+    </div>
+   </div>
+   <!-- TERRAFORM AUTO SCALING -->
+   <div class="project-card">
+    <h3>
+     🏗️ Terraform Auto Scaling Architecture on AWS
+    </h3>
+    <p class="story-hook">
+     I built an Auto Scaling architecture with Terraform. Then one tiny space broke everything. 😅
+    </p>
+    <p>
+     Built a highly available AWS web architecture with Terraform using
                 an Application Load Balancer, Auto Scaling Group, private EC2 instances
                 across two Availability Zones, Launch Templates, secure administration
                 through AWS Systems Manager Session Manager, and an encrypted S3 remote
@@ -392,36 +550,24 @@
                 Auto Scaling Instance Refresh to roll the fix across the fleet.
                 Validated self-healing by deliberately terminating a healthy EC2 instance
                 and watching the Auto Scaling Group restore desired capacity.
-            </p>
-
-            <a href="https://github.com/mandyreed223/terraform-asg-deployment"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                💻 View GitHub
-            </a>
-
-            <a href="https://medium.com/@mandymreed/%EF%B8%8F-i-built-an-auto-scaling-architecture-with-terraform-then-one-tiny-space-broke-everything-c1f29147dcd5"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                ✍️ Read the Story
-            </a>
-
-        </div>
-
-
-        <!-- AMAZON EKS DEPLOYMENT -->
-        <div class="project-card">
-
-            <h3>☁️☸️ Amazon EKS Deployment</h3>
-
-            <p class="story-hook">
-                I put Kubernetes on AWS. Then I started deleting Pods. ☸️😈
-            </p>
-
-            <p>
-                Moved my Kubernetes learning from a local environment into AWS by
+    </p>
+    <a class="project-button" href="https://github.com/mandyreed223/terraform-asg-deployment" rel="noopener noreferrer" target="_blank">
+     💻 View GitHub
+    </a>
+    <a class="project-button" href="https://medium.com/@mandymreed/%EF%B8%8F-i-built-an-auto-scaling-architecture-with-terraform-then-one-tiny-space-broke-everything-c1f29147dcd5" rel="noopener noreferrer" target="_blank">
+     ✍️ Read the Story
+    </a>
+   </div>
+   <!-- AMAZON EKS DEPLOYMENT -->
+   <div class="project-card">
+    <h3>
+     ☁️☸️ Amazon EKS Deployment
+    </h3>
+    <p class="story-hook">
+     I put Kubernetes on AWS. Then I started deleting Pods. ☸️😈
+    </p>
+    <p>
+     Moved my Kubernetes learning from a local environment into AWS by
                 deploying and operating a containerized application on Amazon EKS.
                 Built a managed EKS cluster with private EC2 worker nodes across two
                 Availability Zones, pushed versioned Docker images to Amazon ECR,
@@ -432,36 +578,24 @@
                 Enabled EKS API and audit logging in CloudWatch to add AWS-native
                 operational visibility and followed the complete path between
                 Kubernetes workloads and the AWS infrastructure underneath them.
-            </p>
-
-            <a href="https://github.com/mandyreed223/amazon-eks-deployment"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                💻 View GitHub
-            </a>
-
-            <a href="https://medium.com/@mandymreed/i-put-kubernetes-on-aws-then-i-started-deleting-pods-%EF%B8%8F-6b5d9898773a"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                ✍️ Read the Story
-            </a>
-
-        </div>
-
-
-        <!-- KUBERNETES MULTI-TIER APPLICATION -->
-        <div class="project-card">
-
-            <h3>☸️ WordPress + MySQL Multi-Tier Application on Kubernetes</h3>
-
-            <p class="story-hook">
-                I put WordPress and MySQL on Kubernetes. Then MySQL fought back. ⚔️
-            </p>
-
-            <p>
-                Built a multi-tier WordPress and MySQL application on Kubernetes,
+    </p>
+    <a class="project-button" href="https://github.com/mandyreed223/amazon-eks-deployment" rel="noopener noreferrer" target="_blank">
+     💻 View GitHub
+    </a>
+    <a class="project-button" href="https://medium.com/@mandymreed/i-put-kubernetes-on-aws-then-i-started-deleting-pods-%EF%B8%8F-6b5d9898773a" rel="noopener noreferrer" target="_blank">
+     ✍️ Read the Story
+    </a>
+   </div>
+   <!-- KUBERNETES MULTI-TIER APPLICATION -->
+   <div class="project-card">
+    <h3>
+     ☸️ WordPress + MySQL Multi-Tier Application on Kubernetes
+    </h3>
+    <p class="story-hook">
+     I put WordPress and MySQL on Kubernetes. Then MySQL fought back. ⚔️
+    </p>
+    <p>
+     Built a multi-tier WordPress and MySQL application on Kubernetes,
                 moving beyond individual Kubernetes resources to explore how
                 application and database workloads communicate as part of a larger
                 system. Worked with Deployments, Services, labels and selectors,
@@ -471,36 +605,24 @@
                 mean a healthy application, and that troubleshooting Kubernetes
                 means following the complete path between workloads, Services,
                 configuration, storage, and the application itself.
-            </p>
-
-            <a href="https://github.com/mandyreed223/kubernetes-multitier-application"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                💻 View GitHub
-            </a>
-
-            <a href="https://medium.com/@mandymreed/i-put-wordpress-and-mysql-on-kubernetes-then-mysql-fought-back-%EF%B8%8F-05a6370e0926"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                ✍️ Read the Story
-            </a>
-
-        </div>
-
-
-        <!-- KUBERNETES FUNDAMENTALS -->
-        <div class="project-card">
-
-            <h3>☸️ Kubernetes Fundamentals</h3>
-
-            <p class="story-hook">
-                Kubernetes said desired state. I said prove it. ☸️
-            </p>
-
-            <p>
-                Built my first hands-on Kubernetes application using MicroK8s on
+    </p>
+    <a class="project-button" href="https://github.com/mandyreed223/kubernetes-multitier-application" rel="noopener noreferrer" target="_blank">
+     💻 View GitHub
+    </a>
+    <a class="project-button" href="https://medium.com/@mandymreed/i-put-wordpress-and-mysql-on-kubernetes-then-mysql-fought-back-%EF%B8%8F-05a6370e0926" rel="noopener noreferrer" target="_blank">
+     ✍️ Read the Story
+    </a>
+   </div>
+   <!-- KUBERNETES FUNDAMENTALS -->
+   <div class="project-card">
+    <h3>
+     ☸️ Kubernetes Fundamentals
+    </h3>
+    <p class="story-hook">
+     Kubernetes said desired state. I said prove it. ☸️
+    </p>
+    <p>
+     Built my first hands-on Kubernetes application using MicroK8s on
                 Ubuntu in WSL2, progressing from a standalone nginx Pod to a
                 declaratively managed application with Deployments, ReplicaSets,
                 multiple Pods, and a stable ClusterIP Service. Practiced scaling,
@@ -509,180 +631,120 @@
                 to observe Kubernetes self-healing. Finished by moving the
                 application into reusable YAML and troubleshooting an immutable
                 Deployment selector while rebuilding the environment declaratively.
-            </p>
-
-            <a href="https://github.com/mandyreed223/kubernetes-fundamentals"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                💻 View GitHub
-            </a>
-
-            <a href="https://medium.com/@mandymreed/kubernetes-said-desired-state-i-said-prove-it-%EF%B8%8F-e8fbe1469ec3"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                ✍️ Read the Story
-            </a>
-
-        </div>
-
-
-        <!-- WORDPRESS + MYSQL DOCKER SWARM -->
-        <div class="project-card">
-
-            <h3>🐳 WordPress + MySQL Docker Swarm on AWS</h3>
-
-            <p class="story-hook">
-                WordPress, MySQL, Docker Swarm, EFS... what could possibly go wrong? 😅
-            </p>
-
-            <p>
-                Built a multi-service WordPress and MySQL application on a
+    </p>
+    <a class="project-button" href="https://github.com/mandyreed223/kubernetes-fundamentals" rel="noopener noreferrer" target="_blank">
+     💻 View GitHub
+    </a>
+    <a class="project-button" href="https://medium.com/@mandymreed/kubernetes-said-desired-state-i-said-prove-it-%EF%B8%8F-e8fbe1469ec3" rel="noopener noreferrer" target="_blank">
+     ✍️ Read the Story
+    </a>
+   </div>
+   <!-- WORDPRESS + MYSQL DOCKER SWARM -->
+   <div class="project-card">
+    <h3>
+     🐳 WordPress + MySQL Docker Swarm on AWS
+    </h3>
+    <p class="story-hook">
+     WordPress, MySQL, Docker Swarm, EFS... what could possibly go wrong? 😅
+    </p>
+    <p>
+     Built a multi-service WordPress and MySQL application on a
                 three-node Docker Swarm running across AWS EC2. Used Docker Stack,
                 overlay networking, Docker Secrets, and Amazon EFS shared storage
                 to explore container orchestration, persistent data, service
                 communication, and resiliency. Troubleshot networking, SSH,
                 Docker service health, memory pressure, and storage issues while
                 testing service recovery and worker-node rescheduling.
-            </p>
-
-            <a href="https://github.com/mandyreed223/wordpress-docker-swarm-aws"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                💻 View GitHub
-            </a>
-
-            <a href="https://medium.com/@mandymreed/i-put-wordpress-on-docker-swarm-then-things-got-real-438cbb166861"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                ✍️ Read the Story
-            </a>
-
-        </div>
-
-
-        <!-- DOCKER SWARM -->
-        <div class="project-card">
-
-            <h3>🐳 Docker Swarm on AWS</h3>
-
-            <p class="story-hook">
-                I built a Docker Swarm. Then I started killing containers. 🐳💀
-            </p>
-
-            <p>
-                Built a three-node Docker Swarm across AWS EC2 instances to practice
+    </p>
+    <a class="project-button" href="https://github.com/mandyreed223/wordpress-docker-swarm-aws" rel="noopener noreferrer" target="_blank">
+     💻 View GitHub
+    </a>
+    <a class="project-button" href="https://medium.com/@mandymreed/i-put-wordpress-on-docker-swarm-then-things-got-real-438cbb166861" rel="noopener noreferrer" target="_blank">
+     ✍️ Read the Story
+    </a>
+   </div>
+   <!-- DOCKER SWARM -->
+   <div class="project-card">
+    <h3>
+     🐳 Docker Swarm on AWS
+    </h3>
+    <p class="story-hook">
+     I built a Docker Swarm. Then I started killing containers. 🐳💀
+    </p>
+    <p>
+     Built a three-node Docker Swarm across AWS EC2 instances to practice
                 multi-node container orchestration, replicated and global services,
                 scaling, self-healing, Docker Stack, overlay networking, and routing
                 mesh. Tested resiliency by intentionally removing containers and
                 draining a worker node to validate desired-state recovery, task
                 rescheduling, and traffic routing across the cluster.
-            </p>
-
-            <a href="https://github.com/mandyreed223/docker-swarm-aws-lab"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                💻 View GitHub
-            </a>
-
-            <a href="https://medium.com/@mandymreed/i-built-a-docker-swarm-then-i-started-killing-containers-14bfd9fb54ae"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                ✍️ Read the Story
-            </a>
-
-        </div>
-
-
-        <!-- TERRAFORM + JENKINS -->
-        <div class="project-card">
-
-            <h3>🏗️ Jenkins on AWS with Terraform</h3>
-
-            <p class="story-hook">
-                It started with one manually deployed Jenkins server.
+    </p>
+    <a class="project-button" href="https://github.com/mandyreed223/docker-swarm-aws-lab" rel="noopener noreferrer" target="_blank">
+     💻 View GitHub
+    </a>
+    <a class="project-button" href="https://medium.com/@mandymreed/i-built-a-docker-swarm-then-i-started-killing-containers-14bfd9fb54ae" rel="noopener noreferrer" target="_blank">
+     ✍️ Read the Story
+    </a>
+   </div>
+   <!-- TERRAFORM + JENKINS -->
+   <div class="project-card">
+    <h3>
+     🏗️ Jenkins on AWS with Terraform
+    </h3>
+    <p class="story-hook">
+     It started with one manually deployed Jenkins server.
                 Then I decided Terraform should do the work. 😅
-            </p>
-
-            <p>
-                Deployed a Jenkins server on AWS using Terraform, progressing from
+    </p>
+    <p>
+     Deployed a Jenkins server on AWS using Terraform, progressing from
                 a manual proof of concept to reusable Infrastructure as Code.
                 Provisioned EC2, Security Groups, and private S3 artifact storage,
                 automated Jenkins installation with User Data, and implemented an
                 IAM Role and Instance Profile with least-privilege S3 permissions.
                 Validated temporary AWS credentials and tested artifact upload and
                 download before safely destroying the Terraform-managed infrastructure.
-            </p>
-
-            <a href="https://github.com/mandyreed223/terraform-jenkins-aws"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                💻 View GitHub
-            </a>
-
-            <a href="https://medium.com/@mandymreed/i-put-jenkins-on-aws-with-terraform-because-apparently-clicking-buttons-was-too-easy-%EF%B8%8F-%EF%B8%8F-d6a39afaa125"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                ✍️ Read the Story
-            </a>
-
-        </div>
-
-
-        <!-- DOCKER + JENKINS -->
-        <div class="project-card">
-
-            <h3>🐳 Docker + Jenkins Lab</h3>
-
-            <p class="story-hook">
-                What happens when you start deleting Jenkins containers on purpose?
+    </p>
+    <a class="project-button" href="https://github.com/mandyreed223/terraform-jenkins-aws" rel="noopener noreferrer" target="_blank">
+     💻 View GitHub
+    </a>
+    <a class="project-button" href="https://medium.com/@mandymreed/i-put-jenkins-on-aws-with-terraform-because-apparently-clicking-buttons-was-too-easy-%EF%B8%8F-%EF%B8%8F-d6a39afaa125" rel="noopener noreferrer" target="_blank">
+     ✍️ Read the Story
+    </a>
+   </div>
+   <!-- DOCKER + JENKINS -->
+   <div class="project-card">
+    <h3>
+     🐳 Docker + Jenkins Lab
+    </h3>
+    <p class="story-hook">
+     What happens when you start deleting Jenkins containers on purpose?
                 Turns out, quite a lot. 🐳😂
-            </p>
-
-            <p>
-                Built and managed Jenkins in Docker while exploring container
+    </p>
+    <p>
+     Built and managed Jenkins in Docker while exploring container
                 lifecycle, persistent storage, Docker Compose, and custom image
                 creation. Tested data persistence by intentionally removing and
                 recreating Jenkins containers, then built a custom Jenkins image
                 using a Dockerfile and verified the customization with curl inside
                 the running container.
-            </p>
-
-            <a href="https://github.com/mandyreed223/docker-jenkins-lab"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                💻 View GitHub
-            </a>
-
-            <a href="https://medium.com/@mandymreed/i-put-jenkins-in-a-container-then-started-deleting-things-e947c8bca954"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                ✍️ Read the Story
-            </a>
-
-        </div>
-
-
-        <!-- DOCKER + APACHE REBUILD -->
-        <div class="project-card">
-
-            <h3>🐳 Docker + Apache Web App Rebuild</h3>
-
-            <p class="story-hook">
-                Same project. Different engineer. 🐳
-            </p>
-
-            <p>
-                Rebuilt one of my first Docker projects using a Dockerfile and a
+    </p>
+    <a class="project-button" href="https://github.com/mandyreed223/docker-jenkins-lab" rel="noopener noreferrer" target="_blank">
+     💻 View GitHub
+    </a>
+    <a class="project-button" href="https://medium.com/@mandymreed/i-put-jenkins-in-a-container-then-started-deleting-things-e947c8bca954" rel="noopener noreferrer" target="_blank">
+     ✍️ Read the Story
+    </a>
+   </div>
+   <!-- DOCKER + APACHE REBUILD -->
+   <div class="project-card">
+    <h3>
+     🐳 Docker + Apache Web App Rebuild
+    </h3>
+    <p class="story-hook">
+     Same project. Different engineer. 🐳
+    </p>
+    <p>
+     Rebuilt one of my first Docker projects using a Dockerfile and a
                 repeatable image build instead of manually configuring a running
                 container. Practiced Docker image versioning, layer caching,
                 container lifecycle management, host-to-container port mapping,
@@ -690,503 +752,396 @@
                 application side by side. Troubleshot Docker Engine availability,
                 port and container-name conflicts, application connectivity, and
                 container behavior while validating each stage of the rebuild.
-            </p>
-
-            <a href="https://github.com/mandyreed223/docker-apache-webapp"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                💻 View GitHub
-            </a>
-
-            <a href="https://medium.com/@mandymreed/it-worked-on-my-machine-until-it-didnt-3d2df233c995"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                ✍️ Read the Story
-            </a>
-
-        </div>
-
-
-        <!-- AWS PORTFOLIO -->
-        <div class="project-card">
-
-            <h3>☁️ AWS Cloud Engineering Portfolio</h3>
-
-            <p class="story-hook">
-                Building a portfolio was easy. Getting DNS, HTTPS, caching,
+    </p>
+    <a class="project-button" href="https://github.com/mandyreed223/docker-apache-webapp" rel="noopener noreferrer" target="_blank">
+     💻 View GitHub
+    </a>
+    <a class="project-button" href="https://medium.com/@mandymreed/it-worked-on-my-machine-until-it-didnt-3d2df233c995" rel="noopener noreferrer" target="_blank">
+     ✍️ Read the Story
+    </a>
+   </div>
+   <!-- AWS PORTFOLIO -->
+   <div class="project-card">
+    <h3>
+     ☁️ AWS Cloud Engineering Portfolio
+    </h3>
+    <p class="story-hook">
+     Building a portfolio was easy. Getting DNS, HTTPS, caching,
                 and a custom domain to cooperate was the adventure. 🌐
-            </p>
-
-            <p>
-                Designed and deployed this cloud engineering portfolio using
+    </p>
+    <p>
+     Designed and deployed this cloud engineering portfolio using
                 Amazon S3, CloudFront, Route 53, and AWS Certificate Manager.
                 Configured a custom domain with DNS routing and HTTPS/TLS,
                 maintained source control through GitHub, and troubleshot
                 deployment, caching, domain registration, DNS, and content
                 delivery issues.
-            </p>
-
-            <a href="https://github.com/mandyreed223/cloud-engineer-portfolio"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                💻 View GitHub
-            </a>
-
-            <a href="https://medium.com/@mandymreed/so-i-decided-i-needed-a-portfolio-website-what-could-possibly-go-wrong-5a726e889864"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                ✍️ Read the Story
-            </a>
-
-        </div>
-
-
-        <!-- PROMPT DEPLOYMENT PIPELINE -->
-        <div class="project-card">
-
-            <h3>🤖 Prompt Deployment Pipeline</h3>
-
-            <p class="story-hook">
-                What if a GitHub push could hand work directly to generative AI?
+    </p>
+    <a class="project-button" href="https://github.com/mandyreed223/cloud-engineer-portfolio" rel="noopener noreferrer" target="_blank">
+     💻 View GitHub
+    </a>
+    <a class="project-button" href="https://medium.com/@mandymreed/so-i-decided-i-needed-a-portfolio-website-what-could-possibly-go-wrong-5a726e889864" rel="noopener noreferrer" target="_blank">
+     ✍️ Read the Story
+    </a>
+   </div>
+   <!-- PROMPT DEPLOYMENT PIPELINE -->
+   <div class="project-card">
+    <h3>
+     🤖 Prompt Deployment Pipeline
+    </h3>
+    <p class="story-hook">
+     What if a GitHub push could hand work directly to generative AI?
                 Naturally, I had to find out. 🤖
-            </p>
-
-            <p>
-                Built a CI/CD-style workflow using GitHub, Amazon S3,
+    </p>
+    <p>
+     Built a CI/CD-style workflow using GitHub, Amazon S3,
                 and Amazon Bedrock.
-            </p>
-
-            <a href="https://github.com/mandyreed223/prompt-deployment-pipeline"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                💻 View GitHub
-            </a>
-
-        </div>
-
-
-        <!-- MULTILINGUAL AUDIO PIPELINE -->
-        <div class="project-card">
-
-            <h3>🌎 Multilingual Audio Pipeline</h3>
-
-            <p class="story-hook">
-                One audio file went into AWS. Several services later,
+    </p>
+    <a class="project-button" href="https://github.com/mandyreed223/prompt-deployment-pipeline" rel="noopener noreferrer" target="_blank">
+     💻 View GitHub
+    </a>
+    <a class="project-button" href="https://medium.com/@mandymreed/teaching-the-cloud-how-to-write-bbfcd091634f" rel="noopener noreferrer" target="_blank">
+     ✍️ Read the Story
+    </a>
+   </div>
+   <!-- MULTILINGUAL AUDIO PIPELINE -->
+   <div class="project-card">
+    <h3>
+     🌎 Multilingual Audio Pipeline
+    </h3>
+    <p class="story-hook">
+     One audio file went into AWS. Several services later,
                 the cloud was speaking another language. 🌍
-            </p>
-
-            <p>
-                Created an AWS pipeline using Amazon Transcribe, Translate,
+    </p>
+    <p>
+     Created an AWS pipeline using Amazon Transcribe, Translate,
                 Polly, Lambda, and S3.
-            </p>
-
-            <a href="https://github.com/mandyreed223/multilingual-audio-pipeline"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                💻 View GitHub
-            </a>
-
-            <a href="https://medium.com/@mandymreed/teaching-the-cloud-to-speak-every-language-df07b5764134"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                ✍️ Read the Story
-            </a>
-
-        </div>
-
-
-        <!-- REKOGNITION PIPELINE -->
-        <div class="project-card">
-
-            <h3>👁️ Rekognition Image Labeling Pipeline</h3>
-
-            <p class="story-hook">
-                Upload an image and let AWS figure out what it is.
+    </p>
+    <a class="project-button" href="https://github.com/mandyreed223/multilingual-audio-pipeline" rel="noopener noreferrer" target="_blank">
+     💻 View GitHub
+    </a>
+    <a class="project-button" href="https://medium.com/@mandymreed/teaching-the-cloud-to-speak-every-language-df07b5764134" rel="noopener noreferrer" target="_blank">
+     ✍️ Read the Story
+    </a>
+   </div>
+   <!-- REKOGNITION PIPELINE -->
+   <div class="project-card">
+    <h3>
+     👁️ Rekognition Image Labeling Pipeline
+    </h3>
+    <p class="story-hook">
+     Upload an image and let AWS figure out what it is.
                 That sounded like a perfectly reasonable experiment. 👀
-            </p>
-
-            <p>
-                Built an image-processing workflow using Amazon Rekognition,
+    </p>
+    <p>
+     Built an image-processing workflow using Amazon Rekognition,
                 DynamoDB, Lambda, and S3.
-            </p>
-
-            <a href="https://github.com/mandyreed223/rekognition-image-labeling-pipeline"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                💻 View GitHub
-            </a>
-
-        </div>
-
-
-        <!-- POLLY PIPELINE -->
-        <div class="project-card">
-
-            <h3>🔊 Polly Text-to-Speech API Pipeline</h3>
-
-            <p class="story-hook">
-                Because apparently reading text myself was too easy,
+    </p>
+    <a class="project-button" href="https://github.com/mandyreed223/rekognition-image-labeling-pipeline" rel="noopener noreferrer" target="_blank">
+     💻 View GitHub
+    </a>
+    <a class="project-button" href="https://medium.com/@mandymreed/when-your-ci-pipeline-starts-recognizing-pictures-be370329bacb" rel="noopener noreferrer" target="_blank">
+     ✍️ Read the Story
+    </a>
+   </div>
+   <!-- POLLY PIPELINE -->
+   <div class="project-card">
+    <h3>
+     🔊 Polly Text-to-Speech API Pipeline
+    </h3>
+    <p class="story-hook">
+     Because apparently reading text myself was too easy,
                 I taught AWS to say it out loud. 🔊
-            </p>
-
-            <p>
-                Created a serverless text-to-speech solution using Amazon Polly,
+    </p>
+    <p>
+     Created a serverless text-to-speech solution using Amazon Polly,
                 Lambda, API Gateway, and S3.
-            </p>
-
-            <a href="https://github.com/mandyreed223/polly_text_to_speech_pipeline"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                💻 View GitHub
-            </a>
-
-        </div>
-
-
-        <!-- STATIC WEBSITE PIPELINE -->
-        <div class="project-card">
-
-            <h3>🌐 Static Website Pipeline</h3>
-
-            <p class="story-hook">
-                The goal was simple: push code and let the pipeline handle
+    </p>
+    <a class="project-button" href="https://github.com/mandyreed223/polly_text_to_speech_pipeline" rel="noopener noreferrer" target="_blank">
+     💻 View GitHub
+    </a>
+    <a class="project-button" href="https://medium.com/@mandymreed/teaching-the-cloud-to-read-aloud-building-a-text-to-speech-ci-cd-pipeline-with-amazon-polly-2ea8df17d30f" rel="noopener noreferrer" target="_blank">
+     ✍️ Read the Story
+    </a>
+   </div>
+   <!-- STATIC WEBSITE PIPELINE -->
+   <div class="project-card">
+    <h3>
+     🌐 Static Website Pipeline
+    </h3>
+    <p class="story-hook">
+     The goal was simple: push code and let the pipeline handle
                 the deployment. Much nicer than clicking everything manually. 😎
-            </p>
-
-            <p>
-                Built and deployed a static website using Amazon S3,
+    </p>
+    <p>
+     Built and deployed a static website using Amazon S3,
                 CloudFront, and CodePipeline.
-            </p>
-
-            <a href="https://github.com/mandyreed223/static_website_pipeline_project"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                💻 View GitHub
-            </a>
-
-        </div>
-
-
-        <!-- REQUIRED FILES CHECKER -->
-        <div class="project-card">
-
-            <h3>✅ Required Files Checker</h3>
-
-            <p class="story-hook">
-                No README? No entry. Sometimes automation needs boundaries. 😂
-            </p>
-
-            <p>
-                Created a GitHub Actions workflow that validates required
+    </p>
+    <a class="project-button" href="https://github.com/mandyreed223/static_website_pipeline_project" rel="noopener noreferrer" target="_blank">
+     💻 View GitHub
+    </a>
+    <a class="project-button" href="https://medium.com/@mandymreed/from-git-commit-to-global-cdn-building-a-real-ci-cd-pipeline-on-aws-9c4bffa6eba2" rel="noopener noreferrer" target="_blank">
+     ✍️ Read the Story
+    </a>
+   </div>
+   <!-- LAMBDA EC2 SHUTDOWN AUTOMATION -->
+   <div class="project-card">
+    <h3>
+     ⚡ Lambda EC2 Shutdown Automation
+    </h3>
+    <p class="story-hook">
+     Teaching the cloud when to sleep. 😴☁️
+    </p>
+    <p>
+     Built a serverless AWS automation project using AWS Lambda to stop
+                EC2 instances programmatically, reinforcing event-driven cloud operations,
+                IAM permissions, Python-based automation, and the value of automating
+                repetitive infrastructure tasks.
+    </p>
+    <a class="project-button" href="https://github.com/mandyreed223/lambda_to_stop_ec2_instances" rel="noopener noreferrer" target="_blank">
+     💻 View GitHub
+    </a>
+    <a class="project-button" href="https://medium.com/@mandymreed/teaching-the-cloud-when-to-sleep-automating-ec2-shutdowns-with-aws-lambda-be8f63055408" rel="noopener noreferrer" target="_blank">
+     ✍️ Read the Story
+    </a>
+   </div>
+   <!-- REQUIRED FILES CHECKER -->
+   <div class="project-card">
+    <h3>
+     ✅ Required Files Checker
+    </h3>
+    <p class="story-hook">
+     No README? No entry. Sometimes automation needs boundaries. 😂
+    </p>
+    <p>
+     Created a GitHub Actions workflow that validates required
                 repository files and logs results to Amazon CloudWatch.
-            </p>
-
-            <a href="https://github.com/mandyreed223/file_checker_project"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="project-button">
-                💻 View GitHub
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- LESSONS -->
-    <section class="lessons">
-
-        <h2>🧠 Things My Projects Have Taught Me</h2>
-
-        <p class="section-intro">
-            The technical skills matter, but the strongest lessons come from understanding
+    </p>
+    <a class="project-button" href="https://github.com/mandyreed223/file_checker_project" rel="noopener noreferrer" target="_blank">
+     💻 View GitHub
+    </a>
+    <a class="project-button" href="https://medium.com/@mandymreed/no-readme-no-entry-the-repo-bouncers-guide-to-ci-cd-enforcement-5685445ee1d9" rel="noopener noreferrer" target="_blank">
+     ✍️ Read the Story
+    </a>
+   </div>
+  </section>
+  <!-- LESSONS -->
+  <section class="lessons">
+   <h2>
+    🧠 Things My Projects Have Taught Me
+   </h2>
+   <p class="section-intro">
+    The technical skills matter, but the strongest lessons come from understanding
             what the system is doing, why it failed, and how it recovered. 😅
-        </p>
-
-        <div class="lesson-grid">
-
-            <div class="lesson-card">
-
-                <div class="lesson-icon">
-                    ☁️
-                </div>
-
-                <h3>Deployment Is Only Step One</h3>
-
-                <p>
-                    A successful deployment does not automatically mean the
+   </p>
+   <div class="lesson-grid">
+    <div class="lesson-card">
+     <div class="lesson-icon">
+      ☁️
+     </div>
+     <h3>
+      Deployment Is Only Step One
+     </h3>
+     <p>
+      A successful deployment does not automatically mean the
                     application actually works. Terraform can successfully create
                     infrastructure while the application running inside it is still
                     unhealthy. I validate the infrastructure and the application path.
-                </p>
-
-            </div>
-
-
-            <div class="lesson-card">
-
-                <div class="lesson-icon">
-                    🔗
-                </div>
-
-                <h3>Infrastructure Is a Chain of References</h3>
-
-                <p>
-                    Terraform became easier to understand when I stopped viewing
+     </p>
+    </div>
+    <div class="lesson-card">
+     <div class="lesson-icon">
+      🔗
+     </div>
+     <h3>
+      Infrastructure Is a Chain of References
+     </h3>
+     <p>
+      Terraform became easier to understand when I stopped viewing
                     resources as isolated blocks and started following values between
                     them. VPC IDs, subnet IDs, Security Groups, Target Groups,
                     Launch Templates, IAM roles, and Auto Scaling Groups connect
                     individual resources into a complete architecture.
-                </p>
-
-            </div>
-
-
-            <div class="lesson-card">
-
-                <div class="lesson-icon">
-                    🔎
-                </div>
-
-                <h3>Follow the Entire Path</h3>
-
-                <p>
-                    Troubleshooting gets easier when I understand how every service
+     </p>
+    </div>
+    <div class="lesson-card">
+     <div class="lesson-icon">
+      🔎
+     </div>
+     <h3>
+      Follow the Entire Path
+     </h3>
+     <p>
+      Troubleshooting gets easier when I understand how every service
                     connects. Whether the path crosses an ALB, Target Group, EC2 and
                     Apache, or Docker, ECR, Kubernetes and AWS load balancing, following
                     the request from beginning to end helps isolate the failing layer.
-                </p>
-
-            </div>
-
-
-            <div class="lesson-card">
-
-                <div class="lesson-icon">
-                    🧩
-                </div>
-
-                <h3>Tiny Errors Can Break Big Architectures</h3>
-
-                <p>
-                    One leading space before a User Data shebang was enough to stop
+     </p>
+    </div>
+    <div class="lesson-card">
+     <div class="lesson-icon">
+      🧩
+     </div>
+     <h3>
+      Tiny Errors Can Break Big Architectures
+     </h3>
+     <p>
+      One leading space before a User Data shebang was enough to stop
                     Apache from installing, fail ALB health checks, and cause Auto
                     Scaling to repeatedly replace unhealthy instances. Small
                     configuration mistakes can have architecture-wide effects.
-                </p>
-
-            </div>
-
-
-            <div class="lesson-card">
-
-                <div class="lesson-icon">
-                    🔐
-                </div>
-
-                <h3>Secure It, Then Prove It</h3>
-
-                <p>
-                    Private instances do not automatically require inbound SSH.
+     </p>
+    </div>
+    <div class="lesson-card">
+     <div class="lesson-icon">
+      🔐
+     </div>
+     <h3>
+      Secure It, Then Prove It
+     </h3>
+     <p>
+      Private instances do not automatically require inbound SSH.
                     AWS Systems Manager Session Manager gave me secure diagnostic
                     access without public IP addresses, port 22, or SSH key management.
                     Least privilege matters more when I validate that it actually works.
-                </p>
-
-            </div>
-
-
-            <div class="lesson-card">
-
-                <div class="lesson-icon">
-                    ♻️
-                </div>
-
-                <h3>Desired State Is Something You Can Test</h3>
-
-                <p>
-                    Docker Swarm, Kubernetes, and EC2 Auto Scaling all reinforced the
+     </p>
+    </div>
+    <div class="lesson-card">
+     <div class="lesson-icon">
+      ♻️
+     </div>
+     <h3>
+      Desired State Is Something You Can Test
+     </h3>
+     <p>
+      Docker Swarm, Kubernetes, and EC2 Auto Scaling all reinforced the
                     same idea at different layers: define the state you want, deliberately
                     change reality, and observe how the platform responds. When I
                     terminated a healthy EC2 instance, Auto Scaling restored the desired
                     capacity without manual intervention.
-                </p>
-
-            </div>
-
-
-            <div class="lesson-card">
-
-                <div class="lesson-icon">
-                    ☁️
-                </div>
-
-                <h3>Kubernetes and AWS Operate at Different Layers</h3>
-
-                <p>
-                    EKS helped make the boundary much clearer. Kubernetes manages
+     </p>
+    </div>
+    <div class="lesson-card">
+     <div class="lesson-icon">
+      ☁️
+     </div>
+     <h3>
+      Kubernetes and AWS Operate at Different Layers
+     </h3>
+     <p>
+      EKS helped make the boundary much clearer. Kubernetes manages
                     workloads, desired state, Services, rolling updates, and Pod
                     autoscaling, while AWS provides the compute, networking, load
                     balancing, container registry, managed control plane, and logging
                     underneath it.
-                </p>
-
-            </div>
-
-
-            <div class="lesson-card">
-
-                <div class="lesson-icon">
-                    📈
-                </div>
-
-                <h3>Scaling Happens at Different Layers</h3>
-
-                <p>
-                    Kubernetes can scale application Pods while EC2 Auto Scaling
+     </p>
+    </div>
+    <div class="lesson-card">
+     <div class="lesson-icon">
+      📈
+     </div>
+     <h3>
+      Scaling Happens at Different Layers
+     </h3>
+     <p>
+      Kubernetes can scale application Pods while EC2 Auto Scaling
                     changes infrastructure capacity. Understanding which layer is
                     scaling, why it is scaling, and what signal drives the change
                     makes the behavior much easier to reason about.
-                </p>
-
-            </div>
-
-
-            <div class="lesson-card">
-
-                <div class="lesson-icon">
-                    💾
-                </div>
-
-                <h3>Persistent Data Changes Everything</h3>
-
-                <p>
-                    Containers may be disposable, but application data is not.
+     </p>
+    </div>
+    <div class="lesson-card">
+     <div class="lesson-icon">
+      💾
+     </div>
+     <h3>
+      Persistent Data Changes Everything
+     </h3>
+     <p>
+      Containers may be disposable, but application data is not.
                     Shared storage, database placement, and recovery behavior need
                     to be considered as part of the architecture.
-                </p>
-
-            </div>
-
-
-            <div class="lesson-card">
-
-                <div class="lesson-icon">
-                    🔗
-                </div>
-
-                <h3>Healthy Infrastructure Does Not Guarantee a Healthy Application</h3>
-
-                <p>
-                    An EC2 instance can be running while the application inside it
+     </p>
+    </div>
+    <div class="lesson-card">
+     <div class="lesson-icon">
+      🔗
+     </div>
+     <h3>
+      Healthy Infrastructure Does Not Guarantee a Healthy Application
+     </h3>
+     <p>
+      An EC2 instance can be running while the application inside it
                     is unusable, just as a Kubernetes Pod can show Running while the
                     complete application path is broken. Health needs to be evaluated
                     at the layer that actually matters to the application.
-                </p>
-
-            </div>
-
-
-            <div class="lesson-card">
-
-                <div class="lesson-icon">
-                    🔄
-                </div>
-
-                <h3>Versioning Makes Changes Easier to Understand</h3>
-
-                <p>
-                    Versioned ECR images made Kubernetes releases easier to follow,
+     </p>
+    </div>
+    <div class="lesson-card">
+     <div class="lesson-icon">
+      🔄
+     </div>
+     <h3>
+      Versioning Makes Changes Easier to Understand
+     </h3>
+     <p>
+      Versioned ECR images made Kubernetes releases easier to follow,
                     while Launch Template versions made infrastructure changes explicit.
                     After correcting EC2 User Data, Instance Refresh rolled the new
                     Launch Template configuration across the Auto Scaling Group.
-                </p>
-
-            </div>
-
-
-            <div class="lesson-card">
-
-                <div class="lesson-icon">
-                    🧹
-                </div>
-
-                <h3>Clean Up Counts Too</h3>
-
-                <p>
-                    Building cloud resources is fun. Knowing how to safely tear
+     </p>
+    </div>
+    <div class="lesson-card">
+     <div class="lesson-icon">
+      🧹
+     </div>
+     <h3>
+      Clean Up Counts Too
+     </h3>
+     <p>
+      Building cloud resources is fun. Knowing how to safely tear
                     them down is part of understanding the full lifecycle, especially
                     when environments include networking, NAT, load balancing,
                     Auto Scaling, EC2, EKS, ECR, and CloudWatch resources.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-
-        <p class="footer-message">
-            ☁️ Thanks for stopping by. I'm probably building, troubleshooting,
+     </p>
+    </div>
+   </div>
+  </section>
+  <!-- FOOTER -->
+  <footer>
+   <p class="footer-message">
+    ☁️ Thanks for stopping by. I'm probably building, troubleshooting,
             or documenting something new right now. 🛠️
-        </p>
-
-        <p>
-            🌐 Portfolio:
-            <a href="https://mandyreed.com"
-               target="_blank"
-               rel="noopener noreferrer">
-                mandyreed.com
-            </a>
-        </p>
-
-        <p>
-            💻 GitHub:
-            <a href="https://github.com/mandyreed223"
-               target="_blank"
-               rel="noopener noreferrer">
-                github.com/mandyreed223
-            </a>
-        </p>
-
-        <p>
-            💼 LinkedIn:
-            <a href="https://www.linkedin.com/in/mandymreed/"
-               target="_blank"
-               rel="noopener noreferrer">
-                linkedin.com/in/mandymreed
-            </a>
-        </p>
-
-        <p>
-            ✍️ Medium:
-            <a href="https://medium.com/@mandymreed"
-               target="_blank"
-               rel="noopener noreferrer">
-                medium.com/@mandymreed
-            </a>
-        </p>
-
-        <p class="footer-signoff">
-            ☁️ Build it. Troubleshoot it. Understand it. Then build something harder. 🚀
-        </p>
-
-    </footer>
-
-    <!--
+   </p>
+   <p>
+    🌐 Portfolio:
+    <a href="https://mandyreed.com" rel="noopener noreferrer" target="_blank">
+     mandyreed.com
+    </a>
+   </p>
+   <p>
+    💻 GitHub:
+    <a href="https://github.com/mandyreed223" rel="noopener noreferrer" target="_blank">
+     github.com/mandyreed223
+    </a>
+   </p>
+   <p>
+    💼 LinkedIn:
+    <a href="https://www.linkedin.com/in/mandymreed/" rel="noopener noreferrer" target="_blank">
+     linkedin.com/in/mandymreed
+    </a>
+   </p>
+   <p>
+    ✍️ Medium:
+    <a href="https://medium.com/@mandymreed" rel="noopener noreferrer" target="_blank">
+     medium.com/@mandymreed
+    </a>
+   </p>
+   <p class="footer-signoff">
+    ☁️ Build it. Troubleshoot it. Understand it. Then build something harder. 🚀
+   </p>
+  </footer>
+  <!--
         ☁️ You found the source code.
 
         Yes, I built this myself.
@@ -1195,7 +1150,6 @@
 
         Built, troubleshot, and maintained by Mandy Reed.
     -->
-
-</body>
-
+ </body>
 </html>
+
