@@ -124,6 +124,18 @@
      Amazon ECR
     </span>
     <span>
+     Amazon ECS
+    </span>
+    <span>
+     AWS Fargate
+    </span>
+    <span>
+     ECS Task Definitions
+    </span>
+    <span>
+     ECS Services
+    </span>
+    <span>
      Amazon VPC
     </span>
     <span>
@@ -349,6 +361,12 @@
      Jenkins
     </span>
     <span>
+     Jenkins Pipelines
+    </span>
+    <span>
+     CI/CD Quality Gates
+    </span>
+    <span>
      Dockerfile
     </span>
     <span>
@@ -530,6 +548,32 @@
       💻 View GitHub
      </a>
      <a class="project-button" href="https://medium.com/@mandymreed/i-built-a-highly-available-aws-architecture-then-i-started-killing-ec2-instances-6f6996657256" rel="noopener noreferrer" target="_blank">
+      ✍️ Read the Story
+     </a>
+    </div>
+   </div>
+   <!-- JENKINS CI/CD TO ECS FARGATE -->
+   <div class="project-card">
+    <h3>
+     🚀 Jenkins CI/CD Pipeline to AWS ECS Fargate
+    </h3>
+    <p class="story-hook">
+     I built a CI/CD pipeline. Then I broke the pipeline. 💀
+    </p>
+    <p>
+     Built an end-to-end CI/CD pipeline using GitHub, Jenkins, Docker, Amazon ECR,
+                and Amazon ECS Fargate. Automated the path from source code through container
+                build and application validation to versioned image publication and deployment
+                on AWS. Added a quality gate that intentionally stopped a broken release before
+                it could reach ECR or ECS, then fixed the application and validated a successful
+                automated deployment. Tested ECS desired-state recovery by terminating a running
+                task and observing the service automatically replace it.
+    </p>
+    <div class="project-links">
+     <a class="project-button" href="https://github.com/mandyreed223/jenkins-cicd-aws-pipeline" rel="noopener noreferrer" target="_blank">
+      💻 View GitHub
+     </a>
+     <a class="project-button" href="https://medium.com/@mandymreed/i-built-a-ci-cd-pipeline-then-i-broke-the-pipeline-2397aae6bc7b" rel="noopener noreferrer" target="_blank">
       ✍️ Read the Story
      </a>
     </div>
@@ -1092,6 +1136,20 @@
                     while Launch Template versions made infrastructure changes explicit.
                     After correcting EC2 User Data, Instance Refresh rolled the new
                     Launch Template configuration across the Auto Scaling Group.
+     </p>
+    </div>
+    <div class="lesson-card">
+     <div class="lesson-icon">
+      🛑
+     </div>
+     <h3>
+      A Failed Pipeline Can Be a Successful Safety Mechanism
+     </h3>
+     <p>
+      A pipeline is not successful simply because every stage runs. When application
+                    validation failed, Jenkins stopped the release before the broken image reached
+                    ECR or ECS. The failure proved that the quality gate was doing exactly what it
+                    was designed to do: protect the deployed environment.
      </p>
     </div>
     <div class="lesson-card">

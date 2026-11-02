@@ -4,7 +4,7 @@
 
 Welcome to my cloud engineering portfolio.
 
-I’m an enterprise IT professional with 18 years of experience supporting users and business-critical technology environments, including more than 21 years with Allstate. I’m building on that foundation through hands-on cloud engineering and DevOps projects focused on AWS, Terraform, Infrastructure as Code, Linux, Docker, Kubernetes, automation, monitoring, reliability, and troubleshooting.
+I’m an enterprise IT professional with 18 years of experience supporting users and business-critical technology environments, including more than 21 years with Allstate. I’m building on that foundation through hands-on cloud engineering and DevOps projects focused on AWS, Terraform, Infrastructure as Code, Linux, Docker, Kubernetes, CI/CD, automation, monitoring, reliability, and troubleshooting.
 
 Rather than stopping when something deploys successfully, I test behavior, follow dependencies, troubleshoot failures, validate recovery, and document what I learn.
 
@@ -46,7 +46,7 @@ Source code and version history are maintained in GitHub.
 
 I’m an enterprise IT professional with 18 years of experience supporting users and business-critical technology environments, including more than 21 years with Allstate. My background includes technical troubleshooting, incident resolution, customer support, documentation, access management, Microsoft 365, Active Directory, and enterprise IT operations.
 
-Building on that foundation, I’ve expanded my hands-on experience into cloud engineering and DevOps through projects using AWS, Terraform, Infrastructure as Code, Linux, Docker, Kubernetes, Amazon EKS, Amazon ECR, CI/CD, automation, monitoring, autoscaling, databases, and highly available cloud architectures.
+Building on that foundation, I’ve expanded my hands-on experience into cloud engineering and DevOps through projects using AWS, Terraform, Infrastructure as Code, Linux, Docker, Kubernetes, Amazon EKS, Amazon ECR, Amazon ECS, AWS Fargate, Jenkins, CI/CD, automation, monitoring, autoscaling, databases, and highly available cloud architectures.
 
 My approach is centered on understanding how systems connect and what happens when they fail. Rather than stopping when something deploys successfully, I test behavior, troubleshoot failures, validate recovery, and document what I learn. This has allowed me to apply the troubleshooting mindset developed throughout my IT career to increasingly complex cloud and DevOps environments.
 
@@ -67,6 +67,10 @@ These technologies represent tools, services, and engineering concepts I have us
 * Amazon EFS
 * Amazon EKS
 * Amazon ECR
+* Amazon ECS
+* AWS Fargate
+* ECS Task Definitions
+* ECS Services
 * Amazon VPC
 * Application Load Balancer
 * Elastic Load Balancing
@@ -155,7 +159,10 @@ These technologies represent tools, services, and engineering concepts I have us
 * GitHub
 * GitHub Actions
 * Jenkins
+* Jenkins Pipelines
 * CI/CD
+* CI/CD Quality Gates
+* Containerized Deployment Automation
 * Monitoring and Alerting
 * Application Bootstrapping
 * EC2 User Data
@@ -179,7 +186,7 @@ These technologies represent tools, services, and engineering concepts I have us
 
 # ⭐ Featured Cloud & DevOps Projects
 
-These projects represent some of my strongest recent work and the progression from individual technologies into complete cloud architectures.
+These projects represent some of my strongest recent work and the progression from individual technologies into complete cloud architectures and automated delivery workflows.
 
 ## ✨ 🏗️ Highly Available 2-Tier AWS Architecture with Terraform
 
@@ -258,6 +265,54 @@ CloudWatch also captured the recovery process through the Target Group's `UnHeal
 💻 **[View Repository](https://github.com/mandyreed223/terraform-ha-2tier-aws)**
 
 ✍️ **[Read the Story on Medium](https://medium.com/@mandymreed/i-built-a-highly-available-aws-architecture-then-i-started-killing-ec2-instances-6f6996657256)**
+
+---
+
+## 🚀 Jenkins CI/CD Pipeline to AWS ECS Fargate
+
+> **I built a CI/CD pipeline. Then I broke the pipeline. 💀**
+
+Built an end-to-end CI/CD pipeline connecting GitHub, Jenkins, Docker, Amazon ECR, Amazon ECS, and AWS Fargate.
+
+### Pipeline
+
+```text
+GitHub Push
+    ↓
+Jenkins Pipeline
+    ↓
+Docker Image Build
+    ↓
+Application Quality Gate
+    ↓
+Amazon ECR
+    ↓
+ECS Task Definition Revision
+    ↓
+ECS Service
+    ↓
+AWS Fargate
+```
+
+A source change triggers Jenkins to build a versioned Docker image and validate the application before publication. Successful releases are pushed to Amazon ECR, registered as new ECS task definition revisions, and deployed through an ECS service running on AWS Fargate.
+
+I deliberately introduced a broken application release to test the quality gate.
+
+The validation stage failed, and Jenkins stopped the pipeline before the broken image could be pushed to ECR or deployed to ECS. The existing deployment remained healthy.
+
+After fixing the application, I ran the pipeline again and validated the complete automated deployment path.
+
+I also terminated a running ECS task and observed ECS desired-state behavior automatically launch a replacement task.
+
+For AWS authentication, the Jenkins EC2 instance uses an attached IAM role rather than storing long-lived AWS access keys in Jenkins.
+
+That experiment reinforced an important CI/CD lesson:
+
+> **A pipeline that blocks a bad release is doing its job.**
+
+💻 **[View Repository](https://github.com/mandyreed223/jenkins-cicd-aws-pipeline)**
+
+✍️ **[Read the Story on Medium](https://medium.com/@mandymreed/i-built-a-ci-cd-pipeline-then-i-broke-the-pipeline-2397aae6bc7b)**
 
 ---
 
@@ -379,7 +434,7 @@ Troubleshooting meant following the complete path between workloads, Services, c
 
 # 🧪 More Hands-On Projects
 
-My portfolio also includes projects covering Kubernetes fundamentals and troubleshooting, Docker orchestration, Jenkins, CI/CD, serverless AWS services, automation, and cloud-hosted applications.
+My portfolio also includes projects covering Kubernetes fundamentals and troubleshooting, Docker orchestration, earlier Jenkins work, serverless AWS services, automation, CI validation, and cloud-hosted applications.
 
 | Project                                 | Focus                                                               | GitHub                                                                            | Story                                                                                                                                                          |
 | --------------------------------------- | ------------------------------------------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -443,177 +498,4 @@ Those references connect individual resources into an architecture and also help
 
 ### 🔎 Follow the Entire Path
 
-When something fails, I try to follow the request or dependency path rather than guessing at individual components.
-
-```text
-User
- ↓
-Load Balancer
- ↓
-Target Group
- ↓
-EC2
- ↓
-Application
- ↓
-Database
-```
-
-The same approach applies to Kubernetes, containers, CI/CD, and cloud infrastructure.
-
-### ♻️ Desired State Is Something You Can Test
-
-Docker Swarm, Kubernetes, and EC2 Auto Scaling reinforced the same idea at different layers:
-
-> Define the state you want, deliberately change reality, and observe how the platform responds.
-
-Deleting Pods, removing containers, draining nodes, and terminating EC2 instances turned self-healing from documentation into observable behavior.
-
-### 💾 Compute Can Be Disposable. Data Cannot.
-
-The HA Terraform architecture made this especially clear.
-
-I terminated an application instance and allowed Auto Scaling to replace it. The compute changed, but the records stored in RDS remained available to the replacement instance.
-
-Persistent data needs an architecture independent of disposable compute.
-
-### 🔐 Secure It, Then Prove It
-
-Private EC2 instances do not automatically require inbound SSH.
-
-Systems Manager Session Manager has allowed me to troubleshoot private instances without public IP addresses, port 22, or SSH key management.
-
-Security controls are more meaningful when I validate that the intended access path actually works.
-
-### 📈 Monitor the Recovery, Not Just the Failure
-
-The HA Terraform project added another layer to failure testing.
-
-It was not enough to terminate an instance and watch Auto Scaling create another one. CloudWatch provided visibility into the unhealthy-host condition and its return to normal after the replacement target became healthy.
-
-### 🧹 Clean Up Counts Too
-
-Building cloud resources is fun.
-
-Understanding dependencies well enough to safely destroy the environment is part of understanding the full lifecycle too.
-
----
-
-# 🚀 Current Focus
-
-My hands-on Kubernetes experience has progressed from managing individual resources to building multi-tier applications, troubleshooting workloads, and deploying cloud-based environments on Amazon EKS.
-
-```text
-Kubernetes Fundamentals
-        ↓
-Multi-Tier Applications
-        ↓
-Troubleshooting
-        ↓
-Amazon EKS
-        ↓
-Cloud-Native Operations
-```
-
-My Terraform experience has followed a similar progression from provisioning individual AWS resources to building increasingly connected multi-AZ architectures.
-
-```text
-Terraform Fundamentals
-        ↓
-Individual AWS Resources
-        ↓
-Jenkins on AWS
-        ↓
-Resource Linkage
-        ↓
-Multi-AZ Auto Scaling Architecture
-        ↓
-Highly Available 2-Tier Architecture
-        ↓
-Infrastructure Operations & Reliability
-```
-
-The latest architecture integrates VPC networking, public and private subnets, Application Load Balancing, private EC2 instances, Launch Templates, Auto Scaling, IAM, Systems Manager, NAT, Multi-AZ RDS, Secrets Manager, CloudWatch monitoring, application bootstrapping, SQL validation, and failure-recovery testing.
-
-I continue to strengthen these capabilities through hands-on implementation, troubleshooting, and operational problem-solving while expanding my expertise in:
-
-* Microsoft Azure
-* Google Cloud Platform (GCP)
-* Cloud security
-* Monitoring and observability
-* Site Reliability Engineering
-* Kubernetes observability
-* Deployment automation
-* SQL and database fundamentals
-* Deeper Terraform architecture and automation
-
-My objective is to develop a well-rounded cloud engineering skill set focused on reliability, scalability, security, automation, and operational excellence across modern enterprise environments.
-
----
-
-# 💼 Professional Background
-
-I have 18 years of experience supporting users in enterprise IT environments and more than 21 years with Allstate.
-
-My professional background includes technical troubleshooting, incident resolution, customer support, documentation, access management, Microsoft 365, Active Directory, and supporting business-critical technology.
-
-My cloud and DevOps work builds on that foundation through hands-on engineering projects rather than replacing the story that came before it.
-
-The technologies may be changing, but one part remains very familiar:
-
-> **Something isn't working. Figure out why. 🔎**
-
----
-
-# 🔧 Portfolio Troubleshooting
-
-The portfolio itself has been part of the hands-on work.
-
-Building and maintaining it has included:
-
-* Troubleshooting Git and repository issues
-* Diagnosing CloudFront caching when updated content was already present in GitHub and S3
-* Using CloudFront cache invalidations during deployments
-* Troubleshooting Route 53 domain registration and DNS configuration
-* Configuring the Route 53 hosted zone
-* Using DNS validation for the ACM TLS certificate
-* Configuring HTTPS for the root and `www` domains
-* Adding alternate domain names to CloudFront
-* Creating Route 53 alias records
-* Understanding how GitHub, S3, CloudFront, Route 53, DNS, TLS, and the live website connect
-
-What started as a place to showcase cloud projects became another cloud project of its own. 😅
-
----
-
-# 🔮 What's Next for the Portfolio?
-
-The portfolio will continue evolving with the work behind it.
-
-Potential future improvements include:
-
-* Automated portfolio deployment with GitHub Actions
-* Terraform-managed portfolio infrastructure
-* Additional architecture visualizations
-* Continued UI and accessibility improvements
-* New cloud and DevOps projects as they are completed
-
----
-
-# 🔗 Connect With Me
-
-🌐 **Portfolio:** [mandyreed.com](https://mandyreed.com)
-
-💻 **GitHub:** [github.com/mandyreed223](https://github.com/mandyreed223)
-
-💼 **LinkedIn:** [linkedin.com/in/mandymreed](https://www.linkedin.com/in/mandymreed/)
-
-✍️ **Medium:** [medium.com/@mandymreed](https://medium.com/@mandymreed)
-
----
-
-## 👩‍💻 Mandy Reed
-
-Enterprise IT professional building hands-on cloud and DevOps engineering experience through AWS, Terraform, Infrastructure as Code, highly available architectures, Amazon EKS, Linux, Docker, Kubernetes, databases, monitoring, automation, troubleshooting, and technical writing.
-
-☁️ **Build it. Troubleshoot it. Understand it. Then build something harder.** 🚀
+When something fails, I try to follow the request or dependency path rather than guess
