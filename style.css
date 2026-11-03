@@ -1215,3 +1215,130 @@ img.project-architecture {
    Green is always invited.
    Red may visit, but it has to behave. 😂
 */
+
+
+/* ==============================
+   THIS SITE IS A CLOUD PROJECT, TOO
+   AWS / live portfolio identity
+   ============================== */
+
+.site-project {
+    position: relative;
+    overflow: hidden;
+}
+
+.site-project::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 190px;
+    height: 190px;
+    background: radial-gradient(
+        circle,
+        rgba(255, 153, 0, 0.07) 0%,
+        rgba(255, 153, 0, 0.02) 45%,
+        transparent 70%
+    );
+    pointer-events: none;
+}
+
+.portfolio-project {
+    border-left-width: 7px;
+    border-left-color: #ff9900;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255, 153, 0, 0.09),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #f8fafc 0%,
+            #f2f5f8 55%,
+            #edf2f6 100%
+        );
+    box-shadow:
+        0 7px 22px rgba(35, 47, 62, 0.09),
+        0 2px 6px rgba(35, 47, 62, 0.04);
+    isolation: isolate;
+}
+
+.portfolio-project::after {
+    background: linear-gradient(
+        90deg,
+        #ff9900,
+        rgba(255, 153, 0, 0.12) 65%,
+        transparent
+    );
+}
+
+.portfolio-project h3 {
+    color: #232f3e;
+}
+
+.portfolio-project .project-badge {
+    position: relative;
+    background: linear-gradient(
+        135deg,
+        #232f3e,
+        #32465f
+    );
+    color: white;
+    box-shadow: 0 3px 8px rgba(35, 47, 62, 0.18);
+}
+
+.portfolio-project .project-badge::after {
+    content: "☁";
+    position: absolute;
+    top: -9px;
+    right: -14px;
+    color: #ffad33;
+    font-size: 15px;
+    text-shadow: 0 0 10px rgba(255, 153, 0, 0.25);
+}
+
+.portfolio-project:hover {
+    border-left-color: #ff9900;
+    box-shadow:
+        0 14px 32px rgba(35, 47, 62, 0.13),
+        0 3px 8px rgba(255, 153, 0, 0.06);
+}
+
+.portfolio-project:hover .project-badge {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(35, 47, 62, 0.22);
+}
+
+/* Small live-production accent, using Mandy's green without
+   competing with the AWS orange / cloud-blue identity. */
+.portfolio-project::before {
+    content: "";
+    position: absolute;
+    right: 18px;
+    bottom: 0;
+    width: 125px;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ff9900 25%,
+        #ff9900 58%,
+        #2f7d46 84%,
+        transparent
+    );
+    opacity: 0.60;
+    pointer-events: none;
+}
+
+@media (max-width: 480px) {
+    .site-project::before {
+        width: 130px;
+        height: 130px;
+    }
+
+    .portfolio-project::before {
+        width: 90px;
+    }
+}

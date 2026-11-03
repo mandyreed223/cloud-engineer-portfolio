@@ -510,6 +510,45 @@
      connected without manually copying generated identifiers.
     </p>
    </section>
+
+   <!-- THIS SITE IS A CLOUD PROJECT TOO -->
+   <section class="projects site-project">
+    <h2>☁️ This Site Is a Cloud Project, Too</h2>
+    <p class="section-intro">
+     The portfolio you're viewing is also a live AWS project. What began as a static
+     website evolved into a secured, automated, serverless cloud application.
+    </p>
+    <div class="project-card portfolio-project">
+     <div class="project-badge">☁️ Live Portfolio Architecture</div>
+     <h3>AWS Cloud Engineering Portfolio</h3>
+     <p class="story-hook">
+      It started as a static website. Then I secured it, automated it, and gave it a serverless backend. 😅
+     </p>
+     <p>
+      The site you're viewing is delivered from a private Amazon S3 origin through
+      CloudFront Origin Access Control, Route 53, AWS Certificate Manager, and HTTPS.
+      GitHub Actions automatically deploys changes pushed to the main branch, using
+      GitHub OIDC federation to assume a least-privilege AWS IAM role with temporary
+      credentials instead of stored AWS access keys. The workflow updates S3 and
+      invalidates the CloudFront cache so new versions are delivered automatically.
+     </p>
+     <p>
+      I also added a Terraform-managed serverless visitor counter using Amazon API Gateway,
+      AWS Lambda, and DynamoDB. The browser calls a GET /count endpoint, Lambda performs
+      an atomic DynamoDB update, and the persistent count is returned to the page.
+      Terraform resource references connect the API, Lambda, IAM permissions, and
+      DynamoDB table without manually copying AWS-generated IDs or ARNs.
+     </p>
+     <div class="visitor-counter project-counter" aria-live="polite">
+      👀 Portfolio Views: <span id="visitor-count">Loading...</span>
+     </div>
+     <div class="project-links">
+      <a class="project-button" href="https://github.com/mandyreed223/cloud-engineer-portfolio" rel="noopener noreferrer" target="_blank">💻 View GitHub</a>
+      <a class="project-button" href="https://medium.com/@mandymreed/so-i-decided-i-needed-a-portfolio-website-what-could-possibly-go-wrong-5a726e889864" rel="noopener noreferrer" target="_blank">✍️ Read the Original Build</a>
+      <a class="project-button" href="https://medium.com/@mandymreed/%EF%B8%8F-my-aws-portfolio-worked-fine-so-naturally-i-rebuilt-half-of-it-dfc985690ac8" rel="noopener noreferrer" target="_blank">🚀 Read the Architecture Upgrade</a>
+     </div>
+    </div>
+   </section>
    <!-- FEATURED PROJECTS -->
   <section class="projects" id="projects">
    <h2>
@@ -830,38 +869,6 @@
      ✍️ Read the Story
     </a>
    </div>
-   <!-- AWS PORTFOLIO -->
-    <div class="project-card">
-     <h3>☁️ AWS Cloud Engineering Portfolio</h3>
-     <p class="story-hook">
-      It started as a static website. Then I secured it, automated it, and gave it a serverless backend. 😅
-     </p>
-     <p>
-      Evolved this cloud engineering portfolio from a manually deployed static website
-      into a secured and automated AWS application. The frontend is delivered from a
-      private Amazon S3 origin through CloudFront Origin Access Control, Route 53, AWS
-      Certificate Manager, and HTTPS. GitHub Actions automatically deploys changes pushed
-      to the main branch, using GitHub OIDC federation to assume a least-privilege AWS IAM
-      role with temporary credentials instead of stored AWS access keys, then updates S3
-      and invalidates the CloudFront cache.
-     </p>
-     <p>
-      Added a Terraform-managed serverless visitor counter using Amazon API Gateway,
-      AWS Lambda, and DynamoDB. The browser calls a GET /count endpoint, Lambda performs
-      an atomic DynamoDB update, and the persistent count is returned to the page.
-      Terraform resource references connect the API, Lambda, IAM permissions, and
-      DynamoDB table without manually copying AWS-generated IDs or ARNs.
-     </p>
-     <div class="visitor-counter project-counter" aria-live="polite">
-      👀 Portfolio Views: <span id="visitor-count">Loading...</span>
-     </div>
-     <a class="project-button" href="https://github.com/mandyreed223/cloud-engineer-portfolio" rel="noopener noreferrer" target="_blank">
-      💻 View GitHub
-     </a>
-     <a class="project-button" href="https://medium.com/@mandymreed/so-i-decided-i-needed-a-portfolio-website-what-could-possibly-go-wrong-5a726e889864" rel="noopener noreferrer" target="_blank">
-      ✍️ Read the Story
-     </a>
-    </div>
     <!-- PROMPT DEPLOYMENT PIPELINE -->
    <div class="project-card">
     <h3>
@@ -1204,12 +1211,6 @@
    <p class="footer-message">
     ☁️ Thanks for stopping by. I'm probably building, troubleshooting,
             or documenting something new right now. 🛠️
-   </p>
-   <p>
-    🌐 Portfolio:
-    <a href="https://mandyreed.com" rel="noopener noreferrer" target="_blank">
-     mandyreed.com
-    </a>
    </p>
    <p>
     💻 GitHub:
