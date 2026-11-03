@@ -1133,6 +1133,81 @@ img.project-architecture {
     }
 }
 
+
+
+/* ==============================
+   PORTFOLIO ARCHITECTURE + VISITOR COUNTER
+   ============================== */
+
+/* Supporting labels between architecture resources */
+.architecture-flow-label {
+    width: fit-content;
+    max-width: 320px;
+    margin: 6px auto;
+    padding: 6px 12px;
+    color: #5b6672;
+    background: #f7f9fb;
+    border: 1px solid #e2e7ec;
+    border-radius: 18px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* Give each architecture subsection a little breathing room */
+.architecture h3 {
+    margin-top: 34px;
+    margin-bottom: 8px;
+    color: #34495e;
+    text-align: center;
+}
+
+/* Live serverless visitor counter */
+.visitor-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 16px 0 6px;
+    padding: 9px 14px;
+    background: linear-gradient(
+        135deg,
+        rgba(47, 125, 70, 0.08),
+        rgba(255, 255, 255, 0.75)
+    );
+    color: #34483a;
+    border: 1px solid rgba(47, 125, 70, 0.18);
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 2px 6px rgba(35, 47, 62, 0.05);
+}
+
+.visitor-counter #visitor-count {
+    color: #2f7d46;
+    font-family: Consolas, "Courier New", monospace;
+}
+
+.project-counter {
+    display: flex;
+    width: fit-content;
+}
+
+/* Mobile polish */
+@media (max-width: 480px) {
+    .architecture-flow-label {
+        max-width: 230px;
+        font-size: 12px;
+    }
+
+    .architecture h3 {
+        font-size: 17px;
+    }
+
+    .visitor-counter {
+        font-size: 13px;
+    }
+}
+
 /*
    ✨ Professional enough for recruiters.
    Fun enough that I still recognize my own website.
