@@ -383,6 +383,12 @@
      GitHub Actions
     </span>
     <span>
+     GitHub OIDC
+    </span>
+    <span>
+     Workload Identity Federation
+    </span>
+    <span>
      CI/CD
     </span>
    </div>
@@ -445,20 +451,44 @@
     🏗️ Portfolio Architecture
    </h2>
    <p>
-    This portfolio is built with HTML and CSS, maintained in GitHub,
-            stored in Amazon S3, and delivered securely through Amazon CloudFront.
-            Amazon Route 53 provides DNS routing for the custom domain, while
-            AWS Certificate Manager provides the TLS certificate used for HTTPS.
+    This portfolio is built with HTML and CSS, maintained in GitHub, and
+            automatically deployed to AWS through GitHub Actions. GitHub authenticates
+            to AWS using OpenID Connect (OIDC) and assumes a least-privilege IAM role,
+            eliminating the need to store long-lived AWS access keys in GitHub.
    </p>
    <div class="architecture-diagram">
     <div class="architecture-box">
-     👤 Visitor
+     💻 VS Code
     </div>
     <div class="architecture-arrow">
      ↓
     </div>
     <div class="architecture-box">
-     🌐 mandyreed.com
+     🐙 GitHub Repository
+    </div>
+    <div class="architecture-arrow">
+     ↓ Push to main
+    </div>
+    <div class="architecture-box">
+     ⚙️ GitHub Actions
+    </div>
+    <div class="architecture-arrow">
+     ↓ OIDC Federation
+    </div>
+    <div class="architecture-box">
+     🔐 AWS IAM Role
+    </div>
+    <div class="architecture-arrow">
+     ↓ S3 Sync + CloudFront Invalidation
+    </div>
+    <div class="architecture-box">
+     🪣 Private Amazon S3
+    </div>
+    <div class="architecture-arrow">
+     ↓ Origin Access Control
+    </div>
+    <div class="architecture-box">
+     🔒 Amazon CloudFront + HTTPS
     </div>
     <div class="architecture-arrow">
      ↓
@@ -470,25 +500,22 @@
      ↓
     </div>
     <div class="architecture-box">
-     🔒 Amazon CloudFront + HTTPS
+     🌐 mandyreed.com
     </div>
     <div class="architecture-arrow">
      ↓
     </div>
     <div class="architecture-box">
-     🪣 Amazon S3
-    </div>
-    <div class="architecture-arrow">
-     ↓
-    </div>
-    <div class="architecture-box">
-     💻 Portfolio Website
+     👤 Visitor
     </div>
    </div>
    <p>
-    AWS Certificate Manager secures both mandyreed.com and
-            www.mandyreed.com with HTTPS. Source code and version history
-            are maintained in GitHub.
+    The S3 origin is private and accessible through CloudFront using Origin
+            Access Control. AWS Certificate Manager provides HTTPS for mandyreed.com
+            and www.mandyreed.com. When changes are pushed to the main branch,
+            GitHub Actions assumes the AWS IAM role through OIDC, synchronizes the
+            updated site files to S3, and creates a CloudFront invalidation so the
+            latest version is delivered without a manual AWS Console deployment.
    </p>
   </section>
   <!-- FEATURED PROJECTS -->
@@ -817,16 +844,18 @@
      ☁️ AWS Cloud Engineering Portfolio
     </h3>
     <p class="story-hook">
-     Building a portfolio was easy. Getting DNS, HTTPS, caching,
-                and a custom domain to cooperate was the adventure. 🌐
+     It started as a static website. Then I decided deploying it manually was too easy. 😅
     </p>
     <p>
-     Designed and deployed this cloud engineering portfolio using
-                Amazon S3, CloudFront, Route 53, and AWS Certificate Manager.
-                Configured a custom domain with DNS routing and HTTPS/TLS,
-                maintained source control through GitHub, and troubleshot
-                deployment, caching, domain registration, DNS, and content
-                delivery issues.
+     Designed, secured, and automated this cloud engineering portfolio using
+                Amazon S3, CloudFront, Route 53, AWS Certificate Manager, IAM, GitHub,
+                and GitHub Actions. Configured a custom domain with HTTPS/TLS and
+                secured the S3 origin behind CloudFront using Origin Access Control.
+                Built an automated deployment workflow that triggers when changes are
+                pushed to the main branch, uses GitHub OIDC federation to assume a
+                least-privilege AWS IAM role without stored AWS access keys, synchronizes
+                the updated website to S3, and invalidates the CloudFront cache so new
+                content is delivered automatically.
     </p>
     <a class="project-button" href="https://github.com/mandyreed223/cloud-engineer-portfolio" rel="noopener noreferrer" target="_blank">
      💻 View GitHub
